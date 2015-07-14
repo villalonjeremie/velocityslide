@@ -29,13 +29,13 @@ if (!function_exists('of_options'))
 		( 
 			"disabled" => array (
 				"placebo" 		=> "placebo", //REQUIRED!
-				"block_one"		=> "Block One",
-				"block_two"		=> "Block Two",
-				"block_three"	=> "Block Three",
+				"presentation"	=> "Presentation",
+				"services"		=> "Services",
+				"portfolio"		=> "Portfolio",
+				"blog"			=> "Blog",
 			), 
 			"enabled" => array (
 				"placebo" 		=> "placebo", //REQUIRED!
-				"block_four"	=> "Block Four",
 			),
 		);
 
@@ -103,17 +103,23 @@ if (!function_exists('of_options'))
 global $of_options;
 $of_options = array();
 
-$of_options[] = array( 	"name" 		=> __('Home Settings', 'velocityslide'),
+$of_options[] = array( 	"name" 		=> __('Homepage Settings', 'velocityslide'),
 						"type" 		=> "heading"
 				);
-
-					
+				
 $of_options[] = array( 	"name" 		=> __('Hello There!', 'velocityslide'),
 						"desc" 		=> "",
 						"id" 		=> "introduction",
 						"std" 		=> __('<h3 style=\"margin: 0 0 10px;\">Welcome to the Options velocity slide</h3><br>Organize how you want the layout to appear on the homepage.<br /><br />You can choose to enable/disable sections via drag & drop, or re-order their stacking order on the homepage.<br /><br />NB; Once you have re-ordered or disabled, do not forget to adjust your Menu (Navigation) in the same way.', 'velocityslide'),
 						"icon" 		=> true,
 						"type" 		=> "info"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Homepage Layout Manager', 'velocityslide'),
+						"desc" 		=> __('Organize how you want the layout','velocityslide'),
+						"id" 		=> "blocks_homepage",
+						"std" 		=> $of_options_homepage_blocks,
+						"type" 		=> "sorter"
 				);
 
 $of_options[] = array( 	"name" 		=> __('Background upload', 'velocityslide'),
@@ -123,6 +129,120 @@ $of_options[] = array( 	"name" 		=> __('Background upload', 'velocityslide'),
 						"mod"		=> "min",
 						"type" 		=> "media"
 				);
+
+$of_options[] = array( 	"name" 		=> __('Title', 'velocityslide'),
+						"desc" 		=> __('Please enter a title for the homepage section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
+						"id" 		=> "title_homepage",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+$of_options[] = array( 	"name" 		=> __('Description', 'velocityslide'),
+						"desc" 		=> __('You can add a short description to appear in this block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
+						"id" 		=> "text_homepage",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+$of_options[] = array( 	"name" 		=> __('Title button', 'velocityslide'),
+						"desc" 		=> __('Please enter a global name for your button (eg; Launch Project or Visit Website).', 'velocityslide'),
+						"id" 		=> "text_button_homepage",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Url button', 'velocityslide'),
+						"desc" 		=> __('Please enter an url link for your button (eg; http://www.webaffinity.com).', 'velocityslide'),
+						"id" 		=> "url_button_homepage",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Presentation Settings', 'velocityslide'),
+						"type" 		=> "heading"
+				);
+				
+
+$of_options[] = array( 	"name" 		=> __('Left background upload', 'velocityslide'),
+						"desc" 		=> __('Upload your left background for presentation', 'velocityslide'),
+						"id" 		=> "left_bg_presentation",
+						"std" 		=> "",
+						"mod"		=> "min",
+						"type" 		=> "media"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right background upload', 'velocityslide'),
+						"desc" 		=> __('Upload your right background for presentation', 'velocityslide'),
+						"id" 		=> "right_bg_presentation",
+						"std" 		=> "",
+						"mod"		=> "min",
+						"type" 		=> "media"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Left Title', 'velocityslide'),
+						"desc" 		=> __('Please enter a title for the presentation section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
+						"id" 		=> "lef_title_presentation",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right Title', 'velocityslide'),
+						"desc" 		=> __('Please enter a title for the presentation section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
+						"id" 		=> "lef_title_presentation",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Left Description', 'velocityslide'),
+						"desc" 		=> __('You can add a short description to appear in left block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
+						"id" 		=> "left_description_presentation",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right Description', 'velocityslide'),
+						"desc" 		=> __('You can add a short description to appear in right block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
+						"id" 		=> "right_description_presentation",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+
+$of_options[] = array( 	"name" 		=> __('Services Settings', 'velocityslide'),
+						"type" 		=> "heading"
+				);
+				
+
+$of_options[] = array( 	"name" 		=> __('Left background upload', 'velocityslide'),
+						"desc" 		=> __('Upload your left background for services section', 'velocityslide'),
+						"id" 		=> "left_bg_services",
+						"std" 		=> "",
+						"mod"		=> "min",
+						"type" 		=> "media"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right background upload', 'velocityslide'),
+						"desc" 		=> __('Upload your right background for services section', 'velocityslide'),
+						"id" 		=> "right_bg_services",
+						"std" 		=> "",
+						"mod"		=> "min",
+						"type" 		=> "media"
+				);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
 
 $of_options[] = array( 	"name" 		=> "JQuery UI Slider example 1",
 						"desc" 		=> "JQuery UI slider description.<br /> Min: 1, max: 500, step: 3, default value: 45",
@@ -189,15 +309,17 @@ $of_options[] = array( 	"name" 		=> "Hidden option 1",
 						"desc" 		=> "This is a sample hidden option controlled by a <strong>switch</strong> button",
 						"id" 		=> "hidden_switch_ex1",
 						"std" 		=> "Hi, I\'m just a text input - nr 1",
-						"fold" 		=> "switch_ex4", /* the switch hook */
+						"fold" 		=> "switch_ex4", 
 						"type" 		=> "text"
 				);
+
+
 				
 $of_options[] = array( 	"name" 		=> "Hidden option 2",
 						"desc" 		=> "This is a sample hidden option controlled by a <strong>switch</strong> button",
 						"id" 		=> "hidden_switch_ex2",
 						"std" 		=> "Hi, I\'m just a text input - nr 2",
-						"fold" 		=> "switch_ex4", /* the switch hook */
+						"fold" 		=> "switch_ex4",
 						"type" 		=> "text"
 				);
 				
@@ -230,6 +352,8 @@ $of_options[] = array( 	"name" 		=> "Typography",
 						"std" 		=> array('size' => '12px','style' => 'bold italic'),
 						"type" 		=> "typography"
 				);
+
+				*/
 
 $of_options[] = array( 	"name" 		=> "General Settings",
 						"type" 		=> "heading"
@@ -553,5 +677,5 @@ $of_options[] = array( 	"name" 		=> "Transfer Theme Options Data",
 				);
 				
 	}//End function: of_options()
-}//End chack if function exists: of_options()
+}//End check if function exists: of_options()
 ?>
