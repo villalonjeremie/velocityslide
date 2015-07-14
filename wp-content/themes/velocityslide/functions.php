@@ -49,6 +49,9 @@ function gt_queue_assets()
     wp_enqueue_script('ie', get_template_directory_uri() . '/assets/js/ie.js', false);
 
     wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css', false);
+
+    wp_enqueue_script('jquery-migrate-1.2.1', get_template_directory_uri() .'/assets/js/jquery-migrate-1.2.1.js', false);
+
 }
 
 add_action("init", "gt_queue_assets");

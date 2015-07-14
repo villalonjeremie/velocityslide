@@ -103,31 +103,22 @@ if (!function_exists('of_options'))
 global $of_options;
 $of_options = array();
 
-$of_options[] = array( 	"name" 		=> "Home Settings",
+$of_options[] = array( 	"name" 		=> __('Home Settings', 'velocityslide'),
 						"type" 		=> "heading"
 				);
+
 					
-$of_options[] = array( 	"name" 		=> "Hello there!",
+$of_options[] = array( 	"name" 		=> __('Hello There!', 'velocityslide'),
 						"desc" 		=> "",
 						"id" 		=> "introduction",
-						"std" 		=> "<h3 style=\"margin: 0 0 10px;\">Welcome to the Options Framework demo.</h3>
-						This is a slightly modified version of the original options framework by Devin Price with a couple of aesthetical improvements on the interface and some cool additional features. If you want to learn how to setup these options or just need general help on using it feel free to visit my blog at <a href=\"http://aquagraphite.com/2011/09/29/slightly-modded-options-framework/\">AquaGraphite.com</a>",
+						"std" 		=> __('<h3 style=\"margin: 0 0 10px;\">Welcome to the Options velocity slide</h3><br>Organize how you want the layout to appear on the homepage.<br /><br />You can choose to enable/disable sections via drag & drop, or re-order their stacking order on the homepage.<br /><br />NB; Once you have re-ordered or disabled, do not forget to adjust your Menu (Navigation) in the same way.', 'velocityslide'),
 						"icon" 		=> true,
 						"type" 		=> "info"
 				);
 
-$of_options[] = array( 	"name" 		=> "Media Uploader 3.5",
-						"desc" 		=> "Upload images using native media uploader from Wordpress 3.5+.",
-						"id" 		=> "media_upload_35",
-						// Use the shortcodes [site_url] or [site_url_secure] for setting default URLs
-						"std" 		=> "",
-						"type" 		=> "upload"
-				);
-
-$of_options[] = array( 	"name" 		=> "Media Uploader 3.5 min",
-						"desc" 		=> "Upload images using native media uploader from Wordpress 3.5+. Min mod",
-						"id" 		=> "media_upload_356",
-						// Use the shortcodes [site_url] or [site_url_secure] for setting default URLs
+$of_options[] = array( 	"name" 		=> __('Background upload', 'velocityslide'),
+						"desc" 		=> __('Upload your background for homepage', 'velocityslide'),
+						"id" 		=> "bg_homepage",
 						"std" 		=> "",
 						"mod"		=> "min",
 						"type" 		=> "media"
