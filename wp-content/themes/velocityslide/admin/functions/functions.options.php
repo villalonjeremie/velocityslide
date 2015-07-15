@@ -20,9 +20,7 @@ if (!function_exists('of_options'))
 		    $of_pages[$of_page->ID] = $of_page->post_name; }
 		$of_pages_tmp 		= array_unshift($of_pages, "Select a page:");       
 	
-		//Testing 
-		$of_options_select 	= array("one","two","three","four","five"); 
-		$of_options_radio 	= array("one" => "One","two" => "Two","three" => "Three","four" => "Four","five" => "Five");
+		$of_options_radio 	= array("two" => "Two","four" => "Four","six" => "Six");
 		
 		//Sample Homepage blocks for the layout manager (sorter)
 		$of_options_homepage_blocks = array
@@ -110,7 +108,7 @@ $of_options[] = array( 	"name" 		=> __('Homepage Settings', 'velocityslide'),
 $of_options[] = array( 	"name" 		=> __('Hello There!', 'velocityslide'),
 						"desc" 		=> "",
 						"id" 		=> "introduction",
-						"std" 		=> __('<h3 style=\"margin: 0 0 10px;\">Welcome to the Options velocity slide</h3><br>Organize how you want the layout to appear on the homepage.<br /><br />You can choose to enable/disable sections via drag & drop, or re-order their stacking order on the homepage.<br /><br />NB; Once you have re-ordered or disabled, do not forget to adjust your Menu (Navigation) in the same way.', 'velocityslide'),
+						"std" 		=> __('<h3 style=\"margin: 0 0 10px;\">Welcome to the Options velocity slide</h3><br>Organize how you want the layout to appear on the homepage.<br /><br />You can choose to enable/disable sections via drag & drop, or re-order their stacking order on the homepage.<br /><br />NB; Let the fields empty for not display', 'velocityslide'),
 						"icon" 		=> true,
 						"type" 		=> "info"
 				);
@@ -179,14 +177,14 @@ $of_options[] = array( 	"name" 		=> __('Right background upload', 'velocityslide
 
 $of_options[] = array( 	"name" 		=> __('Left Title', 'velocityslide'),
 						"desc" 		=> __('Please enter a title for the presentation section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
-						"id" 		=> "lef_title_presentation",
+						"id" 		=> "left_title_presentation",
 						"std" 		=> "",
 						"type" 		=> "text"
 				);
 
 $of_options[] = array( 	"name" 		=> __('Right Title', 'velocityslide'),
 						"desc" 		=> __('Please enter a title for the presentation section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
-						"id" 		=> "lef_title_presentation",
+						"id" 		=> "left_title_presentation",
 						"std" 		=> "",
 						"type" 		=> "text"
 				);
@@ -205,11 +203,9 @@ $of_options[] = array( 	"name" 		=> __('Right Description', 'velocityslide'),
 						"type" 		=> "text"
 				);
 
-
 $of_options[] = array( 	"name" 		=> __('Services Settings', 'velocityslide'),
 						"type" 		=> "heading"
 				);
-				
 
 $of_options[] = array( 	"name" 		=> __('Left background upload', 'velocityslide'),
 						"desc" 		=> __('Upload your left background for services section', 'velocityslide'),
@@ -227,33 +223,239 @@ $of_options[] = array( 	"name" 		=> __('Right background upload', 'velocityslide
 						"type" 		=> "media"
 				);
 
+$of_options[] = array( 	"name" 		=> __('Select services', 'velocityslide'),
+						"desc" 		=> __('Select your count services that you want to display.', 'velocityslide'),
+						"id" 		=> "select_services",
+						"std" 		=> "two",
+						"type" 		=> "select",
+						"mod" 		=> "mini",
+						"options" 	=> $of_options_radio
+				); 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-$of_options[] = array( 	"name" 		=> "JQuery UI Slider example 1",
-						"desc" 		=> "JQuery UI slider description.<br /> Min: 1, max: 500, step: 3, default value: 45",
-						"id" 		=> "slider_example_1",
-						"std" 		=> "45",
-						"min" 		=> "1",
-						"step"		=> "3",
-						"max" 		=> "500",
-						"type" 		=> "sliderui" 
+$of_options[] = array( 	"name" 		=> __('Portfolios Settings', 'velocityslide'),
+						"type" 		=> "heading"
 				);
 				
+
+$of_options[] = array( 	"name" 		=> __('Left background upload', 'velocityslide'),
+						"desc" 		=> __('Upload your left background for portfolios', 'velocityslide'),
+						"id" 		=> "left_bg_portfolios",
+						"std" 		=> "",
+						"mod"		=> "min",
+						"type" 		=> "media"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right background upload', 'velocityslide'),
+						"desc" 		=> __('Upload your right background for portfolios', 'velocityslide'),
+						"id" 		=> "right_bg_portfolios",
+						"std" 		=> "",
+						"mod"		=> "min",
+						"type" 		=> "media"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Left Title', 'velocityslide'),
+						"desc" 		=> __('Please enter a title for the portfolios section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
+						"id" 		=> "left_title_portfolios",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right Title', 'velocityslide'),
+						"desc" 		=> __('Please enter a title for the portfolios section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
+						"id" 		=> "right_title_portfolios",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Left Description', 'velocityslide'),
+						"desc" 		=> __('You can add a short description to appear in left block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
+						"id" 		=> "left_description_portfolios",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right Description', 'velocityslide'),
+						"desc" 		=> __('You can add a short description to appear in right block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
+						"id" 		=> "right_description_portfolios",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+$of_options[] = array( 	"name" 		=> __('Left title button', 'velocityslide'),
+						"desc" 		=> __('Please enter a global name for your button (eg; Launch Project or Visit Website).', 'velocityslide'),
+						"id" 		=> "left_text_button_portfolios",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Left button', 'velocityslide'),
+						"desc" 		=> __('Please enter an url link for your button (eg; http://www.webaffinity.com).', 'velocityslide'),
+						"id" 		=> "left_url_button_portfolios",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+$of_options[] = array( 	"name" 		=> __('Right title button', 'velocityslide'),
+						"desc" 		=> __('Please enter a global name for your button (eg; Launch Project or Visit Website).', 'velocityslide'),
+						"id" 		=> "right_text_button_portfolios",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right url button', 'velocityslide'),
+						"desc" 		=> __('Please enter an url link for your button (eg; http://www.webaffinity.com).', 'velocityslide'),
+						"id" 		=> "right_url_button_portfolios",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+$of_options[] = array( 	"name" 		=> __('Blog Settings', 'velocityslide'),
+						"type" 		=> "heading"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Blog side', 'velocityslide'),
+						"desc" 		=> __('Blog in right (on),Blog in left (off)', 'velocityslide'),
+						"id" 		=> "side_blog",
+						"std" 		=> 0,
+						"type" 		=> "switch"
+				);  
+				
+
+$of_options[] = array( 	"name" 		=> __('Left background upload', 'velocityslide'),
+						"desc" 		=> __('Upload your left background for blog section', 'velocityslide'),
+						"id" 		=> "left_bg_blog",
+						"std" 		=> "",
+						"mod"		=> "min",
+						"type" 		=> "media"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right background upload', 'velocityslide'),
+						"desc" 		=> __('Upload your right background for blog section', 'velocityslide'),
+						"id" 		=> "right_bg_blog",
+						"std" 		=> "",
+						"mod"		=> "min",
+						"type" 		=> "media"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Contact Settings', 'velocityslide'),
+						"type" 		=> "heading"
+				);		
+					
+$of_options[] = array(  "name"		=> __('Contact Address', 'velocityslide'),
+					    "desc"		=> __('Please enter your company address (eg; 10 Columbus Circle, New York, NY 10019, United States.)', 'velocityslide'),
+					    "id"		=> "text_address_contact",
+						"std"       => "",
+						"type"		=> "text"
+				);
+					
+$of_options[] = array(  "name"		=> __('Contact Telephone Number', 'velocityslide'),
+					    "desc"		=> __('Please enter your company telephone number (eg; (212) 823-6000.)', 'velocityslide'),
+					    "id"		=> "text_telephone_contact",
+					    "std"		=> "",
+					    "type"		=> "text");
+					
+$of_options[] = array(  "name"		=> __('Fax Telephone Number', 'velocityslide'),
+					    "desc"		=> __('Please enter your company fax number (eg; (212) 823-6005.)', 'velocityslide'),
+						"id"		=> "text_fax_contact",
+						"std"		=> "",
+						"type"		=> "text");	
+					
+$of_options[] = array(  "name"		=> __('Contact Email', 'velocityslide'),
+						"desc"		=> __('Please enter your company email address (eg; marc@guuthemes.com) This will also populate into your Contact Form.', 'velocityslide'),
+						"id"		=> "text_email_contact",
+						"std"		=> "",
+						"type"		=> "text");			
+
+$of_options[] = array( 	"name" 		=> __('General Settings', 'velocityslide'),
+						"type" 		=> "heading"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Background upload', 'velocityslide'),
+						"desc" 		=> __('Upload your background for contact', 'velocityslide'),
+						"id" 		=> "bg_contact",
+						"std" 		=> "",
+						"mod"		=> "min",
+						"type" 		=> "media"
+				);
+					
+				
+$of_options[] = array( 	"name" 		=> __('Tracking Code', 'velocityslide'),
+						"desc" 		=> __('Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme.', 'velocityslide'),
+						"id" 		=> "google_analytics",
+						"std" 		=> "",
+						"type" 		=> "textarea"
+				);
+				
+$of_options[] = array( 	"name" 		=> __('Footer Text', 'velocityslide'),
+						"desc" 		=> __('You can use the following shortcodes in your footer text: [wp-link] [theme-link] [loginout-link] [blog-title] [blog-link] [the-year]', 'velocityslide'),
+						"id" 		=> "footer_text",
+						"std" 		=> "Powered by [wp-link]. Built on the [theme-link].",
+						"type" 		=> "textarea"
+				);
+				
+$of_options[] = array( 	"name" 		=> __('Styling Options', 'velocityslide'),
+						"type" 		=> "heading"
+				);
+				
+$of_options[] = array( 	"name" 		=> __('Body Background Color', 'velocityslide'),
+						"desc" 		=> __('Pick a background color for the theme (default: #fff)', 'velocityslide'),
+						"id" 		=> "body_background",
+						"std" 		=> "",
+						"type" 		=> "color"
+				);
+				
+$of_options[] = array( 	"name" 		=> __('Body Font', 'velocityslide'),
+						"desc" 		=> __('Specify the body font properties', 'velocityslide'),
+						"id" 		=> "body_font",
+						"std" 		=> array('size' => '12px','face' => 'arial','style' => 'normal','color' => '#000000'),
+						"type" 		=> "typography"
+				);  
+				
+$of_options[] = array( 	"name" 		=> __('Custom CSS', 'velocityslide'),
+						"desc" 		=> __('Quickly add some CSS to your theme by adding it to this block.', 'velocityslide'),
+						"id" 		=> "custom_css",
+						"std" 		=> "",
+						"type" 		=> "textarea"
+				); 
+
+				
+$of_options[] = array( 	"name" 		=> __('Google Font Select', 'velocityslide'),
+						"desc" 		=> __('Some description. Note that this is a custom text added from options file.', 'velocityslide'),
+						"id" 		=> "g_select",
+						"std" 		=> "Select a font",
+						"type" 		=> "select_google_font",
+						"preview" 	=> array(
+										"text" => "This is my preview text!", //this is the text from preview box
+										"size" => "30px" //this is the text size from preview box
+						),
+						"options" 	=> array(
+										"none" => "Select a font",//please, always use this key: "none"
+										"Lato" => "Lato",
+										"Loved by the King" => "Loved By the King",
+										"Tangerine" => "Tangerine",
+										"Terminal Dosis" => "Terminal Dosis"
+						)
+				);
+				
+// Backup Options
+$of_options[] = array( 	"name" 		=> __('Backup Options', 'velocityslide'),
+						"type" 		=> "heading",
+						"icon"		=> ADMIN_IMAGES . "icon-slider.png"
+				);
+				
+$of_options[] = array( 	"name" 		=> __('Backup and Restore Options', 'velocityslide'),
+						"id" 		=> "of_backup",
+						"std" 		=> "",
+						"type" 		=> "backup",
+						"desc" 		=> __('You can use the two buttons below to backup your current options, and then restore it back at a later time. This is useful if you want to experiment on the options but would like to keep the old settings in case you need it back.', 'velocityslide'),
+				);
+				
+$of_options[] = array( 	"name" 		=> __('Transfer Theme Options Data', 'velocityslide'),
+						"id" 		=> "of_transfer",
+						"std" 		=> "",
+						"type" 		=> "transfer",
+						"desc" 		=> __('You can tranfer the saved options data between different installs by copying the text inside the text box. To import data from another install, replace the data in the text box with the one from another install and click "Import Options".', 'velocityslide'),
+				);
+
+/*				
 $of_options[] = array( 	"name" 		=> "JQuery UI Slider example 1 with steps(5)",
 						"desc" 		=> "JQuery UI slider description.<br /> Min: 0, max: 300, step: 5, default value: 75",
 						"id" 		=> "slider_example_2",
@@ -274,63 +476,9 @@ $of_options[] = array( 	"name" 		=> "JQuery UI Spinner",
 						"type" 		=> "spinner" 
 				);
 				
-$of_options[] = array( 	"name" 		=> "Switch 1",
-						"desc" 		=> "Switch OFF",
-						"id" 		=> "switch_ex1",
-						"std" 		=> 0,
-						"type" 		=> "switch"
-				);   
-				
-$of_options[] = array( 	"name" 		=> "Switch 2",
-						"desc" 		=> "Switch ON",
-						"id" 		=> "switch_ex2",
-						"std" 		=> 1,
-						"type" 		=> "switch"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Switch 3",
-						"desc" 		=> "Switch with custom labels",
-						"id" 		=> "switch_ex3",
-						"std" 		=> 0,
-						"on" 		=> "Enable",
-						"off" 		=> "Disable",
-						"type" 		=> "switch"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Switch 4",
-						"desc" 		=> "Switch OFF with hidden options. ;)",
-						"id" 		=> "switch_ex4",
-						"std" 		=> 0,
-						"folds"		=> 1,
-						"type" 		=> "switch"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Hidden option 1",
-						"desc" 		=> "This is a sample hidden option controlled by a <strong>switch</strong> button",
-						"id" 		=> "hidden_switch_ex1",
-						"std" 		=> "Hi, I\'m just a text input - nr 1",
-						"fold" 		=> "switch_ex4", 
-						"type" 		=> "text"
-				);
-
 
 				
-$of_options[] = array( 	"name" 		=> "Hidden option 2",
-						"desc" 		=> "This is a sample hidden option controlled by a <strong>switch</strong> button",
-						"id" 		=> "hidden_switch_ex2",
-						"std" 		=> "Hi, I\'m just a text input - nr 2",
-						"fold" 		=> "switch_ex4",
-						"type" 		=> "text"
-				);
 				
-				
-$of_options[] = array( 	"name" 		=> "Homepage Layout Manager",
-						"desc" 		=> "Organize how you want the layout to appear on the homepage",
-						"id" 		=> "homepage_blocks",
-						"std" 		=> $of_options_homepage_blocks,
-						"type" 		=> "sorter"
-				);
-					
 $of_options[] = array( 	"name" 		=> "Slider Options",
 						"desc" 		=> "Unlimited slider with drag and drop sortings.",
 						"id" 		=> "pingu_slider",
@@ -345,112 +493,15 @@ $of_options[] = array( 	"name" 		=> "Background Images",
 						"type" 		=> "tiles",
 						"options" 	=> $bg_images,
 				);
-					
-$of_options[] = array( 	"name" 		=> "Typography",
-						"desc" 		=> "Typography option with each property can be called individually.",
-						"id" 		=> "custom_type",
-						"std" 		=> array('size' => '12px','style' => 'bold italic'),
-						"type" 		=> "typography"
-				);
 
-				*/
-
-$of_options[] = array( 	"name" 		=> "General Settings",
-						"type" 		=> "heading"
-				);
-					
-$url =  ADMIN_DIR . 'assets/images/';
-$of_options[] = array( 	"name" 		=> "Main Layout",
-						"desc" 		=> "Select main content and sidebar alignment. Choose between 1, 2 or 3 column layout.",
-						"id" 		=> "layout",
-						"std" 		=> "2c-l-fixed.css",
-						"type" 		=> "images",
-						"options" 	=> array(
-							'1col-fixed.css' 	=> $url . '1col.png',
-							'2c-r-fixed.css' 	=> $url . '2cr.png',
-							'2c-l-fixed.css' 	=> $url . '2cl.png',
-							'3c-fixed.css' 		=> $url . '3cm.png',
-							'3c-r-fixed.css' 	=> $url . '3cr.png'
-						)
-				);
-				
-$of_options[] = array( 	"name" 		=> "Tracking Code",
-						"desc" 		=> "Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme.",
-						"id" 		=> "google_analytics",
-						"std" 		=> "",
-						"type" 		=> "textarea"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Footer Text",
-						"desc" 		=> "You can use the following shortcodes in your footer text: [wp-link] [theme-link] [loginout-link] [blog-title] [blog-link] [the-year]",
-						"id" 		=> "footer_text",
-						"std" 		=> "Powered by [wp-link]. Built on the [theme-link].",
-						"type" 		=> "textarea"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Styling Options",
-						"type" 		=> "heading"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Theme Stylesheet",
-						"desc" 		=> "Select your themes alternative color scheme.",
+$of_options[] = array( 	"name" 		=> __('Theme Stylesheet', 'velocityslide'),
+						"desc" 		=> __('Select your themes alternative color scheme.', 'velocityslide'),
 						"id" 		=> "alt_stylesheet",
 						"std" 		=> "default.css",
 						"type" 		=> "select",
 						"options" 	=> $alt_stylesheets
 				);
-				
-$of_options[] = array( 	"name" 		=> "Body Background Color",
-						"desc" 		=> "Pick a background color for the theme (default: #fff).",
-						"id" 		=> "body_background",
-						"std" 		=> "",
-						"type" 		=> "color"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Header Background Color",
-						"desc" 		=> "Pick a background color for the header (default: #fff).",
-						"id" 		=> "header_background",
-						"std" 		=> "",
-						"type" 		=> "color"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Footer Background Color",
-						"desc" 		=> "Pick a background color for the footer (default: #fff).",
-						"id" 		=> "footer_background",
-						"std" 		=> "",
-						"type" 		=> "color"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Body Font",
-						"desc" 		=> "Specify the body font properties",
-						"id" 		=> "body_font",
-						"std" 		=> array('size' => '12px','face' => 'arial','style' => 'normal','color' => '#000000'),
-						"type" 		=> "typography"
-				);  
-				
-$of_options[] = array( 	"name" 		=> "Custom CSS",
-						"desc" 		=> "Quickly add some CSS to your theme by adding it to this block.",
-						"id" 		=> "custom_css",
-						"std" 		=> "",
-						"type" 		=> "textarea"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Example Options",
-						"type" 		=> "heading"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Typography",
-						"desc" 		=> "This is a typographic specific option.",
-						"id" 		=> "typography",
-						"std" 		=> array(
-											'size'  => '12px',
-											'face'  => 'verdana',
-											'style' => 'bold italic',
-											'color' => '#123456'
-										),
-						"type" 		=> "typography"
-				);  
-				
+
 $of_options[] = array( 	"name" 		=> "Border",
 						"desc" 		=> "This is a border specific option.",
 						"id" 		=> "border",
@@ -461,27 +512,7 @@ $of_options[] = array( 	"name" 		=> "Border",
 										),
 						"type" 		=> "border"
 				);
-				
-$of_options[] = array( 	"name" 		=> "Colorpicker",
-						"desc" 		=> "No color selected.",
-						"id" 		=> "example_colorpicker",
-						"std" 		=> "",
-						"type" 		=> "color"
-					); 
-					
-$of_options[] = array( 	"name" 		=> "Colorpicker (default #2098a8)",
-						"desc" 		=> "Color selected.",
-						"id" 		=> "example_colorpicker_2",
-						"std" 		=> "#2098a8",
-						"type" 		=> "color"
-				);
 
-$of_options[] = array( 	"name" 		=> "Input Text",
-						"desc" 		=> "A text input field.",
-						"id" 		=> "test_text",
-						"std" 		=> "Default Value",
-						"type" 		=> "text"
-				);
 				
 $of_options[] = array( 	"name" 		=> "Input Checkbox (false)",
 						"desc" 		=> "Example checkbox with false selected.",
@@ -489,63 +520,7 @@ $of_options[] = array( 	"name" 		=> "Input Checkbox (false)",
 						"std" 		=> 0,
 						"type" 		=> "checkbox"
 				);
-				
-$of_options[] = array( 	"name" 		=> "Input Checkbox (true)",
-						"desc" 		=> "Example checkbox with true selected.",
-						"id" 		=> "example_checkbox_true",
-						"std" 		=> 1,
-						"type" 		=> "checkbox"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Normal Select",
-						"desc" 		=> "Normal Select Box.",
-						"id" 		=> "example_select",
-						"std" 		=> "three",
-						"type" 		=> "select",
-						"options" 	=> $of_options_select
-				);
-				
-$of_options[] = array( 	"name" 		=> "Mini Select",
-						"desc" 		=> "A mini select box.",
-						"id" 		=> "example_select_2",
-						"std" 		=> "two",
-						"type" 		=> "select",
-						"mod" 		=> "mini",
-						"options" 	=> $of_options_radio
-				); 
-				
-$of_options[] = array( 	"name" 		=> "Google Font Select",
-						"desc" 		=> "Some description. Note that this is a custom text added added from options file.",
-						"id" 		=> "g_select",
-						"std" 		=> "Select a font",
-						"type" 		=> "select_google_font",
-						"preview" 	=> array(
-										"text" => "This is my preview text!", //this is the text from preview box
-										"size" => "30px" //this is the text size from preview box
-						),
-						"options" 	=> array(
-										"none" => "Select a font",//please, always use this key: "none"
-										"Lato" => "Lato",
-										"Loved by the King" => "Loved By the King",
-										"Tangerine" => "Tangerine",
-										"Terminal Dosis" => "Terminal Dosis"
-						)
-				);
-				
-$of_options[] = array( 	"name" 		=> "Google Font Select2",
-						"desc" 		=> "Some description.",
-						"id" 		=> "g_select2",
-						"std" 		=> "Select a font",
-						"type" 		=> "select_google_font",
-						"options" 	=> array(
-										"none" => "Select a font",//please, always use this key: "none"
-										"Lato" => "Lato",
-										"Loved by the King" => "Loved By the King",
-										"Tangerine" => "Tangerine",
-										"Terminal Dosis" => "Terminal Dosis"
-									)
-				);
-				
+
 $of_options[] = array( 	"name" 		=> "Input Radio (one)",
 						"desc" 		=> "Radio select with default of 'one'.",
 						"id" 		=> "example_radio",
@@ -553,27 +528,7 @@ $of_options[] = array( 	"name" 		=> "Input Radio (one)",
 						"type" 		=> "radio",
 						"options" 	=> $of_options_radio
 				);
-				
-$url =  ADMIN_DIR . 'assets/images/';
-$of_options[] = array( 	"name" 		=> "Image Select",
-						"desc" 		=> "Use radio buttons as images.",
-						"id" 		=> "images",
-						"std" 		=> "warning.css",
-						"type" 		=> "images",
-						"options" 	=> array(
-											'warning.css' 	=> $url . 'warning.png',
-											'accept.css' 	=> $url . 'accept.png',
-											'wrench.css' 	=> $url . 'wrench.png'
-										)
-				);
-				
-$of_options[] = array( 	"name" 		=> "Textarea",
-						"desc" 		=> "Textarea description.",
-						"id" 		=> "example_textarea",
-						"std" 		=> "Default Text",
-						"type" 		=> "textarea"
-				);
-				
+
 $of_options[] = array( 	"name" 		=> "Multicheck",
 						"desc" 		=> "Multicheck description.",
 						"id" 		=> "example_multicheck",
@@ -581,6 +536,16 @@ $of_options[] = array( 	"name" 		=> "Multicheck",
 						"type" 		=> "multicheck",
 						"options" 	=> $of_options_radio
 				);
+
+$of_options[] = array( 	"name" 		=> "Hidden option 1",
+						"desc" 		=> "This is a sample hidden option 1",
+						"id" 		=> "hidden_option_1",
+						"std" 		=> "Hi, I\'m just a text input",
+						"fold" 		=> "offline", 
+						"type" 		=> "text"
+				);
+
+ 
 				
 $of_options[] = array( 	"name" 		=> "Select a Category",
 						"desc" 		=> "A list of all the categories being used on the site.",
@@ -589,92 +554,20 @@ $of_options[] = array( 	"name" 		=> "Select a Category",
 						"type" 		=> "select",
 						"options" 	=> $of_categories
 				);
+
 				
-//Advanced Settings
-$of_options[] = array( 	"name" 		=> "Advanced Settings",
-						"type" 		=> "heading"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Folding Checkbox",
-						"desc" 		=> "This checkbox will hide/show a couple of options group. Try it out!",
-						"id" 		=> "offline",
-						"std" 		=> 0,
-						"folds" 	=> 1,
-						"type" 		=> "checkbox"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Hidden option 1",
-						"desc" 		=> "This is a sample hidden option 1",
-						"id" 		=> "hidden_option_1",
-						"std" 		=> "Hi, I\'m just a text input",
-						"fold" 		=> "offline", /* the checkbox hook */
-						"type" 		=> "text"
-				);
+
 				
 $of_options[] = array( 	"name" 		=> "Hidden option 2",
 						"desc" 		=> "This is a sample hidden option 2",
 						"id" 		=> "hidden_option_2",
 						"std" 		=> "Hi, I\'m just a text input",
-						"fold" 		=> "offline", /* the checkbox hook */
+						"fold" 		=> "offline", 
 						"type" 		=> "text"
 				);
-				
-$of_options[] = array( 	"name" 		=> "Hello there!",
-						"desc" 		=> "",
-						"id" 		=> "introduction_2",
-						"std" 		=> "<h3 style=\"margin: 0 0 10px;\">Grouped Options.</h3>
-						You can group a bunch of options under a single heading by removing the 'name' value from the options array except for the first option in the group.",
-						"icon" 		=> true,
-						"type" 		=> "info"
-				);
-				
-				$of_options[] = array( 	"name" 		=> "Some pretty colors for you",
-										"desc" 		=> "Color 1.",
-										"id" 		=> "example_colorpicker_3",
-										"std" 		=> "#2098a8",
-										"type" 		=> "color"
-								);
-								
-				$of_options[] = array( 	"name" 		=> "",
-										"desc" 		=> "Color 2.",
-										"id" 		=> "example_colorpicker_4",
-										"std" 		=> "#2098a8",
-										"type" 		=> "color"
-								);
-								
-				$of_options[] = array( 	"name" 		=> "",
-										"desc" 		=> "Color 3.",
-										"id" 		=> "example_colorpicker_5",
-										"std" 		=> "#2098a8",
-										"type" 		=> "color"
-								);
-								
-				$of_options[] = array( 	"name" 		=> "",
-										"desc" 		=> "Color 4.",
-										"id" 		=> "example_colorpicker_6",
-										"std" 		=> "#2098a8",
-										"type" 		=> "color"
-								);
-				
-// Backup Options
-$of_options[] = array( 	"name" 		=> "Backup Options",
-						"type" 		=> "heading",
-						"icon"		=> ADMIN_IMAGES . "icon-slider.png"
-				);
-				
-$of_options[] = array( 	"name" 		=> "Backup and Restore Options",
-						"id" 		=> "of_backup",
-						"std" 		=> "",
-						"type" 		=> "backup",
-						"desc" 		=> 'You can use the two buttons below to backup your current options, and then restore it back at a later time. This is useful if you want to experiment on the options but would like to keep the old settings in case you need it back.',
-				);
-				
-$of_options[] = array( 	"name" 		=> "Transfer Theme Options Data",
-						"id" 		=> "of_transfer",
-						"std" 		=> "",
-						"type" 		=> "transfer",
-						"desc" 		=> 'You can tranfer the saved options data between different installs by copying the text inside the text box. To import data from another install, replace the data in the text box with the one from another install and click "Import Options".',
-				);
+
+				*/
+
 				
 	}//End function: of_options()
 }//End check if function exists: of_options()

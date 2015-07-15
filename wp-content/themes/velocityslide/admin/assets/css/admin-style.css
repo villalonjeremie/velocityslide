@@ -160,7 +160,12 @@ border-radius: 2px;
 #of_container #of-nav li.generalsettings a{ background-image:url(../images/icon-settings.png);}
 #of_container #of-nav li.stylingoptions a{ background-image:url(../images/icon-paint.png);}
 #of_container #of-nav li.exampleoptions a{ background-image:url(../images/icon-docs.png);}
-#of_container #of-nav li.homesettings a{ background-image:url(../images/icon-home.png);}
+#of_container #of-nav li.homepagesettings a{ background-image:url(../images/icon-home.png);}
+#of_container #of-nav li.servicessettings a{ background-image:url(../images/icon-settings.png);}
+#of_container #of-nav li.portfoliossettings a{ background-image:url(../images/icon-settings.png);}
+#of_container #of-nav li.presentationsettings a{ background-image:url(../images/icon-settings.png);}
+#of_container #of-nav li.blogsettings a{ background-image:url(../images/icon-settings.png);}
+#of_container #of-nav li.contactsettings a{ background-image:url(../images/icon-settings.png);}
 #of_container #of-nav li.backupoptions a {background: url(../images/icon-backup.png) no-repeat;}
 #of_container #of-nav li.advancedsettings a {background: url(../images/wrench16.png) no-repeat;}
 
