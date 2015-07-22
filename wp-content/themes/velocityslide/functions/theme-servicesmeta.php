@@ -8,21 +8,21 @@ $prefix = 'gt_';
  
 $meta_box_service = array(
 	'id' => 'service_details',
-    'title' => __('Service Details', 'kula'),
+    'title' => __('Service Details', 'velocityslide'),
     'page' => 'services',
     'context' => 'normal',
     'priority' => 'high',
     'fields' => array(
         array(
-        	'name' => __('Service Icon', 'kula'),
-            'desc' => __('Add an Icon for your service via Shortcode <br />Example: [icon name=icon-file]<br /><br />A list of all available icons can be found <a href="http://fortawesome.github.com/Font-Awesome" target="_blank">here</a>', 'kula'),
+        	'name' => __('Service Icon', 'velocityslide'),
+            'desc' => __('Add an Icon for your service via Shortcode <br />Example: [icon name=icon-file]<br /><br />A list of all available icons can be found <a href="http://fortawesome.github.com/Font-Awesome" target="_blank">here</a>', 'velocityslide'),
             'id' => $prefix . 'service_icon',
             'type' => 'text',
             'std' => ''
         ),
         array(
-           'name' => __('Service URL', 'kula'),
-           'desc' => __('Please add a page URL for this Service to link to', 'kula'),
+           'name' => __('Service URL', 'velocityslide'),
+           'desc' => __('Please add a page URL for this Service to link to', 'velocityslide'),
            'id' => $prefix . 'service_url',
            'type' => 'text',
            'std' => ''
@@ -41,7 +41,7 @@ function gt_show_box_service() {
     global $meta_box_service, $post;
 	
 	// Use nonce for verification
-	echo '<input type="hidden" name="gt_add_box_service_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="vs_add_box_service_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 
 	echo '<table class="form-table">';
 		
@@ -54,7 +54,6 @@ function gt_show_box_service() {
 				'<td>';
 			echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : stripslashes(htmlspecialchars(( $field['std']), ENT_QUOTES)), '" size="30" style="width:75%; margin-right: 20px; float:left;" />';
 			echo '</td></tr>';
-		
 		}
 		
 		echo '</table>';
@@ -68,7 +67,7 @@ add_action('save_post', 'gt_save_data_service');
  
 function gt_add_box_service() {
 	global $meta_box_service;
-	
+
 	add_meta_box($meta_box_service['id'], $meta_box_service['title'], 'gt_show_box_service', $meta_box_service['page'], $meta_box_service['context'], $meta_box_service['priority']);
 }
 

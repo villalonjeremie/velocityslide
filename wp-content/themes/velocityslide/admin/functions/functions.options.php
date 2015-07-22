@@ -189,6 +189,20 @@ $of_options[] = array( 	"name" 		=> __('Right Title', 'velocityslide'),
 						"type" 		=> "text"
 				);
 
+$of_options[] = array( 	"name" 		=> __('Left Subtitle', 'velocityslide'),
+						"desc" 		=> __('You can add a subtitle to appear in left block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
+						"id" 		=> "left_subtitle_presentation",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right Subtitle', 'velocityslide'),
+						"desc" 		=> __('You can add a subtitle to appear in right block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
+						"id" 		=> "right_subtitle_presentation",
+						"std" 		=> "",
+						"type" 		=> "text"
+				);
+
 $of_options[] = array( 	"name" 		=> __('Left Description', 'velocityslide'),
 						"desc" 		=> __('You can add a short description to appear in left block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
 						"id" 		=> "left_description_presentation",

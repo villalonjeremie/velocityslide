@@ -75,6 +75,7 @@ table {
   width: 1px;
 }
 
+
 html, button, input, select, textarea {
   color: #222;
 }
@@ -121,6 +122,10 @@ textarea {
 
 body {
   background-color: #000;
+}
+
+body.wp-admin {
+  background-color: #fff;
 }
 
 .powerslide {

@@ -8,8 +8,7 @@ get_header();?>
 
 
         <div class="powerslide slider-wrapper">
-            <div class="slider">
-                
+            <div class="slider">                
                 <div class="slide slide--0" data-slideTitle="Home">
                     <div class="slide-content">
                         <h2 class="logo">
@@ -21,18 +20,17 @@ get_header();?>
                             <div class="s-table">
                                 <div class="s-table-cell">
                                     <h1>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slide0/powercell.png" alt="Powercell" class="img-powercell"><br>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/youth-grafter.png" alt="Youth Grafter">
+                                        <?php echo $data['title_homepage']; ?>
+                                        <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/img/slide0/powercell.png" alt="Powercell" class="img-powercell"><br>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/youth-grafter.png" alt="Youth Grafter">-->
                                     </h1>
                                     <h3>
-                                        THE POWERCL DOSE OF VISIBLE YOUTH.<br>
-                                        NOW DAY &amp; NIGHT.
+                                        <?php echo $data['text_homepage']; ?>
                                     </h3>
                                     <p>
-                                        Your Powercell ally against urban aggressions.
+                                        <?php echo $data['text_homepage']; ?>
                                     </p>
-                                    <a href="http://google.com" class="js-external-link button" title="Buy Powercell SKIN REHAB">Buy</a>
-                                    
+                                    <a href="<?php echo $data['url_button_homepage']; ?>" class="js-external-link button" title="<?php echo $data['text_button_homepage']; ?>"><?php echo $data['text_button_homepage']; ?></a>
                                 </div>
                             </div>
                         </div>
@@ -47,15 +45,13 @@ get_header();?>
                                 <div class="container">
                                     <div class="s-table"><div class="s-table-cell">
                                         <h2>
-                                            The Day
+                                            <?php echo $data['left_title_presentation']; ?>
                                         </h2>
                                         <h3>
-                                            THE CITY SYNDROM ACCELERATEs<br>
-                                            APPEARANCE OF AGEING SIGNs.
+                                            <?php echo $data['left_subtitle_presentation']; ?>
                                         </h3>
                                         <p>
-                                            Urban aggression BURNOUT SELF-REGENERATING ENERGY OF THE SKIN,
-                                            <br>EXHAUSTING ITS YOUTH VISIBLY.
+                                            <?php echo $data['left_text_presentation']; ?>
                                         </p>
                                     </div></div>
                                 </div>
@@ -68,16 +64,14 @@ get_header();?>
                                 <div class="container">
                                     <div class="s-table"><div class="s-table-cell">
                                         <h2>
-                                            The Night
+                                            <?php echo $data['right_title_presentation']; ?>
                                         </h2>
                                         <h3>
-                                            YOU THOUGHT YOUR SKIN WAS SAFE AT NIGHT?
+                                            <?php echo $data['right_subtitle_presentation']; ?>
                                         </h3>
                                         <p>
-                                            URBAN HECTIC LIFE RUINS SLEEP QUALITY CAUSING SKIN DAMAGEs.<br>
-                                            AGEING SIGNS APPEAR UP TO 3X MORE VISIBLE UPON WAKING<sup>*</sup>.
+                                            <?php echo $data['right_text_presentation']; ?>
                                         </p>
-                                        <p class="star"><sup>*</sup>research study on 110 women</p>
                                     </div></div>
                                 </div>
                             </div>
@@ -348,4 +342,4 @@ get_header();?>
                     </div>
                 </div>
 
-<?php //get_footer(); ?>
+<?php get_footer(); ?>

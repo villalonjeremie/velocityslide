@@ -9,15 +9,15 @@ add_action('init', 'services_register');
 
 function services_register() {
     $labels = array(
-        'name' => __('Services', 'kula'),
-        'add_new' => __('Add New', 'kula'),
-        'add_new_item' => __('Add New Service', 'kula'),
-        'edit_item' => __('Edit Service Item', 'kula'),
-        'new_item' => __('New Service Item', 'kula'),
-        'view_item' => __('View Service Item', 'kula'),
-        'search_items' => __('Search Service Items', 'kula'),
-        'not_found' => __('No items found', 'kula'),
-        'not_found_in_trash' => __('No items found in Trash', 'kula'), 
+        'name' => __('Services', 'velocityslide'),
+        'add_new' => __('Add New', 'velocityslide'),
+        'add_new_item' => __('Add New Service', 'velocityslide'),
+        'edit_item' => __('Edit Service Item', 'velocityslide'),
+        'new_item' => __('New Service Item', 'velocityslide'),
+        'view_item' => __('View Service Item', 'velocityslide'),
+        'search_items' => __('Search Service Items', 'velocityslide'),
+        'not_found' => __('No items found', 'velocityslide'),
+        'not_found_in_trash' => __('No items found in Trash', 'velocityslide'), 
         'parent_item_colon' => '',
         'menu_name' => 'Services'
         );
@@ -44,14 +44,14 @@ add_action('contextual_help', 'services_help_text', 10, 3);
 function services_help_text($contextual_help, $screen_id, $screen) {
     if ('services' == $screen->id) {
         $contextual_help =
-        '<h3>' . __('Things to remember when adding a Service:', 'kula') . '</h3>' .
+        '<h3>' . __('Things to remember when adding a Service:', 'velocityslide') . '</h3>' .
         '<ul>' .
-        '<li>' . __('Give the Service a title. (ie; Website Development or Development from the best in the game).', 'kula') . '</li>' .
-        '<li>' . __('Add a short excerpt to describe your service.', 'kula') . '</li>' .
+        '<li>' . __('Title service.', 'velocityslide') . '</li>' .
+        '<li>' . __('Add a short description for your service.', 'velocityslide') . '</li>' .
         '</ul>';
     }
     elseif ('edit-services' == $screen->id) {
-        $contextual_help = '<p>' . __('A list of all services items appear below. To edit an item, click on the items title.', 'kula') . '</p>';
+        $contextual_help = '<p>' . __('A list of all services items appear below. To edit an item, click on the items title.', 'velocityslide') . '</p>';
     }
     return $contextual_help;
 }
@@ -91,8 +91,8 @@ function sort_services() {
 ?>
     <div class="wrap">
     <div id="icon-tools" class="icon32"><br /></div>
-    <h2><?php _e('Sort Service Items', 'kula'); ?> <img src="<?php echo home_url(); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h2>
-    <p><?php _e('Click, drag, re-order. Repeat as neccessary. Service item at the top will appear first on your page.', 'kula'); ?></p>
+    <h2><?php _e('Sort Service Items', 'velocityslide'); ?> <img src="<?php echo home_url(); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h2>
+    <p><?php _e('Click, drag, re-order. Repeat as neccessary. Service item at the top will appear first on your page.', 'velocityslide'); ?></p>
     <ul id="post-list">
     <?php while ( $services->have_posts() ) : $services->the_post(); ?>
         <li id="<?php the_id(); ?>"><?php the_title(); ?></li>          

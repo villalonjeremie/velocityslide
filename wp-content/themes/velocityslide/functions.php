@@ -57,10 +57,39 @@ add_action("init", "gt_queue_assets");
 
 load_theme_textdomain('kula', get_template_directory().'/lang');
 
-
 /*-----------------------------------------------------------------------------------*/
 /* Slightly Modified Options Framework (SMOF)
 /*-----------------------------------------------------------------------------------*/
 
 require_once(get_template_directory() . '/admin/index.php');
+
+/*-----------------------------------------------------------------------------------*/
+/* Call Widget Flickr
+/*-----------------------------------------------------------------------------------*/
+
+require_once(get_template_directory() . '/functions/widgets/widget-flickr.php');
+
+/*-----------------------------------------------------------------------------------*/
+/* Call Custom Post Types
+/*-----------------------------------------------------------------------------------*/
+
+require_once(get_template_directory() . '/functions/custom-post-types/services-type.php');
+
+/*-----------------------------------------------------------------------------------*/
+/* Setup custom Metaboxes
+/*-----------------------------------------------------------------------------------*/
+
+require_once(get_template_directory() . '/functions/theme-servicesmeta.php');
+
+/*-----------------------------------------------------------------------------------*/
+/* Shortcodes
+/*-----------------------------------------------------------------------------------*/
+
+require_once(get_template_directory() . '/functions/shortcodes.php');
+
+/*-----------------------------------------------------------------------------------*/
+/* Custom Theme Functions
+/*-----------------------------------------------------------------------------------*/
+
+require_once(get_template_directory() . '/functions/theme-functions.php');
 
