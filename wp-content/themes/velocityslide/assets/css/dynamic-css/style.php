@@ -1,7 +1,7 @@
 /*---------------------- Body --------------------------*/
 
 .header-background-image {
-	background: url(<?php echo $data['upload_header_background']; ?>) top center no-repeat;
+	background: url(<?php //echo $data['upload_header_background']; ?>) top center no-repeat;
 }
 
 .header-background-image-inner {

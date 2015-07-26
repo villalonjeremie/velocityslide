@@ -37,14 +37,16 @@ function vs_add_menu()
 
 function gt_queue_assets()
 {
+    $data = get_option("velocityslide_options");
 
-        $data = get_option("velocityslide_options");
     // Enqueue Scripts (Global)
     wp_enqueue_script('modernizr', get_template_directory_uri() . '/assets/js/lib/modernizr-custom.js', false);
     wp_enqueue_script('lib', get_template_directory_uri() . '/assets/js/lib.js', false);
     wp_enqueue_script('js-test', get_template_directory_uri() . '/assets/js/js-test.js', false);
     wp_enqueue_script('ie', get_template_directory_uri() . '/assets/js/ie.js', false);
     wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css', false);
+    wp_enqueue_script('options', get_template_directory_uri() .'/assets/css/dynamic-css/option.css', false);
+
     wp_enqueue_script('jquery-migrate-1.2.1', get_template_directory_uri() .'/assets/js/jquery-migrate-1.2.1.js', false);
 
 }

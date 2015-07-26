@@ -612,7 +612,7 @@ body {
   background-image: url("../img/slide1/slide1-right.jpg");
 }
 /* line 23, ../../src/sass/partials/slides/_slide1.sass */
-.powerslide .slide--1 .s-table-cell {
+.powerslide .slide--1 .s-table-cell,.powerslide .slide--2 .s-table-cell {
   padding: 20px 80px;
   text-align: center;
 }
@@ -623,7 +623,7 @@ body {
   }
 }
 /* line 29, ../../src/sass/partials/slides/_slide1.sass */
-.powerslide .slide--1 .box {
+.powerslide .slide--1 .box,.powerslide .slide--2 .box {
   position: relative;
   max-width: 700px;
   padding: 10px;

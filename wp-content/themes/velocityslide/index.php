@@ -9,7 +9,7 @@ get_header();?>
 
         <div class="powerslide slider-wrapper">
             <div class="slider">                
-                <div class="slide slide--0" data-slideTitle="Home">
+                <div class="slide slide--0" data-slideTitle="Homepages">
                     <div class="slide-content">
                         <h2 class="logo">
                             <a href="#" class="js-external-link">
@@ -38,7 +38,7 @@ get_header();?>
                 </div>
 
 
-                <div class="slide slide--split slide--1 effect" data-slideTitle="Urban aggression" data-slideTransition="split">
+                <div class="slide slide--split slide--1 effect" data-slideTitle="Presentation" data-slideTransition="split">
                     <div class="slide--split__left">
                         <div class="s-table"><div class="s-table-cell">
                             <div class="box">
@@ -80,109 +80,94 @@ get_header();?>
                 </div>
 
 
-                <div class="slide slide--split slide--2" data-slideTitle="Native vegetal cells" data-slideTransition="split">
+                <div class="slide slide--split slide--2" data-slideTitle="Services" data-slideTransition="split">
                     <div class="slide--split__left">
                         <div class="s-table"><div class="s-table-cell">
-                            <h2>
-                                The Day
-                                <span>WITH THE SERUM</span>
-                            </h2>
-                            <h3>
-                                9x stronger<br>
-                                anti-free radical power<sup>*</sup>
-                            </h3>
-                            <p>
-                                HR Laboratories have identified<br>
-                                the quintessence of self regeneration:
-                            </p>
-                            <p>
-                                <strong>100% active vegetal cells</strong><br>
-                                of Oceanic Crista &amp; Sea Holly
-                            </p>
+                           <div class="box">
+                                <div class="container">
+                                    <div class="s-table"><div class="s-table-cell">
+
+                                        <?php global $data;
+                                        
+                                        $args = array('post_type' => 'services', 'orderby' => 'menu_order', 'order' => 'ASC', 'posts_per_page' => $data['select_services']);
+                                        $loop = new WP_Query($args);
+                                        while ($loop->have_posts()) : $loop->the_post(); ?>
+                                    
+                                        <div class="service one-third column">
+                        
+                                            <?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_icon', $single = true)) ?>
+                        
+                                            <h2><?php the_title(); ?></h2>
+                                            
+                                            <p><?php the_content(); ?></p>
+                                            
+                                            <?php if (get_post_meta($post->ID, 'gt_service_url', true)) { ?>
+                                            <a class="read-more-btn" href="<?php echo get_post_meta($post->ID, 'gt_service_url', true) ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
+                                            <?php } ?>
+                                        
+                                        </div><!-- end .service -->
+                    
+                                        <?php endwhile; ?>
+                                    </div></div>
+                                </div>
+                            </div>
                         </div></div>
-                        <p class="star">
-                            <sup>*</sup> vs Powercell serum 1st generation
-                        </p>
                     </div>
                     <div class="slide--split__right">
                         <div class="s-table"><div class="s-table-cell">
-                            <h2>
-                                THE NIGHT
-                                <span>WITH skin rehab</span>
-                            </h2>
-                            <h3>
-                                The power of 150 million native<br>
-                                vegetal cells in one bottle
-                            </h3>
-                            <p>
-                                The deep sleep phase is the most<br> 
-                                conductive moment for cell regeneration:
-                            </p>
-                            <p>
-                                The 150 million of native vegetal cells restore<br>
-                                &amp; reactivate skin cell activity despite hectic life sleep.
-                            </p>
-
+                           <div class="box">
+                                <div class="container">
+                                    <div class="s-table"><div class="s-table-cell">
+                                        <?php global $data;
+                                        
+                                        $args = array('post_type' => 'services', 'orderby' => 'menu_order', 'order' => 'ASC', 'posts_per_page' => $data['select_services']);
+                                        $loop = new WP_Query($args);
+                                        while ($loop->have_posts()) : $loop->the_post(); ?>
+                                    
+                                        <div class="service one-third column">
+                        
+                                            <?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_icon', $single = true)) ?>
+                        
+                                            <h2><?php the_title(); ?></h2>
+                                            
+                                            <p><?php the_content(); ?></p>
+                                            
+                                            <?php if (get_post_meta($post->ID, 'gt_service_url', true)) { ?>
+                                            <a class="read-more-btn" href="<?php echo get_post_meta($post->ID, 'gt_service_url', true) ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
+                                            <?php } ?>
+                                        
+                                        </div><!-- end .service -->
+                    
+                                        <?php endwhile; ?>
+                                    </div></div>
+                                </div>
+                            </div>
                         </div></div>
                     </div>
                 </div>
 
 
-                <div class="slide slide--split slide--3" data-slideTitle="The Powercell duo" data-slideTransition="split">
+                <div class="slide slide--split slide--3" data-slideTitle="Portfolios" data-slideTransition="split">
                     <div class="slide--split__left">
                         <div class="s-table"><div class="s-table-cell">
                             <h2>
-                                The Day
-                                <span>WITH THE SERUM</span>
+                                <?php echo $data['left_title_portfolios']; ?>
                             </h2>
-                            <h3>                                
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/powercell.png" alt="Powercell">
-                                <span class="logo-product"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/youth-grafter.png" alt="Youth Grafter"></span>
-                                PROTECT &amp; REINFORCE
-                            </h3>
                             <p>
-                                <em>THE SUPERCHARGED SERUM</em>
-                                TO BOOST SKIN’S YOUTH VISIBLY
+                                <?php echo $data['left_description_portfolios']; ?>
                             </p>
-                            <ul>
-                                <li>
-                                    Smoothed wrinkles &amp; texture
-                                </li>
-                                <li>
-                                    Boosted tonicity
-                                </li>
-                                <li>
-                                    Instant healthy radiance
-                                </li>
-                            </ul>
+                            <a href="<?php echo $data['left_url_button_portfolios']; ?>" class="js-external-link button" title="<?php echo $data['left_text_button_portfolios']; ?>"><?php echo $data['left_text_button_portfolios']; ?></a>
                         </div></div>
                     </div>
                     <div class="slide--split__right">
                         <div class="s-table"><div class="s-table-cell">
                             <h2>
-                                THE NIGHT
-                                <span>WITH skin rehab</span>
+                                <?php echo $data['right_title_portfolios']; ?>
                             </h2>
-                            <h3>                                
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/powercell.png" alt="Powercell">
-                                <span class="logo-product logo-skinrehab"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/slide3/skinrehab.png" alt="Skin Rehab" ></span>
-                                DETOX &amp; REVITALIZE
-                            </h3>
                             <p>
-                                <em>THE 1st NIGHT MASK-IN-ESSENCE</em>
-                                TO START EVERY DAY LOOKING YOUNGER
+                                <?php echo $data['right_description_portfolios']; ?>
                             </p>
-                            <ul>
-                                <li>
-                                    Smoother rested features 
-                                </li>
-                                <li>
-                                    Pure radiant complexion
-                                </li>
-                                <li>
-                                    Reinvigorated younger skin
-                                </li>
-                            </ul>
+                            <a href="<?php echo $data['right_url_button_portfolios']; ?>" class="js-external-link button" title="<?php echo $data['right_text_button_portfolios']; ?>"><?php echo $data['right_text_button_portfolios']; ?></a>
                         </div></div>
                     </div>
                 </div>
@@ -191,53 +176,14 @@ get_header();?>
                 <div class="slide slide--split slide--4" data-slideTitle="The results" data-slideTransition="split">
                     <div class="slide--split__left">
                         <div class="s-table"><div class="s-table-cell">
-                            <h2>
-                                The Day
-                                <span>WITH THE SERUM</span>
-                            </h2>
-                            <h3>
-                                PROVEN EFFICACY<br>
-                                AFTER 10 MONTHS:<sup>*</sup>
-                            </h3>
-                            <p class="big">
-                                <strong>+ 43%</strong> on global skin visible quality:<br>
-                                radiance, tonicity, wrinkles
-                            </p>
-                            <p>
-                                powercell serum results
-                            </p>
-                            <a href="#popin-slide4-1" class="popin-button window-open">
-                                Discover More
-                            </a>
+                            <?php if (!$data['side_blog']){ ?>
+                            <?php } ?>
                         </div></div>
-                        <p class="star">
-                            <sup>*</sup> Clinical gradings, 52 caucasian women
-                        </p>
                     </div>
                     <div class="slide--split__right">
                         <div class="s-table"><div class="s-table-cell">
-                            <h2>
-                                THE NIGHT
-                                <span>WITH skin rehab</span>
-                            </h2>
-                            <h3>
-                                UPON WAKING,<br>
-                                WITH THE NEW NIGHT D-TOXER:<sup>**</sup>
-                            </h3>
-                            <p class="big">
-                                More tonicity: <strong>100%</strong><br>
-                                Visibly younger skin: <strong>98%</strong>
-                            </p>
-                            <p>
-                                Powercell Skin Rehab Results
-                            </p>
-                            <a href="#popin-slide4-2" class="popin-button window-open">
-                                Discover More
-                            </a>
-                        </div></div>
-                        <p class="star">
-                            <sup>**</sup> self assessment, 53 asian women, after 5 days of use.
-                        </p>
+                            <?php if ($data['side_blog']){ ?>
+                            <?php } ?>
                     </div>
 
                     <div class="window hide-window popin-slide4-1" id="popin-slide4-1">
