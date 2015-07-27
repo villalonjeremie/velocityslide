@@ -96,11 +96,11 @@ get_header();?>
                                         <div class="service one-third column">
                         
                                             <?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_icon', $single = true)) ?>
-                        
+
                                             <h2><?php the_title(); ?></h2>
-                                            
+
                                             <p><?php the_content(); ?></p>
-                                            
+
                                             <?php if (get_post_meta($post->ID, 'gt_service_url', true)) { ?>
                                             <a class="read-more-btn" href="<?php echo get_post_meta($post->ID, 'gt_service_url', true) ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
                                             <?php } ?>

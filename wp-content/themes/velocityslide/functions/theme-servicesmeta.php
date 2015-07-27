@@ -26,6 +26,14 @@ $meta_box_service = array(
            'id' => $prefix . 'service_url',
            'type' => 'text',
            'std' => ''
+        ),
+        array(
+            'name' => __('Service Side', 'velocityslide'),
+            'desc' => __('Please select the side where you want to put your service box', 'velocityslide'),
+            'id' => $prefix . 'service_select',
+            'type' => 'select',
+            'value' => '',
+            'std' => 'left'
         )
     )
 );
@@ -39,24 +47,37 @@ add_action('admin_menu', 'gt_add_box_service');
 
 function gt_show_box_service() {
     global $meta_box_service, $post;
-	
-	// Use nonce for verification
+
+    // Use nonce for verification
 	echo '<input type="hidden" name="vs_add_box_service_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 
 	echo '<table class="form-table">';
 		
 	foreach ($meta_box_service['fields'] as $field) {
 		// get current post meta data
-		$meta = get_post_meta($post->ID, $field['id'], true);
-			
-			echo '<tr style="border-bottom:1px solid #eeeeee;">',
-				'<th style="width:25%"><label for="', $field['id'], '"><strong>', $field['name'], '</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">'. $field['desc'].'</span></label></th>',
-				'<td>';
-			echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : stripslashes(htmlspecialchars(( $field['std']), ENT_QUOTES)), '" size="30" style="width:75%; margin-right: 20px; float:left;" />';
-			echo '</td></tr>';
+            if($field['type']=='text') {
+                $meta = get_post_meta($post->ID, $field['id'], true);
+                error_log(print_r($meta));
+
+                echo '<tr style="border-bottom:1px solid #eeeeee;">',
+                '<th style="width:25%"><label for="', $field['id'], '"><strong>', $field['name'], '</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">' . $field['desc'] . '</span></label></th>',
+                '<td>';
+                echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : stripslashes(htmlspecialchars(($field['std']), ENT_QUOTES)), '" size="30" style="width:75%; margin-right: 20px; float:left;" />';
+                echo '</td></tr>';
+            }else{
+                $meta = get_post_meta($post->ID, $field['value'], true);
+
+                echo '<tr style="border-bottom:1px solid #eeeeee;">',
+                '<th style="width:25%"><label for="', $field['id'], '"><strong>', $field['name'], '</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">' . $field['desc'] . '</span></label></th>',
+                '<td>';
+                echo '<select name="', $field['name'], '">';
+                echo '<option ' . selected('Left', $meta ? $meta : stripslashes(htmlspecialchars(($field['std']), ENT_QUOTES), false)) . ' value="left">' . __('Left side', 'velocityslide') . '</option>';
+                echo '<option ' . selected('Right', $meta ? $meta : stripslashes(htmlspecialchars(($field['std']), ENT_QUOTES), false)) . ' value="right"> ' . __('Right side', 'velocityslide') . '</option>';
+                echo '</select>';
+                echo '</td></tr>';
+            }
 		}
-		
-		echo '</table>';
+    echo '</table>';
 }
 
 add_action('save_post', 'gt_save_data_service');
@@ -67,14 +88,13 @@ add_action('save_post', 'gt_save_data_service');
  
 function gt_add_box_service() {
 	global $meta_box_service;
-
 	add_meta_box($meta_box_service['id'], $meta_box_service['title'], 'gt_show_box_service', $meta_box_service['page'], $meta_box_service['context'], $meta_box_service['priority']);
 }
 
 // Save data from meta box
 function gt_save_data_service($post_id) {
     global $meta_box_service;
-
+error_log('coucou');
     // verify nonce
     if ( !isset($_POST['gt_add_box_service_nonce']) || !wp_verify_nonce($_POST['gt_add_box_service_nonce'], basename(__FILE__))) {
     	return $post_id;
@@ -95,6 +115,7 @@ function gt_save_data_service($post_id) {
     }
 
     foreach ($meta_box_service['fields'] as $field) { // save each option
+
         $old = get_post_meta($post_id, $field['id'], true);
         $new = $_POST[$field['id']];
 
