@@ -4,10 +4,10 @@
 /* Remove Line Breaks and P tags in Shortcodes
 /*-----------------------------------------------------------------------------------*/
 
-function gt_clean_shortcodes($content){   
+function gt_clean_shortcodes($content){
     $array = array (
-        '<p>[' => '[', 
-        ']</p>' => ']', 
+        '<p>[' => '[',
+        ']</p>' => ']',
         ']<br />' => ']'
     );
     $content = strtr($content, $array);
@@ -20,32 +20,32 @@ add_filter('the_content', 'gt_clean_shortcodes');
 /*-----------------------------------------------------------------------------------*/
 
 function gt_comments($comment, $args, $depth) {
-	$GLOBALS['comment'] = $comment;
-?>
-	<li class="comment">
-	
-		<div>
-			
-		<?php echo get_avatar($comment, $size = '50'); ?>
-		    
-		    <div class="comment-meta">
-		        <h5 class="author"><a href="<?php comment_author_url(); ?>" target="about_blank"><?php comment_author(); ?></a> - <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></h5>
-		        <p class="date"><?php printf(__('%1$s at %2$s', 'velocityslide'), get_comment_date(),  get_comment_time()) ?></p>
-		    </div>
-		    
-		    <div class="comment-entry">
-		    <?php comment_text() ?>
-		    </div>
-		
-		</div>
-		
-		<?php if ($comment->comment_approved == '0') : ?>
-			<em class="comment-moderate"><?php _e('Your comment is awaiting moderation.', 'velocityslide') ?></em>
-			<br />
-		<?php endif; ?>
-		
-		<?php edit_comment_link(__('(Edit)', 'velocityslide'),'  ','') ?>
-		
+    $GLOBALS['comment'] = $comment;
+    ?>
+    <li class="comment">
+
+    <div>
+
+        <?php echo get_avatar($comment, $size = '50'); ?>
+
+        <div class="comment-meta">
+            <h5 class="author"><a href="<?php comment_author_url(); ?>" target="about_blank"><?php comment_author(); ?></a> - <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></h5>
+            <p class="date"><?php printf(__('%1$s at %2$s', 'kula'), get_comment_date(),  get_comment_time()) ?></p>
+        </div>
+
+        <div class="comment-entry">
+            <?php comment_text() ?>
+        </div>
+
+    </div>
+
+    <?php if ($comment->comment_approved == '0') : ?>
+        <em class="comment-moderate"><?php _e('Your comment is awaiting moderation.', 'kula') ?></em>
+        <br />
+    <?php endif; ?>
+
+    <?php edit_comment_link(__('(Edit)', 'kula'),'  ','') ?>
+
 <?php
 }
 
@@ -60,20 +60,20 @@ function gt_comment_form($form_options) {
     // Fields Array
     $fields = array(
 
-	    'author' =>
-	    '<p class="comment-form-author">' .
-	    '<input id="author" name="author" type="text" size="30" placeholder="' . __( 'Your Name (required)', 'velocityslide' ) . '" />' .
-	    '</p>',
-	
-	    'email' =>
-	    '<p class="comment-form-email">' .
-	    '<input id="email" name="email" type="text" size="30" placeholder="' . __( 'Your Email (will not be published)', 'velocityslide' ) . '" />' .
-	    '</p>',
-	
-	    'url' =>
-	    '<p class="comment-form-url">'  .
-	    '<input name="url" size="30" id="url" type="text" placeholder="' . __( 'Your Website (optional)', 'velocityslide' ) . '" />' .
-	    '</p>',
+        'author' =>
+            '<p class="comment-form-author">' .
+            '<input id="author" name="author" type="text" size="30" placeholder="' . __( 'Your Name (required)', 'kula' ) . '" />' .
+            '</p>',
+
+        'email' =>
+            '<p class="comment-form-email">' .
+            '<input id="email" name="email" type="text" size="30" placeholder="' . __( 'Your Email (will not be published)', 'kula' ) . '" />' .
+            '</p>',
+
+        'url' =>
+            '<p class="comment-form-url">'  .
+            '<input name="url" size="30" id="url" type="text" placeholder="' . __( 'Your Website (optional)', 'kula' ) . '" />' .
+            '</p>',
 
     );
 
@@ -84,21 +84,21 @@ function gt_comment_form($form_options) {
 
         // Template Options
         'comment_field' =>
-        '<p class="comment-form-comment">' .
-        '<textarea name="comment" id="comment" aria-required="true" rows="8" cols="45" placeholder="' . __( 'Please leave your comment...', 'velocityslide' ) . '"></textarea>' .
-        '</p>',
+            '<p class="comment-form-comment">' .
+            '<textarea name="comment" id="comment" aria-required="true" rows="8" cols="45" placeholder="' . __( 'Please leave your comment...', 'kula' ) . '"></textarea>' .
+            '</p>',
 
         'must_log_in' =>
-        '<p class="must-log-in">' .
-        sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'velocityslide' ),
-            wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) ) .
-        '</p>',
+            '<p class="must-log-in">' .
+            sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'kula' ),
+                wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) ) .
+            '</p>',
 
         'logged_in_as' =>
-        '<p class="logged-in-as">' .
-        sprintf( __( 'You are currently logged in<a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'velocityslide' ),
-            admin_url('profile.php'), (isset($user_identity)), wp_logout_url( apply_filters('the_permalink', get_permalink()) ) ) .
-        '</p>',
+            '<p class="logged-in-as">' .
+            sprintf( __( 'You are currently logged in<a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'kula' ),
+                admin_url('profile.php'), (isset($user_identity)), wp_logout_url( apply_filters('the_permalink', get_permalink()) ) ) .
+            '</p>',
 
         'comment_notes_before' => '',
 
@@ -107,10 +107,10 @@ function gt_comment_form($form_options) {
         // Rest of Options
         'id_form' => 'form-comment',
         'id_submit' => 'submit',
-        'title_reply' => __( 'Please leave a Comment...', 'velocityslide' ),
-        'title_reply_to' => __( 'Leave a Reply to %s', 'velocityslide' ),
-        'cancel_reply_link' => __( 'Cancel reply', 'velocityslide' ),
-        'label_submit' => __( 'Post Comment', 'velocityslide' ),
+        'title_reply' => __( 'Please leave a Comment...', 'kula' ),
+        'title_reply_to' => __( 'Leave a Reply to %s', 'kula' ),
+        'cancel_reply_link' => __( 'Cancel reply', 'kula' ),
+        'label_submit' => __( 'Post Comment', 'kula' ),
     );
 
     return $form_options;
@@ -121,24 +121,24 @@ function gt_comment_form($form_options) {
 /*-----------------------------------------------------------------------------------*/
 
 if ( ! function_exists( 'gt_content_nav' ) ):
-/**
- * Display navigation to next/previous pages when applicable
- */
-function vs_content_nav( $nav_id ) {
-	global $wp_query;
+    /**
+     * Display navigation to next/previous pages when applicable
+     */
+    function gt_content_nav( $nav_id ) {
+        global $wp_query;
 
-	?>
+        ?>
 
-	<?php if ( is_single() ) : // navigation links for single posts ?>
-<ul class="pager">
-		<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'velocityslide' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'velocityslide' ) . '</span>' ); ?>
-</ul>
+        <?php if ( is_single() ) : // navigation links for single posts ?>
+            <ul class="pager">
+                <?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'kula' ) . '</span> %title' ); ?>
+                <?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'kula' ) . '</span>' ); ?>
+            </ul>
 
-	<?php endif; ?>
+        <?php endif; ?>
 
-	<?php
-}
+    <?php
+    }
 endif;
 
 /*-----------------------------------------------------------------------------------*/
@@ -146,25 +146,25 @@ endif;
 /*-----------------------------------------------------------------------------------*/
 
 function wp_pagenavi() {
-  
-  global $wp_query, $wp_rewrite;
-  $pages = '';
-  $max = $wp_query->max_num_pages;
-  if (!$current = get_query_var('paged')) $current = 1;
-  $args['base'] = str_replace(999999999, '%#%', get_pagenum_link(999999999));
-  $args['total'] = $max;
-  $args['current'] = $current;
- 
-  $total = 1;
-  $args['mid_size'] = 3;
-  $args['end_size'] = 1;
-  $args['prev_text'] = '<i class="icon-arrow-left"></i>';
-  $args['next_text'] = '<i class="icon-arrow-right"></i>';
- 
-  if ($max > 1) echo '</pre>
+
+    global $wp_query, $wp_rewrite;
+    $pages = '';
+    $max = $wp_query->max_num_pages;
+    if (!$current = get_query_var('paged')) $current = 1;
+    $args['base'] = str_replace(999999999, '%#%', get_pagenum_link(999999999));
+    $args['total'] = $max;
+    $args['current'] = $current;
+
+    $total = 1;
+    $args['mid_size'] = 3;
+    $args['end_size'] = 1;
+    $args['prev_text'] = '<i class="icon-arrow-left"></i>';
+    $args['next_text'] = '<i class="icon-arrow-right"></i>';
+
+    if ($max > 1) echo '</pre>
     <div class="pagination">';
- echo $pages . paginate_links($args);
- if ($max > 1) echo '</div>';
+    echo $pages . paginate_links($args);
+    if ($max > 1) echo '</div>';
 
 }
 
@@ -173,35 +173,35 @@ function wp_pagenavi() {
 /*-----------------------------------------------------------------------------------*/
 
 function custom_wp_nav_menu($var) {
-        return is_array($var) ? array_intersect($var, array(
-                //List of allowed menu classes
-                'current_page_item',
-                'current_page_parent',
-                'current_page_ancestor',
-                'first',
-                'last',
-                'vertical',
-                'horizontal'
-                )
-        ) : '';
+    return is_array($var) ? array_intersect($var, array(
+            //List of allowed menu classes
+            'current_page_item',
+            'current_page_parent',
+            'current_page_ancestor',
+            'first',
+            'last',
+            'vertical',
+            'horizontal'
+        )
+    ) : '';
 }
 add_filter('nav_menu_css_class', 'custom_wp_nav_menu');
 add_filter('nav_menu_item_id', 'custom_wp_nav_menu');
 add_filter('page_css_class', 'custom_wp_nav_menu');
- 
+
 //Replaces "current-menu-item" with "active"
 function current_to_active($text){
-        $replace = array(
-                //List of menu item classes that should be changed to "active"
-                'current_page_item' => 'nav-item',
-                'current_page_parent' => 'nav-item',
-                'current_page_ancestor' => 'nav-item',
-        );
-        $text = str_replace(array_keys($replace), $replace, $text);
-                return $text;
-        }
+    $replace = array(
+        //List of menu item classes that should be changed to "active"
+        'current_page_item' => 'nav-item',
+        'current_page_parent' => 'nav-item',
+        'current_page_ancestor' => 'nav-item',
+    );
+    $text = str_replace(array_keys($replace), $replace, $text);
+    return $text;
+}
 add_filter ('wp_nav_menu','current_to_active');
- 
+
 //Deletes empty classes and removes the sub menu class
 function strip_empty_classes($menu) {
     $menu = preg_replace('/ class=""| class="sub-menu"/','',$menu);
@@ -240,10 +240,10 @@ add_filter('get_the_excerpt', 'custom_trim_excerpt');
 /*-----------------------------------------------------------------------------------*/
 
 function gt_search_filter($query) {
-if ($query->is_search) {
-$query->set('post_type', 'post');
-}
-return $query;
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
 }
 
 add_filter('pre_get_posts','gt_search_filter');
@@ -264,8 +264,8 @@ class FontAwesome {
 
     public function setup_shortcode( $params ) {
         extract( shortcode_atts( array(
-                    'name'  => 'icon-wrench'
-                ), $params ) );
+            'name'  => 'icon-wrench'
+        ), $params ) );
         $icon = '<i class="'.$params['name'].'"></i>';
 
         return $icon;
@@ -300,7 +300,7 @@ if ( !function_exists( 'gt_image' ) ) {
             $orderby = 'menu_order';
             $include = '';
         }
-    
+
         // get first 10 attachments for the post
         $args = array(
             'include' => $include,
@@ -318,8 +318,8 @@ if ( !function_exists( 'gt_image' ) ) {
         if( !empty($attachments) ) {
             foreach( $attachments as $attachment ) {
                 // if current image is featured image reloop
-                if( $attachment->ID == $thumbid ) continue; 
-                $full = wp_get_attachment_image_src( $attachment->ID, 'full', false, false );  
+                if( $attachment->ID == $thumbid ) continue;
+                $full = wp_get_attachment_image_src( $attachment->ID, 'full', false, false );
                 $large = wp_get_attachment_image_src( $attachment->ID, 'feature-image', false, false );
                 $alt = ( !empty($attachment->post_content) ) ? $attachment->post_content : $attachment->post_title;
                 $title = ( !empty($attachment->post_content) ) ? $attachment->post_content : $attachment->post_title;
@@ -338,75 +338,75 @@ if ( !function_exists( 'gt_image' ) ) {
 /*-----------------------------------------------------------------------------------*/
 
 function gt_gallery($postid, $imagesize) { ?>
-        <script type="text/javascript">
-            jQuery(document).ready(function(){
-                jQuery(".slider").flexslider({
-                    preload: true,
-                    preloadImage: jQuery(".flexslider-<?php echo $postid; ?>").attr('data-loader')
-                });
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            jQuery(".slider").flexslider({
+                preload: true,
+                preloadImage: jQuery(".flexslider-<?php echo $postid; ?>").attr('data-loader')
             });
-        </script>
-    <?php 
-        $loader = 'loader.gif';
-        $thumbid = 0;
-    
-        // get the featured image for the post
-        if( has_post_thumbnail($postid) ) {
-            $thumbid = get_post_thumbnail_id($postid);
-        }
-        echo "<!-- BEGIN #slider-$postid -->\n<div class='flexslider' data-loader='" . get_template_directory_uri() . "/assets/img/$loader'>";
-        
-        $image_ids_raw = get_post_meta($postid, 'gt_image_ids', true);
+        });
+    </script>
+    <?php
+    $loader = 'loader.gif';
+    $thumbid = 0;
 
-        if( $image_ids_raw ) {
-            // Using WP3.5; use post__in orderby option
-            $image_ids = explode(',', $image_ids_raw);
-            $temp_id = $postid;
-            $postid = null;
-            $orderby = 'post__in';
-            $include = $image_ids;
-        } else {
-            $orderby = 'menu_order';
-            $include = '';
-        }
-
-        // get all of the attachments for the post
-        $args = array(
-            'include' => $include,
-            'orderby' => $orderby,
-            'post_type' => 'attachment',
-            'post_parent' => $postid,
-            'post_mime_type' => 'image',
-            'post_status' => null,
-            'numberposts' => -1
-        );
-        $attachments = get_posts($args);
-        
-        if( !empty($attachments) ) {
-            echo '<ul class="slides">';
-            $i = 0;
-            foreach( $attachments as $attachment ) {
-                if( $attachment->ID == $thumbid ) continue;
-                $src = wp_get_attachment_image_src( $attachment->ID, $imagesize );
-                $full = wp_get_attachment_image_src( $attachment->ID, 'full', false, false );
-                $large = wp_get_attachment_image_src( $attachment->ID, 'large-slider-thumb', false, false );
-                $caption = $attachment->post_excerpt;
-                $caption = ($caption) ? "<div class='slider-desc'>$caption</div>" : '';
-                $alt = ( !empty($attachment->post_content) ) ? $attachment->post_content : $attachment->post_title;
-                echo "<li>$caption<a class='fancybox' rel='gallery' href='$full[0]'><img height='$src[2]' width='$src[1]' src='$large[0]' alt='$alt' /></a></li>";
-                $i++;
-            }
-            echo '</ul>';
-        }
-        echo '</div>';
+    // get the featured image for the post
+    if( has_post_thumbnail($postid) ) {
+        $thumbid = get_post_thumbnail_id($postid);
     }
-    
+    echo "<!-- BEGIN #slider-$postid -->\n<div class='flexslider' data-loader='" . get_template_directory_uri() . "/assets/img/$loader'>";
+
+    $image_ids_raw = get_post_meta($postid, 'gt_image_ids', true);
+
+    if( $image_ids_raw ) {
+        // Using WP3.5; use post__in orderby option
+        $image_ids = explode(',', $image_ids_raw);
+        $temp_id = $postid;
+        $postid = null;
+        $orderby = 'post__in';
+        $include = $image_ids;
+    } else {
+        $orderby = 'menu_order';
+        $include = '';
+    }
+
+    // get all of the attachments for the post
+    $args = array(
+        'include' => $include,
+        'orderby' => $orderby,
+        'post_type' => 'attachment',
+        'post_parent' => $postid,
+        'post_mime_type' => 'image',
+        'post_status' => null,
+        'numberposts' => -1
+    );
+    $attachments = get_posts($args);
+
+    if( !empty($attachments) ) {
+        echo '<ul class="slides">';
+        $i = 0;
+        foreach( $attachments as $attachment ) {
+            if( $attachment->ID == $thumbid ) continue;
+            $src = wp_get_attachment_image_src( $attachment->ID, $imagesize );
+            $full = wp_get_attachment_image_src( $attachment->ID, 'full', false, false );
+            $large = wp_get_attachment_image_src( $attachment->ID, 'large-slider-thumb', false, false );
+            $caption = $attachment->post_excerpt;
+            $caption = ($caption) ? "<div class='slider-desc'>$caption</div>" : '';
+            $alt = ( !empty($attachment->post_content) ) ? $attachment->post_content : $attachment->post_title;
+            echo "<li>$caption<a class='fancybox' rel='gallery' href='$full[0]'><img height='$src[2]' width='$src[1]' src='$large[0]' alt='$alt' /></a></li>";
+            $i++;
+        }
+        echo '</ul>';
+    }
+    echo '</div>';
+}
+
 /*-----------------------------------------------------------------------------------*/
 /* Fixes WC3 Validation WordPress bug!!!!
 /*-----------------------------------------------------------------------------------*/
 
 add_filter( 'the_category', 'replace_cat_tag' );
- 
+
 function replace_cat_tag ( $text ) {
-$text = str_replace('rel="category tag"', "", $text); return $text;
+    $text = str_replace('rel="category tag"', "", $text); return $text;
 }

@@ -342,7 +342,7 @@ body {
   text-transform: uppercase;
 }
 /* line 112, ../../src/sass/partials/slides/_slides.sass */
-.powerslide .popin-button {
+.powerslide .window-button {
   display: inline-block;
   padding: 15px 22px 15px 45px;
   margin-top: 15px;
@@ -356,7 +356,7 @@ body {
   text-shadow: none;
 }
 /* line 124, ../../src/sass/partials/slides/_slides.sass */
-.powerslide .popin-button:hover, .powerslide .popin-button:active {
+.powerslide .window-button:hover, .powerslide .window-button:active {
   color: #000;
 }
 /* line 131, ../../src/sass/partials/slides/_slides.sass */

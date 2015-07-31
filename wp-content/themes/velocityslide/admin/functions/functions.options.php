@@ -184,7 +184,7 @@ $of_options[] = array( 	"name" 		=> __('Left Title', 'velocityslide'),
 
 $of_options[] = array( 	"name" 		=> __('Right Title', 'velocityslide'),
 						"desc" 		=> __('Please enter a title for the presentation section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
-						"id" 		=> "left_title_presentation",
+						"id" 		=> "right_title_presentation",
 						"std" 		=> "",
 						"type" 		=> "text"
 				);
