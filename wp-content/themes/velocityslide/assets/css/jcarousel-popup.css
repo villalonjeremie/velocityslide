@@ -1,0 +1,54 @@
+/** Carousel **/
+.jcarousel {
+    width: 680px;
+    margin: 0 auto;
+}
+
+.jcarousel.oneperone {
+    width: 100%;
+}
+
+.jcarousel li {
+    width: 120px;
+}
+
+.carousel-circular {
+    position: relative;
+}
+
+.jcarousel-control-prev ,
+.jcarousel-control-next {
+    top: 58px;
+}
+
+.jcarousel-control-prev ,
+.jcarousel-control-next {
+    position: absolute;
+    top: 136px;
+    overflow: hidden;
+    padding-top: 31px;
+    width: 17px;
+    height: 0;
+    background: url(../../images/global/icons.png) no-repeat;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+
+.jcarousel-control-prev {
+    left: 0;
+    background-position: -200px -150px;
+}
+
+.jcarousel-control-next {
+    right: 0;
+    background-position: -250px -150px;
+}
+
+.jcarousel-pagination {
+    display: none;
+}
+.jcarousel-control-prev, .jcarousel-control-next {top:164px;}
+

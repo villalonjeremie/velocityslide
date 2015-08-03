@@ -97,7 +97,6 @@ function setBreadcrumb(){
             goToSlide(i);
         });
         $('li a:eq(' + i + ')', $sliderBreadcrumb).on('click', function (event) {
-            alert('coucou');
             event.preventDefault();
         });
     });

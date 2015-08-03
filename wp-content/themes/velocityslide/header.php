@@ -12,7 +12,6 @@
 
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
         <!--[if lt IE 8]>
             <script src="<?php echo get_template_directory_uri(); ?>/assets/js/css/ie.js"></script>
         <![endif]-->

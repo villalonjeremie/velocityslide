@@ -56,41 +56,54 @@
                             <div class="footer-content">
 
                                 <div class="contact-details-1">
-                                    <h2><?php echo $data['title_contact_details_1']; ?></h2>
+                                    <h2><?php if (isset($data["text_twitter_profile"])) { ?>
+                                        <?php echo $data['title_contact_details_1']; ?>
+                                        <?php } ?>
+                                    </h2>
                                     <ul>
-                                        <li> <?php echo $data['text_contact_address']; ?></li>
-                                        <li><?php echo $data['text_contact_country']; ?></li>
-                                        <li><?php echo $data['text_contact_postcode']; ?></li>
+                                        <li>
+                                            <?php if (isset($data["text_twitter_profile"])) { ?>
+                                            <?php echo $data['text_contact_address']; ?>
+                                            <?php } ?>
+                                        </li>
+                                        <li><?php if (isset($data["text_twitter_profile"])) { ?>
+                                            <?php echo $data['text_contact_country']; ?>
+                                            <?php } ?>
+                                        </li>
+                                        <li><?php if (isset($data["text_twitter_profile"])) { ?>
+                                            <?php echo $data['text_contact_postcode']; ?>
+                                            <?php } ?>
+                                        </li>
                                     </ul>
                                 </div>
 
                                 <div class="social-icons-container">
                                     <ul class="social-icons footer">
-                                        <?php if ($data["text_twitter_profile"]) { ?>
+                                        <?php if (isset($data["text_twitter_profile"])) { ?>
                                             <li><a href="<?php echo $data['text_twitter_profile']; ?>" class="mk-social-twitter-alt" title="View Twitter Profile"></a></li>
-                                        <?php } if ($data["text_facebook_profile"]){ ?>
+                                        <?php } if (isset($data["text_facebook_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_facebook_profile']; ?>" class="mk-social-facebook" title="View Facebook Profile"></a></li>
-                                        <?php } if ($data["text_dribbble_profile"]){ ?>
+                                        <?php } if (isset($data["text_dribbble_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_dribbble_profile']; ?>" class="mk-social-dribbble" title="View Dribbble Profile"></a></li>
-                                        <?php } if ($data["text_forrst_profile"]){ ?>
+                                        <?php } if (isset($data["text_forrst_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_forrst_profile']; ?>" class="mk-social-forrst" title="View Forrst Profile"></a></li>
-                                        <?php } if ($data["text_vimeo_profile"]){ ?>
+                                        <?php } if (isset($data["text_vimeo_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_vimeo_profile']; ?>" class="mk-social-vimeo" title="View Vimeo Profile"></a></li>
-                                        <?php } if ($data["text_youtube_profile"]){ ?>
+                                        <?php } if (isset($data["text_youtube_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_youtube_profile']; ?>" class="mk-social-youtube" title="View YouTube Profile"></a></li>
-                                        <?php } if ($data["text_flickr_profile"]){ ?>
+                                        <?php } if (isset($data["text_flickr_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_flickr_profile']; ?>" class="mk-social-flickr" title="View Flickr Profile"></a></li>
-                                        <?php } if ($data["text_linkedin_profile"]){ ?>
+                                        <?php } if (isset($data["text_linkedin_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_linkedin_profile']; ?>" class="mk-social-linkedin" title="View Linkedin Profile"></a></li>
-                                        <?php } if ($data["text_pinterest_profile"]){ ?>
+                                        <?php } if (isset($data["text_pinterest_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_pinterest_profile']; ?>" class="mk-social-pinterest" title="View Pinterest Profile"></a></li>
-                                        <?php } if ($data["text_googleplus_profile"]){ ?>
+                                        <?php } if (isset($data["text_googleplus_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_googleplus_profile']; ?>" class="mk-social-googleplus" title="View Google + Profile"></a></li>
-                                        <?php } if ($data["text_tumblr_profile"]){ ?>
+                                        <?php } if (isset($data["text_tumblr_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_tumblr_profile']; ?>" class="mk-social-tumblr" title="View Tumblr Profile"></a></li>
-                                        <?php } if ($data["text_soundcloud_profile"]){ ?>
+                                        <?php } if (isset($data["text_soundcloud_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_soundcloud_profile']; ?>" class="mk-social-soundcloud" title="View Soundcloud Profile"></a></li>
-                                        <?php } if ($data["text_lastfm_profile"]){ ?>
+                                        <?php } if (isset($data["text_lastfm_profile"])){ ?>
                                             <li><a href="<?php echo $data['text_lastfm_profile']; ?>" class="mk-social-lastfm" title="View Last FM Profile"></a></li>
                                         <?php } ?>
                                     </ul>
@@ -102,11 +115,23 @@
                                 </div>
 
                                 <div class="contact-details-2">
-                                    <h2><?php echo $data['title_contact_details_2']; ?></h2>
+                                    <h2><?php if (isset($data["text_twitter_profile"])) { ?>
+                                        <?php echo $data['title_contact_details_2']; ?>
+                                        <?php } ?>
+                                    </h2>
                                     <ul>
-                                        <li><?php echo $data['text_contact_phone']; ?></li>
-                                        <li><?php echo $data['text_contact_mail']; ?></li>
-                                        <li><?php echo $data['text_contact_website']; ?></li>
+                                        <li><?php if (isset($data["text_twitter_profile"])) { ?>
+                                            <?php echo $data['text_contact_phone']; ?>
+                                            <?php } ?>
+                                        </li>
+                                        <li><?php if (isset($data["text_twitter_profile"])) { ?>
+                                            <?php echo $data['text_contact_mail']; ?>
+                                            <?php } ?>
+                                        </li>
+                                        <li><?php if (isset($data["text_twitter_profile"])) { ?>
+                                            <?php echo $data['text_contact_website']; ?>
+                                            <?php } ?>
+                                        </li>
                                     </ul>
                                 </div>
 
@@ -117,6 +142,7 @@
                     </div><!-- end .slide-content -->
 
                 </div><!-- end .last-slide -->
+
 
 		<?php wp_footer(); ?>
 
