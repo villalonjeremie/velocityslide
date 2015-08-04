@@ -1,0 +1,227 @@
+<?php
+
+/*-----------------------------------------------------------------------------------*/
+/*	Define Metabox Fields
+/*-----------------------------------------------------------------------------------*/
+
+$prefix = 'gt_';
+ 
+$meta_box_portfolio = array(
+	'id' => 'gt-meta-box-portfolio',
+	'title' =>  __('Portfolio Detail Settings', 'kula'),
+	'page' => 'portfolio',
+	'context' => 'normal',
+	'priority' => 'high',
+	'fields' => array(
+		array(
+    	   'name' => __('Client Name', 'velocityslide'),
+    	   'desc' => __('Client who this project was completed for', 'kula'),
+    	   'id' => $prefix . 'client_name',
+    	   'type' => 'text',
+    	   'std' => ''
+    	),
+    	array(
+    	   'name' => __('Project Date', 'velocityslide'),
+    	   'desc' => __('What was the date of the completed project', 'kula'),
+    	   'id' => $prefix . 'project_date',
+    	   'type' => 'text',
+    	   'std' => ''
+    	),
+    	array(
+    	   'name' => __('Project URL', 'velocityslide'),
+    	   'desc' => __('What is the URL for this project', 'kula'),
+    	   'id' => $prefix . 'project_url',
+    	   'type' => 'text',
+    	   'std' => ''
+    	)
+	)
+);
+
+
+add_action('admin_menu', 'gt_add_box_portfolio');
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	Add metabox to edit page
+/*-----------------------------------------------------------------------------------*/
+ 
+function gt_add_box_portfolio() {
+	global $meta_box_portfolio;
+	
+	add_meta_box($meta_box_portfolio['id'], $meta_box_portfolio['title'], 'gt_show_box_portfolio', $meta_box_portfolio['page'], $meta_box_portfolio['context'], $meta_box_portfolio['priority']);
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	Callback function to show fields in meta box
+/*-----------------------------------------------------------------------------------*/
+
+function gt_show_box_portfolio() {
+	global $meta_box_portfolio, $post;
+	
+	$wp_version = get_bloginfo('version');
+
+	// Use nonce for verification
+	echo '<input type="hidden" name="gt_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+ 
+	echo '<table class="form-table">';
+ 
+	foreach ($meta_box_portfolio['fields'] as $field) {
+		// get current post meta data
+		$meta = get_post_meta($post->ID, $field['id'], true);
+		switch ($field['type']) {
+ 
+			
+			//If Text		
+			case 'text':
+			
+			echo '<tr style="border-bottom:1px solid #eeeeee;">',
+				'<th style="width:25%"><label for="', $field['id'], '"><strong>', $field['name'], '</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">'. $field['desc'].'</span></label></th>',
+				'<td>';
+			echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : stripslashes(htmlspecialchars(( $field['std']), ENT_QUOTES)), '" size="30" style="width:75%; margin-right: 20px; float:left;" />';
+			
+			break;
+			
+			//If textarea		
+			case 'textarea':
+			
+			echo '<tr>',
+				'<th style="width:25%"><label for="', $field['id'], '"><strong>', $field['name'], '</strong><span style="line-height:18px; display:block; color:#999; margin:5px 0 0 0;">'. $field['desc'].'</span></label></th>',
+				'<td>';
+			echo '<textarea name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" rows="4" cols="5" style="width:75%; margin-right: 20px; float:left;">', $meta ? $meta : $field['std'], '</textarea>';
+			
+			break;
+ 
+			//If Button	
+			case 'button':
+				echo '<input style="float: left;" type="button" class="button" name="', $field['id'], '" id="', $field['id'], '"value="', $meta ? $meta : $field['std'], '" />';
+				echo 	'</td>',
+			'</tr>';
+			
+			break;
+			
+			//If Select	
+			case 'select':
+			
+				echo '<tr>',
+				'<th style="width:25%"><label for="', $field['id'], '"><strong>', $field['name'], '</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">'. $field['desc'].'</span></label></th>',
+				'<td>';
+			
+				echo'<select id="' . $field['id'] . '" name="'.$field['id'].'">';
+			
+				foreach ($field['options'] as $option) {
+					
+					echo'<option';
+					if ($meta == $option ) { 
+						echo ' selected="selected"'; 
+					}
+					echo'>'. $option .'</option>';
+				
+				} 
+				
+				echo'</select>';
+			
+			break;
+		}
+
+	}
+ 
+	echo '</table>';
+}
+ 
+add_action('save_post', 'gt_save_data_portfolio');
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	Save data when post is edited
+/*-----------------------------------------------------------------------------------*/
+ 
+function gt_save_data_portfolio($post_id) {
+	global $meta_box_portfolio, $meta_box_portfolio_portfolio_video, $meta_box_portfolio_portfolio_image;
+ 
+	// verify nonce
+	if ( !isset($_POST['gt_meta_box_nonce']) || !wp_verify_nonce($_POST['gt_meta_box_nonce'], basename(__FILE__))) {
+		return $post_id;
+	}
+ 
+	// check autosave
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+		return $post_id;
+	}
+ 
+	// check permissions
+	if ('page' == $_POST['post_type']) {
+		if (!current_user_can('edit_page', $post_id)) {
+			return $post_id;
+		}
+	} elseif (!current_user_can('edit_post', $post_id)) {
+		return $post_id;
+	}
+ 
+	foreach ($meta_box_portfolio['fields'] as $field) {
+		$old = get_post_meta($post_id, $field['id'], true);
+		$new = $_POST[$field['id']];
+ 
+		if ($new && $new != $old) {
+			update_post_meta($post_id, $field['id'], stripslashes(htmlspecialchars($new)));
+		} elseif ('' == $new && $old) {
+			delete_post_meta($post_id, $field['id'], $old);
+		}
+	}
+}
+
+// Save Image IDs
+function gt_save_images() {
+
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+		return;
+	
+	if ( !isset($_POST['ids']) || !isset($_POST['nonce']) || !wp_verify_nonce( $_POST['nonce'], 'gt-ajax' ) )
+		return;
+	
+	if ( !current_user_can( 'edit_posts' ) ) return;
+ 
+	$ids = strip_tags(rtrim($_POST['ids'], ','));
+	update_post_meta($_POST['post_id'], 'gt_image_ids', $ids);
+
+	// update thumbs
+	$thumbs = explode(',', $ids);
+	$thumbs_output = '';
+	foreach( $thumbs as $thumb ) {
+		$thumbs_output .= '<li>' . wp_get_attachment_image( $thumb, array(32,32) ) . '</li>';
+	}
+
+	echo $thumbs_output;
+
+	die();
+}
+add_action('wp_ajax_gt_save_images', 'gt_save_images');
+
+/*-----------------------------------------------------------------------------------*/
+/*	Queue Scripts
+/*-----------------------------------------------------------------------------------*/
+
+function gt_admin_scripts_portfolio() {
+	global $post;
+	$wp_version = get_bloginfo('version');
+
+	// enqueue scripts
+	wp_enqueue_script('media-upload');
+	if( version_compare( $wp_version, '3.4.2', '<=' ) ) {
+
+		wp_enqueue_script('thickbox');
+		wp_register_script('gt-upload', get_template_directory_uri() . '/functions/js/upload-button.js', array('jquery','media-upload','thickbox'));
+		wp_enqueue_script('gt-upload');
+
+		wp_enqueue_style('thickbox');
+	}
+
+	if( isset($post) ) {
+		wp_localize_script( 'jquery', 'gt_ajax', array(
+		    'post_id' => $post->ID,
+		    'nonce' => wp_create_nonce( 'gt-ajax' )
+		) );
+	}
+
+}
+add_action('admin_enqueue_scripts', 'gt_admin_scripts_portfolio');

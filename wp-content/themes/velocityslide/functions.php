@@ -80,12 +80,15 @@ require_once(get_template_directory() . '/functions/widgets/widget-flickr.php');
 /*-----------------------------------------------------------------------------------*/
 
 require_once(get_template_directory() . '/functions/custom-post-types/services-type.php');
+require_once(get_template_directory() . '/functions/custom-post-types/portfolio-type.php');
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Setup custom Metaboxes
 /*-----------------------------------------------------------------------------------*/
 
 require_once(get_template_directory() . '/functions/theme-servicesmeta.php');
+require_once(get_template_directory() . '/functions/theme-portfoliometa.php');
 
 /*-----------------------------------------------------------------------------------*/
 /* Shortcodes
