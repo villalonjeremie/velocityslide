@@ -9,8 +9,9 @@
 }
 
 .jcarousel li {
-    width: 120px;
+    margin-left: 12px;
 }
+
 
 .carousel-circular {
     position: relative;
@@ -24,12 +25,12 @@
 .jcarousel-control-prev ,
 .jcarousel-control-next {
     position: absolute;
-    top: 136px;
+    top: 50%;
     overflow: hidden;
     padding-top: 31px;
     width: 17px;
     height: 0;
-    background: url(../../images/global/icons.png) no-repeat;
+    background: url(../img/icons.png) no-repeat;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     -ms-box-shadow: none;
@@ -50,5 +51,3 @@
 .jcarousel-pagination {
     display: none;
 }
-.jcarousel-control-prev, .jcarousel-control-next {top:164px;}
-

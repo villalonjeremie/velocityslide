@@ -169,13 +169,12 @@ get_header();?>
                             <div class="popin-content">
                                 <a href="#" class="window-close popin-close">Close</a>
                                 <div class="jcarousel-wrapper">
-                                    <div class="jcarousel" data-options="{'auto' : false, 'fx': 'fade'}">
+                                    <div class="jcarousel" data-options="{'itemPerPage' : [5], 'control': {'target': 5}}">
                                         <ul class="jcarousel-list">
                                             <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/l-asymetrique-thumbnail.jpg" /></li>
                                             <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/l-oversize-thumbnail.jpg" /></li>
                                             <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/la-pony-thumbnail.jpg" /></li>
                                             <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/la-tresse-epaisse.jpg" /></li>
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/la-tresse-epaisse_1.jpg" /></li>
                                             <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/la-tresse-thumbnail.jpg" /></li>
                                             <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/le-carre-thumbnail.jpg" /></li>
                                             <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/le-chignon-thumbnail.jpg" /></li>
@@ -189,13 +188,6 @@ get_header();?>
                                     <a href="#" class="jcarousel-control-next">&rsaquo;</a>
                                     <p class="jcarousel-pagination" data-jcarouselpagination="true"></p>
                                 </div>
-                                <h3>
-                                    POWERCELL SERUM : The youth grafter efficacy
-                                    <span>
-                                        In 5 days, the visible signs of a younger skin.<br>
-                                        In 1 month, all youth signs improved at 100%<sup>*</sup>.
-                                    </span>
-                                </h3>
                             </div>
                         </div>
                     </div>

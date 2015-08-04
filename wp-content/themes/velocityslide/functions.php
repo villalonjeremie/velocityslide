@@ -46,8 +46,8 @@ function gt_queue_assets()
     wp_enqueue_script('ie', get_template_directory_uri() . '/assets/js/ie.js', false);
     wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css', false);
     wp_enqueue_script('options', get_template_directory_uri() .'/assets/css/dynamic-css/option.css', false);
-    wp_enqueue_script('jcarousel', get_template_directory_uri() .'/assets/css/jcarousel.css', false);
-    wp_enqueue_script('jcarousel-popup', get_template_directory_uri() .'/assets/css/jcarousel-popup.css', false);
+    wp_enqueue_style('jcarousel', get_template_directory_uri() .'/assets/css/jcarousel.css', false);
+    wp_enqueue_style('jcarousel-popup', get_template_directory_uri() .'/assets/css/jcarousel-popup.css', false);
     wp_enqueue_script('jquery-migrate-1.2.1', get_template_directory_uri() .'/assets/js/jquery-migrate-1.2.1.js', false);
     wp_enqueue_script('initialize-jcarousel.js', get_template_directory_uri() .'/assets/js/carousel/initialize-jcarousel.js', false);
     wp_enqueue_script('jcarousel.js', get_template_directory_uri() .'/assets/js/carousel/jcarousel.js', false);

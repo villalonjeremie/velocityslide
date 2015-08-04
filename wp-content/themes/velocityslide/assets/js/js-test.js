@@ -22,11 +22,11 @@ var alreadyTouch = false;
 var scrolling = false;
 var breadcrumbCurrentClass = 'is-current';
 var slides = new Array();
-var options = $.extend({
+var optionsScrolling = $.extend({
     'scrollingSpeed': 700,
     'easing': 'easeInOutSine',
     'breadcrumb': true
-}, options);
+}, optionsScrolling);
 
 function setPage(){
     $windowOpen.on('click', function (event) {
@@ -147,12 +147,12 @@ function goToSlide(slideIndex) {
                     var directionForward = true;
                     var slideCountFrom = slidePrevIndex;
                     var slideCountTo = slideCurrentIndex;
-                    var currentSpeed = options.scrollingSpeed + ( options.scrollingSpeed * ((slideTo - slideFrom - 1) * .5) );  
+                    var currentSpeed = optionsScrolling.scrollingSpeed + ( optionsScrolling.scrollingSpeed * ((slideTo - slideFrom - 1) * .5) );
                 } else {
                     var directionForward = false;
                     var slideCountFrom = slideCurrentIndex;
                     var slideCountTo = slidePrevIndex;
-                    var currentSpeed = options.scrollingSpeed + ( options.scrollingSpeed * ((slideFrom - slideTo - 1) * .5) );  
+                    var currentSpeed = optionsScrolling.scrollingSpeed + ( optionsScrolling.scrollingSpeed * ((slideFrom - slideTo - 1) * .5) );
                 }
                 
                 for ( var i = slideCountFrom ; i <= slideCountTo ; i++ ) {                    
@@ -166,11 +166,11 @@ function goToSlide(slideIndex) {
 
                         $('.slide--split__left', $slideAnimCurrent).stop()
                                             .css({'top' : slideAnimStartPos + 'px'})
-                                            .velocity({'top' : slideAnimEndPos + 'px'}, currentSpeed, options.easing );
+                                            .velocity({'top' : slideAnimEndPos + 'px'}, currentSpeed, optionsScrolling.easing );
 
                         $('.slide--split__right', $slideAnimCurrent).stop()
                                             .css({'top' : -slideAnimStartPos + 'px'})
-                                            .velocity({'top' : -slideAnimEndPos + 'px'}, currentSpeed, options.easing, function() {
+                                            .velocity({'top' : -slideAnimEndPos + 'px'}, currentSpeed, optionsScrolling.easing, function() {
                                                 // si c'est la dernière slide
                                                 if( slideAnimCurrentIndex === slideCountTo) {
                                                     finishSliding(slideCurrentIndex);
@@ -180,7 +180,7 @@ function goToSlide(slideIndex) {
                     } else {
                         $($slideAnimCurrent).stop()
                                             .css({'top' : slideAnimStartPos + 'px'})
-                                            .velocity({'top' : slideAnimEndPos + 'px'}, currentSpeed, options.easing, function() {
+                                            .velocity({'top' : slideAnimEndPos + 'px'}, currentSpeed, optionsScrolling.easing, function() {
                                                 // si c'est la dernière slide
                                                 if( $(this).index() === slideCountTo) {
                                                     finishSliding(slideCurrentIndex);

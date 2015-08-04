@@ -52,14 +52,14 @@ var initializeJcarousel = function(options)
     this.jcarouselStatus = 0;
 
     /**
-     * {object} defaultOptions : list of all optinos. Taken by default, override by a jcarousel common config {options}, and then override by a specific data-options attribute {JSON formatted}
+     * {object} defaultOptions : list of all options. Taken by default, override by a jcarousel common config {options}, and then override by a specific data-options attribute {JSON formatted}
      */
     this.defaultOptions = {
         auto: false,
         interval: 3000,
         fx: 'slide',
         itemPerPage : [4, 3, 2, 1],
-        breakpoints : [959, 641, 481, 481],
+        breakpoints : [1100, 641, 481, 481],
         listItemClass : 'jcarousel-list',
         itemClass : 'item',
         duration : 1000,
@@ -88,19 +88,25 @@ var initializeJcarousel = function(options)
                     }
 
                     var _marginLeft = parseInt(jc.find('li:eq(1)').css('margin-left'));
-
+console.log(_marginLeft);
                     // begin media queries
                     if (n == 0)
                     {
                         if (window.innerWidth > jc.options.breakpoints[n]) {
                             _this.width = (_this.width - (_marginLeft*jc.options.itemPerPage[n])) / jc.options.itemPerPage[n];
+                            console.log(this.width + '0');
+
                             break;
                         }
+
+
                     }
                     else if ( n > 0 && n+1 !== jc.options.itemPerPage.length)
                     {
                         if (window.innerWidth >= jc.options.breakpoints[n]) {
                             _this.width = (_this.width - (_marginLeft*jc.options.itemPerPage[n])) / jc.options.itemPerPage[n];
+                            console.log(this.width + '1');
+
                             break;
                         }
                     }
@@ -108,6 +114,8 @@ var initializeJcarousel = function(options)
                     {
                         if (window.innerWidth < jc.options.breakpoints[n]) {
                             _this.width = (_this.width - (_marginLeft*jc.options.itemPerPage[n])) / jc.options.itemPerPage[n];
+                            console.log(this.width + '2');
+
                             break;
                         }
                     }
@@ -115,6 +123,8 @@ var initializeJcarousel = function(options)
                 // if only one value is set
                 else {
                     _this.width = _this.width / jc.options.itemPerPage[n];
+                    console.log(this.width+ '3');
+
                 }
             } // end for
         } else {
