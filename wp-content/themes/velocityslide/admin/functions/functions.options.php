@@ -134,12 +134,14 @@ $of_options[] = array( 	"name" 		=> __('Title', 'velocityslide'),
 						"std" 		=> "",
 						"type" 		=> "text"
 				);
+
 $of_options[] = array( 	"name" 		=> __('Description', 'velocityslide'),
 						"desc" 		=> __('You can add a short description to appear in this block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
 						"id" 		=> "text_homepage",
 						"std" 		=> "",
 						"type" 		=> "text"
 				);
+
 $of_options[] = array( 	"name" 		=> __('Title button', 'velocityslide'),
 						"desc" 		=> __('Please enter a global name for your button (eg; Launch Project or Visit Website).', 'velocityslide'),
 						"id" 		=> "text_button_homepage",
@@ -268,6 +270,20 @@ $of_options[] = array( 	"name" 		=> __('Right background upload', 'velocityslide
 						"type" 		=> "media"
 				);
 
+$of_options[] = array( 	"name" 		=> __('Popup Left Display', 'velocityslide'),
+                        "desc" 		=> __('<On> for displaying button and popup', 'velocityslide'),
+                        "id" 		=> "side_left_popup_switch",
+                        "std" 		=> 0,
+                        "type" 		=> "switch"
+                    );
+
+$of_options[] = array( 	"name" 		=> __('Popup Right Display', 'velocityslide'),
+                        "desc" 		=> __('<On> for displaying button and popup', 'velocityslide'),
+                        "id" 		=> "side_right_popup_switch",
+                        "std" 		=> 0,
+                        "type" 		=> "switch"
+                    );
+
 $of_options[] = array( 	"name" 		=> __('Left Title', 'velocityslide'),
 						"desc" 		=> __('Please enter a title for the portfolios section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
 						"id" 		=> "left_title_portfolios",
@@ -302,12 +318,20 @@ $of_options[] = array( 	"name" 		=> __('Left title button', 'velocityslide'),
 						"type" 		=> "text"
 				);
 
-$of_options[] = array( 	"name" 		=> __('Left button', 'velocityslide'),
-						"desc" 		=> __('Please enter an url link for your button (eg; http://www.webaffinity.com).', 'velocityslide'),
-						"id" 		=> "left_url_button_portfolios",
-						"std" 		=> "",
-						"type" 		=> "text"
-				);
+$of_options[] = array( 	"name" 		=> __('Left title popup', 'velocityslide'),
+                        "desc" 		=> __('Please enter a global name for your popup (eg; Launch Project or Visit Website).', 'velocityslide'),
+                        "id" 		=> "left_title_popup_portfolios",
+                        "std" 		=> "",
+                        "type" 		=> "text"
+                    );
+
+$of_options[] = array( 	"name" 		=> __('Left description popup', 'velocityslide'),
+                        "desc" 		=> __('Please enter a description for your popup (eg; Launch Project or Visit Website).', 'velocityslide'),
+                        "id" 		=> "left_description_popup_portfolios",
+                        "std" 		=> "",
+                        "type" 		=> "textarea"
+                    );
+
 $of_options[] = array( 	"name" 		=> __('Right title button', 'velocityslide'),
 						"desc" 		=> __('Please enter a global name for your button (eg; Launch Project or Visit Website).', 'velocityslide'),
 						"id" 		=> "right_text_button_portfolios",
@@ -315,12 +339,20 @@ $of_options[] = array( 	"name" 		=> __('Right title button', 'velocityslide'),
 						"type" 		=> "text"
 				);
 
-$of_options[] = array( 	"name" 		=> __('Right url button', 'velocityslide'),
-						"desc" 		=> __('Please enter an url link for your button (eg; http://www.webaffinity.com).', 'velocityslide'),
-						"id" 		=> "right_url_button_portfolios",
-						"std" 		=> "",
-						"type" 		=> "text"
-				);
+$of_options[] = array( 	"name" 		=> __('Right title popup', 'velocityslide'),
+                        "desc" 		=> __('Please enter a global name for your popup (eg; Launch Project or Visit Website).', 'velocityslide'),
+                        "id" 		=> "right_title_popup_portfolios",
+                        "std" 		=> "",
+                        "type" 		=> "text"
+                );
+
+$of_options[] = array( 	"name" 		=> __('Right description popup', 'velocityslide'),
+                        "desc" 		=> __('Please enter a description for your popup (eg; Launch Project or Visit Website).', 'velocityslide'),
+                        "id" 		=> "right_description_popup_portfolios",
+                        "std" 		=> "",
+                        "type" 		=> "textarea"
+                    );
+
 $of_options[] = array( 	"name" 		=> __('Blog Settings', 'velocityslide'),
 						"type" 		=> "heading"
 				);
@@ -330,8 +362,7 @@ $of_options[] = array( 	"name" 		=> __('Blog side', 'velocityslide'),
 						"id" 		=> "side_blog",
 						"std" 		=> 0,
 						"type" 		=> "switch"
-				);  
-				
+				);
 
 $of_options[] = array( 	"name" 		=> __('Left background upload', 'velocityslide'),
 						"desc" 		=> __('Upload your left background for blog section', 'velocityslide'),
@@ -468,6 +499,7 @@ $of_options[] = array( 	"name" 		=> __('Transfer Theme Options Data', 'velocitys
 						"type" 		=> "transfer",
 						"desc" 		=> __('You can tranfer the saved options data between different installs by copying the text inside the text box. To import data from another install, replace the data in the text box with the one from another install and click "Import Options".', 'velocityslide'),
 				);
+
 
 /*				
 $of_options[] = array( 	"name" 		=> "JQuery UI Slider example 1 with steps(5)",

@@ -1,11 +1,11 @@
 var _delay = 800;
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
 
     //
     // init jcarousel if any
     //
-    if ($('.jcarousel').length){
+    if (jQuery('.jcarousel').length){
         // initialize
         initializeJcarousel({
             auto: false,
@@ -19,7 +19,7 @@ $(document).ready(function() {
     //
     // listen to thumbnail changes
     //
-    $(document)
+    jQuery(document)
         .on("braid-ready", function() {
             visonOfStyleAjaxReturn();
     });
@@ -32,11 +32,11 @@ $(document).ready(function() {
 function visonOfStyleAjaxReturn() {
 
 
-        $('.jcarousel-control-prev, .jcarousel-control-next')
+    jQuery('.jcarousel-control-prev, .jcarousel-control-next')
             .unbind('click.jcarousel-control-arrow')
             .bind('click.jcarousel-control-arrow', function() {
 
-                var _p = $(this).parents('.vision-page');
+                var _p = jQuery(this).parents('.vision-page');
 
                 setTimeout(function() {
                     if (_p.find('.look-slides-item-first').hasClass('active')) {
@@ -46,11 +46,11 @@ function visonOfStyleAjaxReturn() {
 
         });
 
-    $('.link-to-steps')
+    jQuery('.link-to-steps')
         .unbind('click.link-to-steps')
         .bind('click.link-to-steps', function() {
 
-            var _parent = $(this).parents('.jcarousel.oneperone').parent();
+            var _parent = jQuery(this).parents('.jcarousel.oneperone').parent();
 
             initializeJcarousel({
                 auto: false,

@@ -149,7 +149,9 @@ get_header();?>
                             <p>
                                 <?php echo $data['left_description_portfolios']; ?>
                             </p>
+                            <?php if($data['side_left_popup_switch']): ?>
                             <a href="#popin-slide3-1" class="window-button js-window-open" title="<?php echo $data['left_text_button_portfolios']; ?>"><?php echo $data['left_text_button_portfolios']; ?></a>
+                            <?php endif; ?>
                         </div></div>
                     </div>
                     <div class="slide--split__right">
@@ -160,7 +162,9 @@ get_header();?>
                             <p>
                                 <?php echo $data['right_description_portfolios']; ?>
                             </p>
-                                <a href="#popin-slide3-2" class="window-button js-window-open" title="<?php echo $data['right_text_button_portfolios']; ?>"><?php echo $data['right_text_button_portfolios']; ?></a>
+                                <?php if($data['side_right_popup_switch']): ?>
+                                    <a href="#popin-slide3-2" class="window-button js-window-open" title="<?php echo $data['right_text_button_portfolios']; ?>"><?php echo $data['right_text_button_portfolios']; ?></a>
+                                <?php endif; ?>
                         </div></div>
                     </div>
                     <div class="window hide-window popin-slide3-1" id="popin-slide3-1">
@@ -168,20 +172,40 @@ get_header();?>
                         <div class="container-inner">
                             <div class="popin-content">
                                 <a href="#" class="window-close popin-close">Close</a>
+                                <h3>
+                                    <?php echo $data['left_title_popup_portfolios']; ?><span>.</span>
+                                </h3>
+                                <p><?php echo do_shortcode(stripslashes($data['left_description_popup_portfolios'])); ?></p>
                                 <div class="jcarousel-wrapper">
                                     <div class="jcarousel" data-options="{'itemPerPage' : [5], 'control': {'target': 5}}">
                                         <ul class="jcarousel-list">
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/l-asymetrique-thumbnail.jpg" /></li>
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/l-oversize-thumbnail.jpg" /></li>
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/la-pony-thumbnail.jpg" /></li>
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/la-tresse-epaisse.jpg" /></li>
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/la-tresse-thumbnail.jpg" /></li>
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/le-carre-thumbnail.jpg" /></li>
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/le-chignon-thumbnail.jpg" /></li>
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/le-froisse-thumbnail.jpg" /></li>
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/le-sleek-thumbnail.jpg" /></li>
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/le-smooth-thumbnail.jpg" /></li>
-                                            <li class="item"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/carousel/le-volume-thumbnail.jpg" /></li>
+
+                                            <?php
+                                            query_posts(array(
+                                                'post_type' => 'portfolio',
+                                                'orderby' => 'menu_order',
+                                                'order' => 'ASC',
+                                                'posts_per_page' => -1
+                                            ));
+                                            ?>
+
+                                            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                                                    <?php $side = do_shortcode(get_post_meta($post->ID, 'gt_portfolio_side', $single = true)); ?>
+                                                    <?php if($side=='Left'): ?>
+                                                    <?php
+                                                    $terms =  get_the_terms( $post->ID, 'project-type' );
+                                                    $term_list = '';
+                                                    if( is_array($terms) ) {
+                                                        foreach( $terms as $term ) {
+                                                            $term_list .= urldecode($term->slug);
+                                                            $term_list .= ' ';
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                    <li <?php post_class("$term_list item"); ?> id="post-<?php the_ID(); ?>"><?php the_post_thumbnail('portfolio-thumb'); ?></li>
+                                                    <?php endif; ?>
+                                            <?php endwhile; endif; ?>
                                         </ul>
                                     </div>
                                     <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
@@ -194,12 +218,47 @@ get_header();?>
                     <div class="window hide-window popin-slide3-2" id="popin-slide3-2">
                         <div class="window-close popin-close-overay"></div>
                         <div class="container-inner">
-
                             <div class="popin-content">
                                 <a href="#" class="window-close popin-close">Close</a>
                                 <h3>
-                                    THE SKIN REHAB EFFICACY
+                                    <?php echo $data['right_title_popup_portfolios']; ?><span>.</span>
                                 </h3>
+                                <p><?php echo do_shortcode(stripslashes($data['right_description_popup_portfolios'])); ?></p>
+                                <div class="jcarousel-wrapper">
+                                    <div class="jcarousel" data-options="{'itemPerPage' : [5], 'control': {'target': 5}}">
+                                        <ul class="jcarousel-list">
+                                            <?php
+                                            query_posts(array(
+                                                'post_type' => 'portfolio',
+                                                'orderby' => 'menu_order',
+                                                'order' => 'ASC',
+                                                'posts_per_page' => -1
+                                            ));
+                                            ?>
+
+                                            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                                                    <?php $side = do_shortcode(get_post_meta($post->ID, 'gt_portfolio_side', $single = true)); ?>
+                                                    <?php if($side=='Right'): ?>
+                                                    <?php
+                                                    $terms =  get_the_terms( $post->ID, 'project-type' );
+                                                    $term_list = '';
+                                                    if( is_array($terms) ) {
+                                                        foreach( $terms as $term ) {
+                                                            $term_list .= urldecode($term->slug);
+                                                            $term_list .= ' ';
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                    <li <?php post_class("$term_list item"); ?> id="post-<?php the_ID(); ?>"><?php the_post_thumbnail('portfolio-thumb'); ?></li>
+                                                    <?php endif; ?>
+                                                <?php endwhile; endif; ?>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                                    <p class="jcarousel-pagination" data-jcarouselpagination="true"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
