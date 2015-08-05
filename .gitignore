@@ -1,4 +1,7 @@
 wp-content/debug.log
 .idea/
 wp-config.php
+*/.DS_Store
+.DS_Store
+
 
