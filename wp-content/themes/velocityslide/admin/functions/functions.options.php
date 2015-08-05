@@ -177,17 +177,19 @@ $of_options[] = array( 	"name" 		=> __('Right background upload', 'velocityslide
 						"type" 		=> "media"
 				);
 
+$of_options[] = array( 	"name" 		=> __('Left content', 'velocityslide'),
+                        "desc" 		=> __('For displaying content on left panel', 'velocityslide'),
+                        "id" 		=> "left_content_presentation",
+                        "std" 		=> 0,
+                        "folds"		=> 1,
+                        "type" 		=> "switch"
+                    );
+
 $of_options[] = array( 	"name" 		=> __('Left Title', 'velocityslide'),
 						"desc" 		=> __('Please enter a title for the presentation section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
 						"id" 		=> "left_title_presentation",
 						"std" 		=> "",
-						"type" 		=> "text"
-				);
-
-$of_options[] = array( 	"name" 		=> __('Right Title', 'velocityslide'),
-						"desc" 		=> __('Please enter a title for the presentation section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
-						"id" 		=> "right_title_presentation",
-						"std" 		=> "",
+                        "fold"		=> "left_content_presentation",
 						"type" 		=> "text"
 				);
 
@@ -195,13 +197,7 @@ $of_options[] = array( 	"name" 		=> __('Left Subtitle', 'velocityslide'),
 						"desc" 		=> __('You can add a subtitle to appear in left block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
 						"id" 		=> "left_subtitle_presentation",
 						"std" 		=> "",
-						"type" 		=> "text"
-				);
-
-$of_options[] = array( 	"name" 		=> __('Right Subtitle', 'velocityslide'),
-						"desc" 		=> __('You can add a subtitle to appear in right block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
-						"id" 		=> "right_subtitle_presentation",
-						"std" 		=> "",
+                        "fold"		=> "left_content_presentation",
 						"type" 		=> "text"
 				);
 
@@ -209,6 +205,31 @@ $of_options[] = array( 	"name" 		=> __('Left Description', 'velocityslide'),
 						"desc" 		=> __('You can add a short description to appear in left block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
 						"id" 		=> "left_description_presentation",
 						"std" 		=> "",
+                        "fold"		=> "left_content_presentation",
+						"type" 		=> "textarea"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right content', 'velocityslide'),
+                        "desc" 		=> __('For displaying content on right panel', 'velocityslide'),
+                        "id" 		=> "right_content_presentation",
+                        "std" 		=> 0,
+                        "folds"		=> 1,
+                        "type" 		=> "switch"
+                    );
+
+$of_options[] = array( 	"name" 		=> __('Right Title', 'velocityslide'),
+						"desc" 		=> __('Please enter a title for the presentation section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
+						"id" 		=> "right_title_presentation",
+						"std" 		=> "",
+                        "fold"		=> "right_content_presentation",
+						"type" 		=> "text"
+				);
+
+$of_options[] = array( 	"name" 		=> __('Right Subtitle', 'velocityslide'),
+						"desc" 		=> __('You can add a subtitle to appear in right block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
+						"id" 		=> "right_subtitle_presentation",
+						"std" 		=> "",
+                        "fold"		=> "right_content_presentation",
 						"type" 		=> "text"
 				);
 
@@ -216,7 +237,8 @@ $of_options[] = array( 	"name" 		=> __('Right Description', 'velocityslide'),
 						"desc" 		=> __('You can add a short description to appear in right block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
 						"id" 		=> "right_description_presentation",
 						"std" 		=> "",
-						"type" 		=> "text"
+                        "fold"		=> "right_content_presentation",
+						"type" 		=> "textarea"
 				);
 
 $of_options[] = array( 	"name" 		=> __('Services Settings', 'velocityslide'),
@@ -270,58 +292,72 @@ $of_options[] = array( 	"name" 		=> __('Right background upload', 'velocityslide
 						"type" 		=> "media"
 				);
 
-$of_options[] = array( 	"name" 		=> __('Popup Left Display', 'velocityslide'),
-                        "desc" 		=> __('<On> for displaying button and popup', 'velocityslide'),
-                        "id" 		=> "side_left_popup_switch",
+
+
+$of_options[] = array( 	"name" 		=> __('Left content', 'velocityslide'),
+                        "desc" 		=> __('For displaying content on left panel', 'velocityslide'),
+                        "id" 		=> "left_content_portfolio",
                         "std" 		=> 0,
+                        "folds"		=> 1,
                         "type" 		=> "switch"
                     );
 
-$of_options[] = array( 	"name" 		=> __('Popup Right Display', 'velocityslide'),
-                        "desc" 		=> __('<On> for displaying button and popup', 'velocityslide'),
-                        "id" 		=> "side_right_popup_switch",
-                        "std" 		=> 0,
-                        "type" 		=> "switch"
-                    );
-
-$of_options[] = array( 	"name" 		=> __('Left Title', 'velocityslide'),
+$of_options[] = array( 	"name" 		=> __('Left title', 'velocityslide'),
 						"desc" 		=> __('Please enter a title for the portfolios section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
 						"id" 		=> "left_title_portfolios",
 						"std" 		=> "",
+						"fold" 		=> "left_content_portfolio",
 						"type" 		=> "text"
 				);
 
-$of_options[] = array( 	"name" 		=> __('Right Title', 'velocityslide'),
-						"desc" 		=> __('Please enter a title for the portfolios section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
-						"id" 		=> "right_title_portfolios",
-						"std" 		=> "",
-						"type" 		=> "text"
-				);
-
-$of_options[] = array( 	"name" 		=> __('Left Description', 'velocityslide'),
+$of_options[] = array( 	"name" 		=> __('Left description', 'velocityslide'),
 						"desc" 		=> __('You can add a short description to appear in left block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
 						"id" 		=> "left_description_portfolios",
 						"std" 		=> "",
+						"fold" 		=> "left_content_portfolio",
+						"type" 		=> "textarea"
+				);
+
+
+$of_options[] = array( 	"name" 		=> __('Right content', 'velocityslide'),
+                        "desc" 		=> __('For displaying content on right panel', 'velocityslide'),
+                        "id" 		=> "right_content_portfolio",
+                        "std" 		=> 0,
+                        "folds"		=> 1,
+                        "type" 		=> "switch"
+                    );
+
+$of_options[] = array( 	"name" 		=> __('Right title', 'velocityslide'),
+						"desc" 		=> __('Please enter a title for the portfolios section. (eg; Hear what we have to say. It is all good.)', 'velocityslide'),
+						"id" 		=> "right_title_portfolios",
+						"std" 		=> "",
+						"fold" 		=> "right_content_portfolio",
 						"type" 		=> "text"
 				);
 
-$of_options[] = array( 	"name" 		=> __('Right Description', 'velocityslide'),
+$of_options[] = array( 	"name" 		=> __('Right description', 'velocityslide'),
 						"desc" 		=> __('You can add a short description to appear in right block.<br /><br /><em>*HTML tags are allowed.</em>', 'velocityslide'),
 						"id" 		=> "right_description_portfolios",
 						"std" 		=> "",
-						"type" 		=> "text"
+						"fold" 		=> "right_content_portfolio",
+						"type" 		=> "textarea"
 				);
-$of_options[] = array( 	"name" 		=> __('Left title button', 'velocityslide'),
-						"desc" 		=> __('Please enter a global name for your button (eg; Launch Project or Visit Website).', 'velocityslide'),
-						"id" 		=> "left_text_button_portfolios",
-						"std" 		=> "",
-						"type" 		=> "text"
-				);
+
+
+$of_options[] = array( 	"name" 		=> __('Left popup display', 'velocityslide'),
+                        "desc" 		=> __('For displaying button and popup', 'velocityslide'),
+                        "id" 		=> "side_left_popup_switch",
+                        "std" 		=> 0,
+                        "folds"		=> 1,
+                        "type" 		=> "switch"
+                    );
+
 
 $of_options[] = array( 	"name" 		=> __('Left title popup', 'velocityslide'),
                         "desc" 		=> __('Please enter a global name for your popup (eg; Launch Project or Visit Website).', 'velocityslide'),
                         "id" 		=> "left_title_popup_portfolios",
                         "std" 		=> "",
+                        "fold"		=> "side_left_popup_switch",
                         "type" 		=> "text"
                     );
 
@@ -329,20 +365,31 @@ $of_options[] = array( 	"name" 		=> __('Left description popup', 'velocityslide'
                         "desc" 		=> __('Please enter a description for your popup (eg; Launch Project or Visit Website).', 'velocityslide'),
                         "id" 		=> "left_description_popup_portfolios",
                         "std" 		=> "",
+                        "fold"		=> "side_left_popup_switch",
                         "type" 		=> "textarea"
                     );
 
-$of_options[] = array( 	"name" 		=> __('Right title button', 'velocityslide'),
+$of_options[] = array( 	"name" 		=> __('Left title button', 'velocityslide'),
 						"desc" 		=> __('Please enter a global name for your button (eg; Launch Project or Visit Website).', 'velocityslide'),
-						"id" 		=> "right_text_button_portfolios",
+						"id" 		=> "left_text_button_portfolios",
 						"std" 		=> "",
+						"fold" 		=> "side_left_popup_switch",
 						"type" 		=> "text"
 				);
+
+$of_options[] = array( 	"name" 		=> __('Right popup display', 'velocityslide'),
+                        "desc" 		=> __('For displaying button and popup', 'velocityslide'),
+                        "id" 		=> "side_right_popup_switch",
+                        "std" 		=> 0,
+                        "folds"		=> 1,
+                        "type" 		=> "switch"
+                    );
 
 $of_options[] = array( 	"name" 		=> __('Right title popup', 'velocityslide'),
                         "desc" 		=> __('Please enter a global name for your popup (eg; Launch Project or Visit Website).', 'velocityslide'),
                         "id" 		=> "right_title_popup_portfolios",
                         "std" 		=> "",
+						"fold" 		=> "side_right_popup_switch",
                         "type" 		=> "text"
                 );
 
@@ -350,8 +397,17 @@ $of_options[] = array( 	"name" 		=> __('Right description popup', 'velocityslide
                         "desc" 		=> __('Please enter a description for your popup (eg; Launch Project or Visit Website).', 'velocityslide'),
                         "id" 		=> "right_description_popup_portfolios",
                         "std" 		=> "",
+						"fold" 		=> "side_right_popup_switch",
                         "type" 		=> "textarea"
                     );
+$of_options[] = array( 	"name" 		=> __('Right title button', 'velocityslide'),
+						"desc" 		=> __('Please enter a global name for your button (eg; Launch Project or Visit Website).', 'velocityslide'),
+						"id" 		=> "right_text_button_portfolios",
+						"std" 		=> "",
+						"fold" 		=> "side_right_popup_switch",
+						"type" 		=> "text"
+				);
+
 
 $of_options[] = array( 	"name" 		=> __('Blog Settings', 'velocityslide'),
 						"type" 		=> "heading"
