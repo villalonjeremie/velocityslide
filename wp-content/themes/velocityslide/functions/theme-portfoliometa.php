@@ -33,7 +33,15 @@ $meta_box_portfolio = array(
     	   'id' => $prefix . 'project_url',
     	   'type' => 'text',
     	   'std' => ''
-    	)
+    	),
+        array(
+            'name' =>  __('Portfolio Side', 'velocityslide'),
+            'desc' => __('Choose the side popup portfolio you wish to display.', 'velocityslide'),
+            'id' => $prefix . 'portfolio_side',
+            "type" => "select",
+            'std' => 'Left',
+            'options' => array('Left', 'Right')
+        )
 	)
 );
 

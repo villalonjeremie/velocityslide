@@ -29,7 +29,7 @@ $meta_box_service = array(
         ),
         array(
             'name' =>  __('Service Side', 'velocityslide'),
-            'desc' => __('Choose the type of portfolio you wish to display.', 'velocityslide'),
+            'desc' => __('Choose the side where you wish to display.', 'velocityslide'),
             'id' => $prefix . 'service_side',
             "type" => "select",
             'std' => 'Left',
