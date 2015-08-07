@@ -59,7 +59,7 @@ var initializeJcarousel = function(options)
         interval: 3000,
         fx: 'slide',
         itemPerPage : [4, 3, 2, 1],
-        breakpoints : [1100, 641, 481, 481],
+        breakpoints : [481, 481, 481, 481],
         listItemClass : 'jcarousel-list',
         itemClass : 'item',
         duration : 1000,
@@ -78,6 +78,7 @@ var initializeJcarousel = function(options)
     this.reload = function(jc)
     {
         if ( jc.options.itemPerPage instanceof Array ) {
+
             for (var n = 0; n < jc.options.itemPerPage.length; n++) {
                 if (jc.options.itemPerPage.length > 1) {
                     if ( ! jc.options.breakpoints instanceof Array ) {
@@ -88,25 +89,18 @@ var initializeJcarousel = function(options)
                     }
 
                     var _marginLeft = parseInt(jc.find('li:eq(1)').css('margin-left'));
-console.log(_marginLeft);
                     // begin media queries
                     if (n == 0)
                     {
                         if (window.innerWidth > jc.options.breakpoints[n]) {
                             _this.width = (_this.width - (_marginLeft*jc.options.itemPerPage[n])) / jc.options.itemPerPage[n];
-                            console.log(this.width + '0');
-
                             break;
                         }
-
-
                     }
                     else if ( n > 0 && n+1 !== jc.options.itemPerPage.length)
                     {
                         if (window.innerWidth >= jc.options.breakpoints[n]) {
                             _this.width = (_this.width - (_marginLeft*jc.options.itemPerPage[n])) / jc.options.itemPerPage[n];
-                            console.log(this.width + '1');
-
                             break;
                         }
                     }
@@ -114,8 +108,6 @@ console.log(_marginLeft);
                     {
                         if (window.innerWidth < jc.options.breakpoints[n]) {
                             _this.width = (_this.width - (_marginLeft*jc.options.itemPerPage[n])) / jc.options.itemPerPage[n];
-                            console.log(this.width + '2');
-
                             break;
                         }
                     }
@@ -163,7 +155,7 @@ console.log(_marginLeft);
                 }
 
                 // debug options list end output
-                // console.log(_me.options);
+                //console.log(_me.options);
 
                 // initialize jcarousel plugins
                 _me.jcarousel();
@@ -178,9 +170,7 @@ console.log(_marginLeft);
                         _me
                             .on('jcarousel:reload jcarousel:create', function () {
                                 _this.width = _me.innerWidth();
-
                                 _this.reload(_me);
-
                                 _me.jcarousel('items').css('width', _this.width + 'px');
                             });
                         break;

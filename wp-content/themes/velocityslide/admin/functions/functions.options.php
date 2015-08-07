@@ -270,7 +270,6 @@ $of_options[] = array( 	"name" 		=> __('Select services', 'velocityslide'),
 						"options" 	=> $of_options_radio
 				); 
 
-
 $of_options[] = array( 	"name" 		=> __('Portfolios Settings', 'velocityslide'),
 						"type" 		=> "heading"
 				);
@@ -291,8 +290,6 @@ $of_options[] = array( 	"name" 		=> __('Right background upload', 'velocityslide
 						"mod"		=> "min",
 						"type" 		=> "media"
 				);
-
-
 
 $of_options[] = array( 	"name" 		=> __('Left content', 'velocityslide'),
                         "desc" 		=> __('For displaying content on left panel', 'velocityslide'),
@@ -413,12 +410,19 @@ $of_options[] = array( 	"name" 		=> __('Blog Settings', 'velocityslide'),
 						"type" 		=> "heading"
 				);
 
-$of_options[] = array( 	"name" 		=> __('Blog side', 'velocityslide'),
-						"desc" 		=> __('Blog in right (on),Blog in left (off)', 'velocityslide'),
-						"id" 		=> "side_blog",
-						"std" 		=> 0,
-						"type" 		=> "switch"
-				);
+$of_options[] = array( 	"name" 		=> __('Left post display', 'velocityslide'),
+                        "desc" 		=> __('For displaying post on left panel', 'velocityslide'),
+                        "id" 		=> "left_panel_post_switch",
+                        "std" 		=> 0,
+                        "type" 		=> "switch"
+                    );
+
+$of_options[] = array( 	"name" 		=> __('Right post display', 'velocityslide'),
+                        "desc" 		=> __('For displaying post on right panel', 'velocityslide'),
+                        "id" 		=> "right_panel_post_switch",
+                        "std" 		=> 0,
+                        "type" 		=> "switch"
+                    );
 
 $of_options[] = array( 	"name" 		=> __('Left background upload', 'velocityslide'),
 						"desc" 		=> __('Upload your left background for blog section', 'velocityslide'),
@@ -438,32 +442,65 @@ $of_options[] = array( 	"name" 		=> __('Right background upload', 'velocityslide
 
 $of_options[] = array( 	"name" 		=> __('Contact Settings', 'velocityslide'),
 						"type" 		=> "heading"
-				);		
-					
+				);
+
+$of_options[] = array(  "name"		=> __('Title contact', 'velocityslide'),
+                        "id"		=> "title_contact",
+                        "std"       => "",
+                        "type"		=> "text"
+                    );
+
+$of_options[] = array(  "name"		=> __('Subtitle contact', 'velocityslide'),
+                        "id"		=> "subtitle_contact",
+                        "std"       => "",
+                        "type"		=> "text"
+                    );
+
+$of_options[] = array(  "name"		=> __('Title details contact', 'velocityslide'),
+                        "id"		=> "title_details_contact",
+                        "std"       => "",
+                        "type"		=> "text"
+                    );
+
 $of_options[] = array(  "name"		=> __('Contact Address', 'velocityslide'),
 					    "desc"		=> __('Please enter your company address (eg; 10 Columbus Circle, New York, NY 10019, United States.)', 'velocityslide'),
 					    "id"		=> "text_address_contact",
 						"std"       => "",
 						"type"		=> "text"
-				);
+				    );
+
+$of_options[] = array(  "name"		=> __('Country contact', 'velocityslide'),
+                        "id"		=> "text_country_contact",
+                        "std"       => "",
+                        "type"		=> "text"
+                     );
+
+$of_options[] = array(  "name"		=> __('Postcode contact', 'velocityslide'),
+                        "id"		=> "text_postcode_contact",
+                        "std"       => "",
+                        "type"		=> "text"
+                    );
 					
 $of_options[] = array(  "name"		=> __('Contact Telephone Number', 'velocityslide'),
 					    "desc"		=> __('Please enter your company telephone number (eg; (212) 823-6000.)', 'velocityslide'),
 					    "id"		=> "text_telephone_contact",
 					    "std"		=> "",
-					    "type"		=> "text");
+					    "type"		=> "text"
+                    );
 					
 $of_options[] = array(  "name"		=> __('Fax Telephone Number', 'velocityslide'),
 					    "desc"		=> __('Please enter your company fax number (eg; (212) 823-6005.)', 'velocityslide'),
 						"id"		=> "text_fax_contact",
 						"std"		=> "",
-						"type"		=> "text");	
+						"type"		=> "text"
+                    );
 					
 $of_options[] = array(  "name"		=> __('Contact Email', 'velocityslide'),
 						"desc"		=> __('Please enter your company email address (eg; marc@guuthemes.com) This will also populate into your Contact Form.', 'velocityslide'),
 						"id"		=> "text_email_contact",
 						"std"		=> "",
-						"type"		=> "text");			
+						"type"		=> "text"
+                    );
 
 $of_options[] = array( 	"name" 		=> __('General Settings', 'velocityslide'),
 						"type" 		=> "heading"

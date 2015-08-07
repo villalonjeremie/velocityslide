@@ -50,7 +50,7 @@ function portfolio_help_text($contextual_help, $screen_id, $screen) {
         '</ul>';
     }
     elseif ('edit-portfolio' == $screen->id) {
-        $contextual_help = '<p>' . __('A list of all Portfolio items appear below. To edit an item, click on the items\'s title.', 'kula') . '</p>';
+        $contextual_help = '<p>' . __('A list of all Portfolio items appear below. To edit an item, click on the items\'s title.', 'velocityslide') . '</p>';
     }
     return $contextual_help;
 }
@@ -65,8 +65,8 @@ function sort_portfolio() {
 ?>
     <div class="wrap">
     <div id="icon-tools" class="icon32"><br /></div>
-    <h2><?php _e('Sort Portfolio Items', 'kula'); ?> <img src="<?php echo home_url(); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h2>
-    <p><?php _e('Click, drag, re-order. Repeat as neccessary. Portfolio item at the top will appear first on your page.', 'kula'); ?></p>
+    <h2><?php _e('Sort Portfolio Items', 'velocityslide'); ?> <img src="<?php echo home_url(); ?>/wp-admin/images/loading.gif" id="loading-animation" /></h2>
+    <p><?php _e('Click, drag, re-order. Repeat as neccessary. Portfolio item at the top will appear first on your page.', 'velocityslide'); ?></p>
     <ul id="post-list">
     <?php while ( $portfolios->have_posts() ) : $portfolios->the_post(); ?>
         <li id="<?php the_id(); ?>"><?php the_title(); ?></li>          

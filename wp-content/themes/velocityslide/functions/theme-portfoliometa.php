@@ -8,28 +8,28 @@ $prefix = 'gt_';
  
 $meta_box_portfolio = array(
 	'id' => 'gt-meta-box-portfolio',
-	'title' =>  __('Portfolio Detail Settings', 'kula'),
+	'title' =>  __('Portfolio Detail Settings', 'velocityslide'),
 	'page' => 'portfolio',
 	'context' => 'normal',
 	'priority' => 'high',
 	'fields' => array(
 		array(
     	   'name' => __('Client Name', 'velocityslide'),
-    	   'desc' => __('Client who this project was completed for', 'kula'),
+    	   'desc' => __('Client who this project was completed for', 'velocityslide'),
     	   'id' => $prefix . 'client_name',
     	   'type' => 'text',
     	   'std' => ''
     	),
     	array(
     	   'name' => __('Project Date', 'velocityslide'),
-    	   'desc' => __('What was the date of the completed project', 'kula'),
+    	   'desc' => __('What was the date of the completed project', 'velocityslide'),
     	   'id' => $prefix . 'project_date',
     	   'type' => 'text',
     	   'std' => ''
     	),
     	array(
     	   'name' => __('Project URL', 'velocityslide'),
-    	   'desc' => __('What is the URL for this project', 'kula'),
+    	   'desc' => __('What is the URL for this project', 'velocityslide'),
     	   'id' => $prefix . 'project_url',
     	   'type' => 'text',
     	   'std' => ''
@@ -145,7 +145,7 @@ add_action('save_post', 'gt_save_data_portfolio');
 /*-----------------------------------------------------------------------------------*/
  
 function gt_save_data_portfolio($post_id) {
-	global $meta_box_portfolio, $meta_box_portfolio_portfolio_video, $meta_box_portfolio_portfolio_image;
+	global $meta_box_portfolio;
  
 	// verify nonce
 	if ( !isset($_POST['gt_meta_box_nonce']) || !wp_verify_nonce($_POST['gt_meta_box_nonce'], basename(__FILE__))) {

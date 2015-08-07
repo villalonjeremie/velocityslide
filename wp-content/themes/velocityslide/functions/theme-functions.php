@@ -30,7 +30,7 @@ function gt_comments($comment, $args, $depth) {
 
         <div class="comment-meta">
             <h5 class="author"><a href="<?php comment_author_url(); ?>" target="about_blank"><?php comment_author(); ?></a> - <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></h5>
-            <p class="date"><?php printf(__('%1$s at %2$s', 'kula'), get_comment_date(),  get_comment_time()) ?></p>
+            <p class="date"><?php printf(__('%1$s at %2$s', 'velocityslide'), get_comment_date(),  get_comment_time()) ?></p>
         </div>
 
         <div class="comment-entry">
@@ -40,11 +40,11 @@ function gt_comments($comment, $args, $depth) {
     </div>
 
     <?php if ($comment->comment_approved == '0') : ?>
-        <em class="comment-moderate"><?php _e('Your comment is awaiting moderation.', 'kula') ?></em>
+        <em class="comment-moderate"><?php _e('Your comment is awaiting moderation.', 'velocityslide') ?></em>
         <br />
     <?php endif; ?>
 
-    <?php edit_comment_link(__('(Edit)', 'kula'),'  ','') ?>
+    <?php edit_comment_link(__('(Edit)', 'velocityslide'),'  ','') ?>
 
 <?php
 }
@@ -62,17 +62,17 @@ function gt_comment_form($form_options) {
 
         'author' =>
             '<p class="comment-form-author">' .
-            '<input id="author" name="author" type="text" size="30" placeholder="' . __( 'Your Name (required)', 'kula' ) . '" />' .
+            '<input id="author" name="author" type="text" size="30" placeholder="' . __( 'Your Name (required)', 'velocityslide' ) . '" />' .
             '</p>',
 
         'email' =>
             '<p class="comment-form-email">' .
-            '<input id="email" name="email" type="text" size="30" placeholder="' . __( 'Your Email (will not be published)', 'kula' ) . '" />' .
+            '<input id="email" name="email" type="text" size="30" placeholder="' . __( 'Your Email (will not be published)', 'velocityslide' ) . '" />' .
             '</p>',
 
         'url' =>
             '<p class="comment-form-url">'  .
-            '<input name="url" size="30" id="url" type="text" placeholder="' . __( 'Your Website (optional)', 'kula' ) . '" />' .
+            '<input name="url" size="30" id="url" type="text" placeholder="' . __( 'Your Website (optional)', 'velocityslide' ) . '" />' .
             '</p>',
 
     );
@@ -85,18 +85,18 @@ function gt_comment_form($form_options) {
         // Template Options
         'comment_field' =>
             '<p class="comment-form-comment">' .
-            '<textarea name="comment" id="comment" aria-required="true" rows="8" cols="45" placeholder="' . __( 'Please leave your comment...', 'kula' ) . '"></textarea>' .
+            '<textarea name="comment" id="comment" aria-required="true" rows="8" cols="45" placeholder="' . __( 'Please leave your comment...', 'velocityslide' ) . '"></textarea>' .
             '</p>',
 
         'must_log_in' =>
             '<p class="must-log-in">' .
-            sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'kula' ),
+            sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'velocityslide' ),
                 wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) ) .
             '</p>',
 
         'logged_in_as' =>
             '<p class="logged-in-as">' .
-            sprintf( __( 'You are currently logged in<a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'kula' ),
+            sprintf( __( 'You are currently logged in<a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'velocityslide' ),
                 admin_url('profile.php'), (isset($user_identity)), wp_logout_url( apply_filters('the_permalink', get_permalink()) ) ) .
             '</p>',
 
@@ -107,10 +107,10 @@ function gt_comment_form($form_options) {
         // Rest of Options
         'id_form' => 'form-comment',
         'id_submit' => 'submit',
-        'title_reply' => __( 'Please leave a Comment...', 'kula' ),
-        'title_reply_to' => __( 'Leave a Reply to %s', 'kula' ),
-        'cancel_reply_link' => __( 'Cancel reply', 'kula' ),
-        'label_submit' => __( 'Post Comment', 'kula' ),
+        'title_reply' => __( 'Please leave a Comment...', 'velocityslide' ),
+        'title_reply_to' => __( 'Leave a Reply to %s', 'velocityslide' ),
+        'cancel_reply_link' => __( 'Cancel reply', 'velocityslide' ),
+        'label_submit' => __( 'Post Comment', 'velocityslide' ),
     );
 
     return $form_options;
@@ -131,8 +131,8 @@ if ( ! function_exists( 'gt_content_nav' ) ):
 
         <?php if ( is_single() ) : // navigation links for single posts ?>
             <ul class="pager">
-                <?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'kula' ) . '</span> %title' ); ?>
-                <?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'kula' ) . '</span>' ); ?>
+                <?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'velocityslide' ) . '</span> %title' ); ?>
+                <?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'velocityslide' ) . '</span>' ); ?>
             </ul>
 
         <?php endif; ?>

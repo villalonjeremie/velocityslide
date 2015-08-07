@@ -5,8 +5,6 @@
  *
  */
 get_header();?>
-
-
         <div class="powerslide slider-wrapper">
             <div class="slider">                
                 <div class="slide slide--0" data-slideTitle="Homepages">
@@ -19,18 +17,24 @@ get_header();?>
                         <div class="slide__content__right">
                             <div class="s-table">
                                 <div class="s-table-cell">
-                                    <h1>
-                                        <?php echo $data['title_homepage']; ?>
-                                        <!--<img src="<?php echo get_template_directory_uri(); ?>/assets/img/slide0/powercell.png" alt="Powercell" class="img-powercell"><br>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/youth-grafter.png" alt="Youth Grafter">-->
-                                    </h1>
-                                    <h3>
-                                        <?php echo $data['text_homepage']; ?>
-                                    </h3>
-                                    <p>
-                                        <?php echo $data['text_homepage']; ?>
-                                    </p>
+                                    <?php if (isset($data["title_homepage"])) : ?>
+                                        <h1>
+                                            <?php echo $data['title_homepage']; ?>
+                                        </h1>
+                                    <?php endif;?>
+                                    <?php if (isset($data["subtitle_homepage"])) : ?>
+                                        <h3>
+                                            <?php echo $data['subtitle_homepage']; ?>
+                                        </h3>
+                                    <?php endif;?>
+                                    <?php if (isset($data["text_homepage"])) : ?>
+                                        <p>
+                                            <?php echo $data['text_homepage']; ?>
+                                        </p>
+                                    <?php endif;?>
+                                    <?php if (isset($data["text_button_homepage"]) || isset($data["url_button_homepage"])) : ?>
                                     <a href="<?php echo $data['url_button_homepage']; ?>" class="js-external-link button" title="<?php echo $data['text_button_homepage']; ?>"><?php echo $data['text_button_homepage']; ?></a>
+                                    <?php endif;?>
                                 </div>
                             </div>
                         </div>
@@ -41,17 +45,27 @@ get_header();?>
                         <div class="s-table"><div class="s-table-cell">
                             <div class="box">
                                 <div class="container">
-                                    <div class="s-table"><div class="s-table-cell">
-                                        <h2>
-                                            <?php echo $data['left_title_presentation']; ?>
-                                        </h2>
-                                        <h3>
-                                            <?php echo $data['left_subtitle_presentation']; ?>
-                                        </h3>
-                                        <p>
-                                            <?php echo $data['left_description_presentation']; ?>
-                                        </p>
-                                    </div></div>
+                                    <div class="s-table">
+                                        <div class="s-table-cell">
+                                            <?php if (isset($data["left_content_presentation"])) : ?>
+                                                <?php if (isset($data["left_title_presentation"])) : ?>
+                                                    <h2>
+                                                        <?php echo $data['left_title_presentation']; ?>
+                                                    </h2>
+                                                <?php endif;?>
+                                                <?php if (isset($data["left_subtitle_presentation"])) : ?>
+                                                    <h3>
+                                                        <?php echo $data['left_subtitle_presentation']; ?>
+                                                    </h3>
+                                                <?php endif;?>
+                                                <?php if (isset($data["left_description_presentation"])) : ?>
+                                                    <p>
+                                                        <?php echo $data['left_description_presentation']; ?>
+                                                    </p>
+                                                <?php endif;?>
+                                            <?php endif;?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div></div>
                         </div>
@@ -60,17 +74,27 @@ get_header();?>
                         <div class="s-table"><div class="s-table-cell">
                             <div class="box">
                                 <div class="container">
-                                    <div class="s-table"><div class="s-table-cell">
-                                        <h2>
-                                            <?php echo $data['right_title_presentation']; ?>
-                                        </h2>
-                                        <h3>
-                                            <?php echo $data['right_subtitle_presentation']; ?>
-                                        </h3>
-                                        <p>
-                                            <?php echo $data['right_description_presentation']; ?>
-                                        </p>
-                                    </div></div>
+                                    <div class="s-table">
+                                        <div class="s-table-cell">
+                                            <?php if (isset($data["right_content_presentation"])) : ?>
+                                                <?php if (isset($data["right_title_presentation"])) : ?>
+                                                    <h2>
+                                                        <?php echo $data['right_title_presentation']; ?>
+                                                    </h2>
+                                                <?php endif;?>
+                                                <?php if (isset($data["right_subtitle_presentation"])) : ?>
+                                                    <h3>
+                                                        <?php echo $data['right_subtitle_presentation']; ?>
+                                                    </h3>
+                                                <?php endif;?>
+                                                <?php if (isset($data["right_description_presentation"])) : ?>
+                                                    <p>
+                                                        <?php echo $data['right_description_presentation']; ?>
+                                                    </p>
+                                                <?php endif;?>
+                                            <?php endif;?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div></div>
@@ -86,9 +110,10 @@ get_header();?>
                                     <div class="container">
                                         <div class="s-table">
                                             <div class="s-table-cell">
+                                                <?php if($loop->have_posts()) : ?>
                                                 <?php while ($loop->have_posts()) : $loop->the_post(); ?>
                                                     <?php $side = do_shortcode(get_post_meta($post->ID, 'gt_service_side', $single = true)); ?>
-                                                    <?php if($side=='Left'){ ?>
+                                                    <?php if($side=='Left') : ?>
                                                         <div class="service one-third column">
                                                             <?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_icon', $single = true)); ?>
                                                             <h2>
@@ -101,7 +126,7 @@ get_header();?>
                                                                 <a class="read-more-btn" href="<?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_url', $single = true)); ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
                                                             <?php } ?>
                                                         </div><!-- end .service -->
-                                                    <?php } ?>
+                                                    <?php endif; ?>
                                                 <?php endwhile; ?>
                                             </div>
                                         </div>
@@ -115,23 +140,25 @@ get_header();?>
                                     <div class="container">
                                         <div class="s-table">
                                             <div class="s-table-cell">
-                                                <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+                                                <?php if($loop->have_posts()) : ?>
+                                                    <?php while ($loop->have_posts()) : $loop->the_post(); ?>
                                                     <?php $side = do_shortcode(get_post_meta($post->ID, 'gt_service_side', $single = true)); ?>
-                                                    <?php if($side=='Right'){ ?>
-                                                        <div class="service one-third column">
-                                                            <?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_icon', $single = true)); ?>
-                                                            <h2>
-                                                                <?php the_title(); ?>
-                                                            </h2>
-                                                            <p>
-                                                                <?php the_content(); ?>
-                                                            </p>
-                                                            <?php if (do_shortcode(get_post_meta($post->ID, 'gt_service_url', $single = true))) { ?>
-                                                                <a class="read-more-btn" href="<?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_url', $single = true)); ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
-                                                            <?php } ?>
-                                                        </div><!-- end .service -->
-                                                    <?php } ?>
-                                                <?php endwhile; ?>
+                                                        <?php if($side=='Right'){ ?>
+                                                            <div class="service one-third column">
+                                                                <?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_icon', $single = true)); ?>
+                                                                <h2>
+                                                                    <?php the_title(); ?>
+                                                                </h2>
+                                                                <p>
+                                                                    <?php the_content(); ?>
+                                                                </p>
+                                                                <?php if (do_shortcode(get_post_meta($post->ID, 'gt_service_url', $single = true))) { ?>
+                                                                    <a class="read-more-btn" href="<?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_url', $single = true)); ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
+                                                                <?php } ?>
+                                                            </div><!-- end .service -->
+                                                        <?php } ?>
+                                                    <?php endwhile; ?>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                     </div>
@@ -142,58 +169,78 @@ get_header();?>
                 </div>
                 <div class="slide slide--split slide--3" data-slideTitle="Portfolios" data-slideTransition="split">
                     <div class="slide--split__left">
-                        <div class="s-table"><div class="s-table-cell">
-                            <h2>
-                                <?php echo $data['left_title_portfolios']; ?>
-                            </h2>
-                            <p>
-                                <?php echo $data['left_description_portfolios']; ?>
-                            </p>
-                            <?php if($data['side_left_popup_switch']): ?>
-                            <a href="#popin-slide3-1" class="window-button js-window-open" title="<?php echo $data['left_text_button_portfolios']; ?>"><?php echo $data['left_text_button_portfolios']; ?></a>
-                            <?php endif; ?>
-                        </div></div>
+                        <div class="s-table">
+                            <div class="s-table-cell">
+                                <?php if ($data['left_content_portfolio']) : ?>
+                                    <?php if ($data['left_title_portfolios']) : ?>
+                                        <h2>
+                                            <?php echo $data['left_title_portfolios']; ?>
+                                        </h2>
+                                    <?php endif; ?>
+                                    <?php if ($data['left_description_portfolios']) : ?>
+                                        <p>
+                                            <?php echo $data['left_description_portfolios']; ?>
+                                        </p>
+                                    <?php endif; ?>
+                                    <?php if($data['side_left_popup_switch']): ?>
+                                        <a href="#popin-slide3-1" class="window-button js-window-open" title="<?php echo $data['left_text_button_portfolios']; ?>">
+                                            <?php echo $data['left_text_button_portfolios']; ?>
+                                        </a>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
                     <div class="slide--split__right">
-                        <div class="s-table"><div class="s-table-cell">
-                            <h2>
-                                <?php echo $data['right_title_portfolios']; ?>
-                            </h2>
-                            <p>
-                                <?php echo $data['right_description_portfolios']; ?>
-                            </p>
-                                <?php if($data['side_right_popup_switch']): ?>
-                                    <a href="#popin-slide3-2" class="window-button js-window-open" title="<?php echo $data['right_text_button_portfolios']; ?>"><?php echo $data['right_text_button_portfolios']; ?></a>
+                        <div class="s-table">
+                            <div class="s-table-cell">
+                                <?php if ($data['right_content_portfolio']) : ?>
+                                    <?php if ($data['right_title_portfolios']) : ?>
+                                    <h2>
+                                        <?php echo $data['right_title_portfolios']; ?>
+                                    </h2>
+                                    <?php endif; ?>
+                                    <?php if ($data['right_description_portfolios']) : ?>
+                                    <p>
+                                        <?php echo $data['right_description_portfolios']; ?>
+                                    </p>
+                                    <?php endif; ?>
+                                    <?php if($data['side_right_popup_switch']): ?>
+                                        <a href="#popin-slide3-2" class="window-button js-window-open" title="<?php echo $data['right_text_button_portfolios']; ?>">
+                                            <?php echo $data['right_text_button_portfolios']; ?>
+                                        </a>
+                                    <?php endif; ?>
                                 <?php endif; ?>
-                        </div></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="window hide-window popin-slide3-1" id="popin-slide3-1">
+                        <?php global $data;
+                        $args = array('post_type' => 'portfolio', 'orderby' => 'menu_order', 'order' => 'ASC','posts_per_page' => -1);
+                        $loop = new WP_Query($args); ?>
                         <div class="window-close popin-close-overay"></div>
                         <div class="container-inner">
                             <div class="popin-content">
                                 <a href="#" class="window-close popin-close">Close</a>
-                                <h3>
-                                    <?php echo $data['left_title_popup_portfolios']; ?><span>.</span>
-                                </h3>
-                                <p><?php echo do_shortcode(stripslashes($data['left_description_popup_portfolios'])); ?></p>
+                                <?php if ($data['left_title_popup_portfolios']) : ?>
+                                    <h3>
+                                        <?php echo $data['left_title_popup_portfolios']; ?><span>.</span>
+                                    </h3>
+                                <?php endif; ?>
+                                <?php if ($data['left_description_popup_portfolios']) : ?>
+                                    <p>
+                                        <?php echo do_shortcode(stripslashes($data['left_description_popup_portfolios'])); ?>
+                                    </p>
+                                <?php endif; ?>
                                 <div class="jcarousel-wrapper">
                                     <div class="jcarousel" data-options="{'itemPerPage' : [5], 'control': {'target': 5}}">
                                         <ul class="jcarousel-list">
-
-                                            <?php
-                                            query_posts(array(
-                                                'post_type' => 'portfolio',
-                                                'orderby' => 'menu_order',
-                                                'order' => 'ASC',
-                                                'posts_per_page' => -1
-                                            ));
-                                            ?>
-
-                                            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                                                    <?php $side = do_shortcode(get_post_meta($post->ID, 'gt_portfolio_side', $single = true)); ?>
+                                            <?php if($loop->have_posts()) : ?>
+                                                <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+                                                    <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'gt_portfolio_side', $single = true)); ?>
                                                     <?php if($side=='Left'): ?>
                                                     <?php
-                                                    $terms =  get_the_terms( $post->ID, 'project-type' );
+                                                    $terms =  get_the_terms( $loop->post->ID, 'project-type' );
                                                     $term_list = '';
                                                     if( is_array($terms) ) {
                                                         foreach( $terms as $term ) {
@@ -202,8 +249,9 @@ get_header();?>
                                                         }
                                                     }
                                                     ?>
-
-                                                    <li <?php post_class("$term_list item"); ?> id="post-<?php the_ID(); ?>"><?php the_post_thumbnail('portfolio-thumb'); ?></li>
+                                                    <li <?php post_class("$term_list item"); ?> id="post-<?php the_ID(); ?>">
+                                                        <?php the_post_thumbnail('portfolio-thumb'); ?>
+                                                    </li>
                                                     <?php endif; ?>
                                             <?php endwhile; endif; ?>
                                         </ul>
@@ -220,27 +268,25 @@ get_header();?>
                         <div class="container-inner">
                             <div class="popin-content">
                                 <a href="#" class="window-close popin-close">Close</a>
+                                <?php if ($data['right_title_popup_portfolios']) : ?>
                                 <h3>
                                     <?php echo $data['right_title_popup_portfolios']; ?><span>.</span>
                                 </h3>
-                                <p><?php echo do_shortcode(stripslashes($data['right_description_popup_portfolios'])); ?></p>
+                                <?php endif; ?>
+                                <?php if ($data['right_description_popup_portfolios']) : ?>
+                                    <p>
+                                        <?php echo do_shortcode(stripslashes($data['right_description_popup_portfolios'])); ?>
+                                    </p>
+                                <?php endif; ?>
                                 <div class="jcarousel-wrapper">
                                     <div class="jcarousel" data-options="{'itemPerPage' : [5], 'control': {'target': 5}}">
                                         <ul class="jcarousel-list">
-                                            <?php
-                                            query_posts(array(
-                                                'post_type' => 'portfolio',
-                                                'orderby' => 'menu_order',
-                                                'order' => 'ASC',
-                                                'posts_per_page' => -1
-                                            ));
-                                            ?>
-
-                                            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                                                    <?php $side = do_shortcode(get_post_meta($post->ID, 'gt_portfolio_side', $single = true)); ?>
+                                            <?php if($loop->have_posts()) : ?>
+                                                <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+                                                    <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'gt_portfolio_side', $single = true)); ?>
                                                     <?php if($side=='Right'): ?>
                                                     <?php
-                                                    $terms =  get_the_terms( $post->ID, 'project-type' );
+                                                    $terms =  get_the_terms( $loop->post->ID, 'project-type' );
                                                     $term_list = '';
                                                     if( is_array($terms) ) {
                                                         foreach( $terms as $term ) {
@@ -249,10 +295,12 @@ get_header();?>
                                                         }
                                                     }
                                                     ?>
-
-                                                    <li <?php post_class("$term_list item"); ?> id="post-<?php the_ID(); ?>"><?php the_post_thumbnail('portfolio-thumb'); ?></li>
+                                                    <li <?php post_class("$term_list item"); ?> id="post-<?php the_ID(); ?>">
+                                                        <?php the_post_thumbnail(); ?>
+                                                    </li>
                                                     <?php endif; ?>
-                                                <?php endwhile; endif; ?>
+                                                <?php endwhile; ?>
+                                            <?php endif; ?>
                                         </ul>
                                     </div>
                                     <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
@@ -264,21 +312,93 @@ get_header();?>
                     </div>
                 </div>
                 <div class="slide slide--split slide--4" data-slideTitle="Blogs" data-slideTransition="split">
+                    <?php
+                    global $data;
+                    $args = array('post_type' => 'post', 'posts_per_page' => -1);
+                    $loop = new WP_Query($args);?>
                     <div class="slide--split__left">
                         <div class="s-table">
                             <div class="s-table-cell">
-                            <?php if (!$data['side_blog']){ ?>
-                            <?php } ?>
+                                <?php if ($data['left_panel_post_switch']) : ?>
+                                    <div class="jcarousel-wrapper jcarousel-article">
+                                        <div class="jcarousel" data-options="{'itemPerPage' : [1], 'control': {'target': 1}}">
+                                            <ul class="jcarousel-list">
+                                                <?php if($loop->have_posts()) : ?>
+                                                    <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+                                                        <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'gt_article_side', $single = true)); ?>
+                                                        <?php if($side=='Left'): ?>
+                                                            <li class="item-article">
+                                                                <article class="article one-third column">
+                                                                    <div class="thumbnail">
+                                                                        <?php the_post_thumbnail('large'); ?>
+                                                                    </div>
+                                                                    <h4>
+                                                                        <a href="<?php the_permalink() ?>">
+                                                                            <?php the_title(); ?><span>.</span>
+                                                                        </a>
+                                                                    </h4>
+                                                                    <div class="meta">
+                                                                        <span><?php _e('Posted in -', 'velocityslide'); ?> <?php the_category(' & '); ?><br />on <strong><?php the_time('F jS, Y'); ?></strong></span>
+                                                                        <span><i class="icon-comment"></i> <a href="<?php the_permalink(); ?>#comments"><?php $commentscount = get_comments_number(); echo $commentscount; ?> <?php _e('Comments', 'velocityslide'); ?></a></span>
+                                                                    </div>
+                                                                    <?php the_excerpt(); ?>
+                                                                    <a class="read-more-btn" href="<?php the_permalink() ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
+                                                                </article><!-- end article -->
+                                                            </li>
+                                                        <?php endif; ?>
+                                                    <?php endwhile; ?>
+                                                <?php endif; ?>
+                                            </ul>
+                                        </div>
+                                        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                                        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                                        <p class="jcarousel-pagination" data-jcarouselpagination="true"></p>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
                     <div class="slide--split__right">
                         <div class="s-table">
                             <div class="s-table-cell">
-                                <?php if ($data['side_blog']){ ?>
-                                <?php } ?>
+                                <?php if ($data['right_panel_post_switch']) : ?>
+                                    <div class="jcarousel-wrapper jcarousel-article">
+                                        <div class="jcarousel" data-options="{'itemPerPage' : [1], 'control': {'target': 1}}">
+                                            <ul class="jcarousel-list">
+                                                <?php if($loop->have_posts()) : ?>
+                                                    <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+                                                        <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'gt_article_side', $single = true)); ?>
+                                                        <?php if($side=='Right'): ?>
+                                                            <li class="item-article">
+                                                                <article class="article one-third column">
+                                                                    <div class="thumbnail">
+                                                                        <?php the_post_thumbnail('large'); ?>
+                                                                    </div>
+                                                                    <h4>
+                                                                        <a href="<?php the_permalink() ?>"><?php the_title(); ?><span>.</span>
+                                                                        </a>
+                                                                    </h4>
+                                                                    <div class="meta">
+                                                                        <span><?php _e('Posted in -', 'velocityslide'); ?> <?php the_category(' & '); ?><br />on <strong><?php the_time('F jS, Y'); ?></strong></span>
+                                                                        <span><i class="icon-comment"></i> <a href="<?php the_permalink(); ?>#comments"><?php $commentscount = get_comments_number(); echo $commentscount; ?> <?php _e('Comments', 'velocityslide'); ?></a></span>
+                                                                    </div>
+                                                                    <?php the_excerpt(); ?>
+                                                                    <a class="read-more-btn" href="<?php the_permalink() ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
+                                                                </article><!-- end article -->
+                                                            </li>
+                                                        <?php endif; ?>
+                                                    <?php endwhile;?>
+                                                <?php endif; ?>
+                                            </ul>
+                                        </div>
+                                        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                                        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                                        <p class="jcarousel-pagination" data-jcarouselpagination="true"></p>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
                 </div>
+
 <?php get_footer(); ?>
