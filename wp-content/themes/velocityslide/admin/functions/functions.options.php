@@ -101,6 +101,63 @@ $of_options[] = array( 	"name" 		=> __('Homepage Layout Manager', 'velocityslide
 						"type" 		=> "sorter"
 				);
 
+$of_options[] = array( 	"name" 		=> __('Rename Layout for Menu', 'velocityslide'),
+                        "desc" 		=> __('For displaying the name you wish in menu', 'velocityslide'),
+                        "id" 		=> "name_layout_switch",
+                        "std" 		=> 0,
+                        "folds"		=> 1,
+                        "type" 		=> "switch"
+);
+
+
+$of_options[] = array( 	"name" 		=> __('Homepage name', 'velocityslide'),
+                        "desc" 		=> __('Rename Homepage layout in menu', 'velocityslide'),
+                        "id" 		=> "name_layout_homepage",
+                        "std" 		=> "",
+                        "fold"		=> "name_layout_switch",
+                        "type" 		=> "text"
+                    );
+
+$of_options[] = array( 	"name" 		=> __('Presentation name', 'velocityslide'),
+                        "desc" 		=> __('Rename Presentation layout in menu', 'velocityslide'),
+                        "id" 		=> "name_layout_presentation",
+                        "std" 		=> "",
+                        "fold"		=> "name_layout_switch",
+                        "type" 		=> "text"
+                    );
+
+$of_options[] = array( 	"name" 		=> __('Service name', 'velocityslide'),
+                        "desc" 		=> __('Rename Service layout in menu', 'velocityslide'),
+                        "id" 		=> "name_layout_service",
+                        "std" 		=> "",
+                        "fold"		=> "name_layout_switch",
+                        "type" 		=> "text"
+                    );
+
+$of_options[] = array( 	"name" 		=> __('Portfolio name', 'velocityslide'),
+                        "desc" 		=> __('Rename Portfolio layout in menu', 'velocityslide'),
+                        "id" 		=> "name_layout_portfolio",
+                        "std" 		=> "",
+                        "fold"		=> "name_layout_switch",
+                        "type" 		=> "text"
+                    );
+
+$of_options[] = array( 	"name" 		=> __('Article name', 'velocityslide'),
+                        "desc" 		=> __('Rename Article layout in menu', 'velocityslide'),
+                        "id" 		=> "name_layout_article",
+                        "std" 		=> "",
+                        "fold"		=> "name_layout_switch",
+                        "type" 		=> "text"
+                    );
+
+$of_options[] = array( 	"name" 		=> __('Contact name', 'velocityslide'),
+                        "desc" 		=> __('Rename Contact layout in menu', 'velocityslide'),
+                        "id" 		=> "name_layout_contact",
+                        "std" 		=> "",
+                        "fold"		=> "name_layout_switch",
+                        "type" 		=> "text"
+                    );
+
 $of_options[] = array( 	"name" 		=> __('Background upload', 'velocityslide'),
 						"desc" 		=> __('Upload your background for homepage', 'velocityslide'),
 						"id" 		=> "bg_homepage",

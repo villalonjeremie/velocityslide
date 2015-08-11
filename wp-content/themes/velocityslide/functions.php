@@ -1,8 +1,8 @@
 <?php
-add_action('widgets_init','vs_add_sidebar');
+add_action('widgets_init','gt_add_sidebar');
 
 
-function vs_add_sidebar()
+function gt_add_sidebar()
 {
   register_sidebar(array(
     'id' => 'right_widget',
@@ -16,13 +16,18 @@ function vs_add_sidebar()
 }
 
 
-add_action('init', 'vs_add_menu');
+add_action('init', 'gt_add_menu');
 
-function vs_add_menu()
+function gt_add_menu()
 {
   register_nav_menu('main_menu', 'Main Menu');
 }
 
+add_action( 'admin_init', 'gt_remove_menus_pages');
+
+function gt_remove_menus_pages() {
+    remove_menu_page( 'nav-menus.php' );
+};
 
 /*-----------------------------------------------------------------------------------*/
 /* Add support, and configure Thumbnails (for WordPress 2.9+)
