@@ -13,9 +13,9 @@ get_header(); ?>
 		
 			<div class="container">
 			
-				<div class="sixteen columns">
+				<div class="full columns">
 					
-					<section id="post-content" class="ten columns alpha">
+					<section id="post-content" class="half-left columns">
 										
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -38,8 +38,6 @@ get_header(); ?>
 					<?php endwhile; endif; ?>
 					
 					<?php comments_template(); ?>
-					
-					<?php gt_content_nav('nav-below');?>
 						
 					</section><!-- end #post-content -->
 					

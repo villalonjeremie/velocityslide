@@ -23,11 +23,22 @@ function gt_add_menu()
   register_nav_menu('main_menu', 'Main Menu');
 }
 
-add_action( 'admin_init', 'gt_remove_menus_pages');
 
-function gt_remove_menus_pages() {
-    remove_menu_page( 'nav-menus.php' );
-};
+
+/*-----------------------------------------------------------------------------------*/
+/* Remove menu && submenu
+/*-----------------------------------------------------------------------------------*/
+add_action( 'admin_menu', 'remove_menu_pages' );
+function remove_menu_pages() {
+    remove_menu_page('edit.php?post_type=page');
+}
+
+add_action( 'admin_menu', 'adjust_the_wp_menu', 999 );
+function adjust_the_wp_menu() {
+    remove_submenu_page( 'themes.php', 'nav-menus.php' );
+    remove_submenu_page( 'themes.php', 'customize.php?return=%2Fwp-admin%2Fthemes.php%3Factivated%3Dtrue' );
+}
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Add support, and configure Thumbnails (for WordPress 2.9+)
