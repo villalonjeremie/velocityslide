@@ -4,7 +4,7 @@
 /*	Define Metabox Fields
 /*-----------------------------------------------------------------------------------*/
 
-$prefix = 'gt_';
+$prefix = 'vs_';
  
 $meta_box_portfolio = array(
 	'id' => 'gt-meta-box-portfolio',
@@ -15,21 +15,21 @@ $meta_box_portfolio = array(
 	'fields' => array(
 		array(
     	   'name' => __('Client Name', 'velocityslide'),
-    	   'desc' => __('Client who this project was completed for', 'velocityslide'),
+    	   'desc' => __('Client who this project was completed for.', 'velocityslide'),
     	   'id' => $prefix . 'client_name',
     	   'type' => 'text',
     	   'std' => ''
     	),
     	array(
     	   'name' => __('Project Date', 'velocityslide'),
-    	   'desc' => __('What was the date of the completed project', 'velocityslide'),
+    	   'desc' => __('What was the date of the completed project.', 'velocityslide'),
     	   'id' => $prefix . 'project_date',
     	   'type' => 'text',
     	   'std' => ''
     	),
     	array(
     	   'name' => __('Project URL', 'velocityslide'),
-    	   'desc' => __('What is the URL for this project', 'velocityslide'),
+    	   'desc' => __('What is the URL for this project.', 'velocityslide'),
     	   'id' => $prefix . 'project_url',
     	   'type' => 'text',
     	   'std' => ''
@@ -46,17 +46,17 @@ $meta_box_portfolio = array(
 );
 
 
-add_action('admin_menu', 'gt_add_box_portfolio');
+add_action('admin_menu', 'vs_add_box_portfolio');
 
 
 /*-----------------------------------------------------------------------------------*/
 /*	Add metabox to edit page
 /*-----------------------------------------------------------------------------------*/
  
-function gt_add_box_portfolio() {
+function vs_add_box_portfolio() {
 	global $meta_box_portfolio;
 	
-	add_meta_box($meta_box_portfolio['id'], $meta_box_portfolio['title'], 'gt_show_box_portfolio', $meta_box_portfolio['page'], $meta_box_portfolio['context'], $meta_box_portfolio['priority']);
+	add_meta_box($meta_box_portfolio['id'], $meta_box_portfolio['title'], 'vs_show_box_portfolio', $meta_box_portfolio['page'], $meta_box_portfolio['context'], $meta_box_portfolio['priority']);
 }
 
 
@@ -64,13 +64,13 @@ function gt_add_box_portfolio() {
 /*	Callback function to show fields in meta box
 /*-----------------------------------------------------------------------------------*/
 
-function gt_show_box_portfolio() {
+function vs_show_box_portfolio() {
 	global $meta_box_portfolio, $post;
 	
 	$wp_version = get_bloginfo('version');
 
 	// Use nonce for verification
-	echo '<input type="hidden" name="gt_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="vs_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
  
 	echo '<table class="form-table">';
  
@@ -137,18 +137,18 @@ function gt_show_box_portfolio() {
 	echo '</table>';
 }
  
-add_action('save_post', 'gt_save_data_portfolio');
+add_action('save_post', 'vs_save_data_portfolio');
 
 
 /*-----------------------------------------------------------------------------------*/
 /*	Save data when post is edited
 /*-----------------------------------------------------------------------------------*/
  
-function gt_save_data_portfolio($post_id) {
+function vs_save_data_portfolio($post_id) {
 	global $meta_box_portfolio;
  
 	// verify nonce
-	if ( !isset($_POST['gt_meta_box_nonce']) || !wp_verify_nonce($_POST['gt_meta_box_nonce'], basename(__FILE__))) {
+	if ( !isset($_POST['vs_meta_box_nonce']) || !wp_verify_nonce($_POST['vs_meta_box_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
  
@@ -179,7 +179,7 @@ function gt_save_data_portfolio($post_id) {
 }
 
 // Save Image IDs
-function gt_save_images() {
+function vs_save_images() {
 
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
 		return;
@@ -190,7 +190,7 @@ function gt_save_images() {
 	if ( !current_user_can( 'edit_posts' ) ) return;
  
 	$ids = strip_tags(rtrim($_POST['ids'], ','));
-	update_post_meta($_POST['post_id'], 'gt_image_ids', $ids);
+	update_post_meta($_POST['post_id'], 'vs_image_ids', $ids);
 
 	// update thumbs
 	$thumbs = explode(',', $ids);
@@ -203,13 +203,13 @@ function gt_save_images() {
 
 	die();
 }
-add_action('wp_ajax_gt_save_images', 'gt_save_images');
+add_action('wp_ajax_vs_save_images', 'vs_save_images');
 
 /*-----------------------------------------------------------------------------------*/
 /*	Queue Scripts
 /*-----------------------------------------------------------------------------------*/
 
-function gt_admin_scripts_portfolio() {
+function vs_admin_scripts_portfolio() {
 	global $post;
 	$wp_version = get_bloginfo('version');
 
@@ -225,11 +225,11 @@ function gt_admin_scripts_portfolio() {
 	}
 
 	if( isset($post) ) {
-		wp_localize_script( 'jquery', 'gt_ajax', array(
+		wp_localize_script( 'jquery', 'vs_ajax', array(
 		    'post_id' => $post->ID,
 		    'nonce' => wp_create_nonce( 'gt-ajax' )
 		) );
 	}
 
 }
-add_action('admin_enqueue_scripts', 'gt_admin_scripts_portfolio');
+add_action('admin_enqueue_scripts', 'vs_admin_scripts_portfolio');

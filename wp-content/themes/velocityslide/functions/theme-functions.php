@@ -4,7 +4,7 @@
 /* Remove Line Breaks and P tags in Shortcodes
 /*-----------------------------------------------------------------------------------*/
 
-function gt_clean_shortcodes($content){
+function vs_clean_shortcodes($content){
     $array = array (
         '<p>[' => '[',
         ']</p>' => ']',
@@ -13,13 +13,13 @@ function gt_clean_shortcodes($content){
     $content = strtr($content, $array);
     return $content;
 }
-add_filter('the_content', 'gt_clean_shortcodes');
+add_filter('the_content', 'vs_clean_shortcodes');
 
 /*-----------------------------------------------------------------------------------*/
 /* Custom function for the Comments
 /*-----------------------------------------------------------------------------------*/
 
-function gt_comments($comment, $args, $depth) {
+function vs_comments($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
     ?>
     <li class="comment">
@@ -53,9 +53,9 @@ function gt_comments($comment, $args, $depth) {
 /* Custom function for the Comment Form
 /*-----------------------------------------------------------------------------------*/
 
-add_filter('comment_form_defaults', 'gt_comment_form');
+add_filter('comment_form_defaults', 'vs_comment_form');
 
-function gt_comment_form($form_options) {
+function vs_comment_form($form_options) {
 
     // Fields Array
     $fields = array(
@@ -120,11 +120,11 @@ function gt_comment_form($form_options) {
 /* Custom Navigation for Single Posts
 /*-----------------------------------------------------------------------------------*/
 
-if ( ! function_exists( 'gt_content_nav' ) ):
+if ( ! function_exists( 'vs_content_nav' ) ):
     /**
      * Display navigation to next/previous pages when applicable
      */
-    function gt_content_nav( $nav_id ) {
+    function vs_content_nav( $nav_id ) {
         global $wp_query;
 
         ?>
@@ -239,14 +239,14 @@ add_filter('get_the_excerpt', 'custom_trim_excerpt');
 /* Custom Search Filter (Returns only Posts. Theme Specific)
 /*-----------------------------------------------------------------------------------*/
 
-function gt_search_filter($query) {
+function vs_search_filter($query) {
     if ($query->is_search) {
         $query->set('post_type', 'post');
     }
     return $query;
 }
 
-add_filter('pre_get_posts','gt_search_filter');
+add_filter('pre_get_posts','vs_search_filter');
 
 /*-----------------------------------------------------------------------------------*/
 /* Font Awesome Shortcodes
@@ -279,15 +279,15 @@ new FontAwesome();
 /* Output Image
 /*-----------------------------------------------------------------------------------*/
 
-if ( !function_exists( 'gt_image' ) ) {
-    function gt_image($postid, $imagesize) {
+if ( !function_exists( 'vs_image' ) ) {
+    function vs_image($postid, $imagesize) {
         // get the featured image for the post
         $thumbid = 0;
         if( has_post_thumbnail($postid) ) {
             $thumbid = get_post_thumbnail_id($postid);
         }
 
-        $image_ids_raw = get_post_meta($postid, 'gt_image_ids', true);
+        $image_ids_raw = get_post_meta($postid, 'vs_image_ids', true);
 
         if( $image_ids_raw ) {
             // Using WP3.5; use post__in orderby option
@@ -337,7 +337,7 @@ if ( !function_exists( 'gt_image' ) ) {
 /* Output Slideshow
 /*-----------------------------------------------------------------------------------*/
 
-function gt_gallery($postid, $imagesize) { ?>
+function vs_gallery($postid, $imagesize) { ?>
     <script type="text/javascript">
         jQuery(document).ready(function(){
             jQuery(".slider").flexslider({
@@ -356,7 +356,7 @@ function gt_gallery($postid, $imagesize) { ?>
     }
     echo "<!-- BEGIN #slider-$postid -->\n<div class='flexslider' data-loader='" . get_template_directory_uri() . "/assets/img/$loader'>";
 
-    $image_ids_raw = get_post_meta($postid, 'gt_image_ids', true);
+    $image_ids_raw = get_post_meta($postid, 'vs_image_ids', true);
 
     if( $image_ids_raw ) {
         // Using WP3.5; use post__in orderby option

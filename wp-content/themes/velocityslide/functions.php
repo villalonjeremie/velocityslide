@@ -1,8 +1,8 @@
 <?php
-add_action('widgets_init','gt_add_sidebar');
+add_action('widgets_init','vs_add_sidebar');
 
 
-function gt_add_sidebar()
+function vs_add_sidebar()
 {
   register_sidebar(array(
     'id' => 'right_widget',
@@ -16,9 +16,9 @@ function gt_add_sidebar()
 }
 
 
-add_action('init', 'gt_add_menu');
+add_action('init', 'vs_add_menu');
 
-function gt_add_menu()
+function vs_add_menu()
 {
   register_nav_menu('main_menu', 'Main Menu');
 }
@@ -54,19 +54,12 @@ if ( function_exists('add_theme_support') ) {
     add_image_size('archive-post', 980, 523, true); // Large Post Thumbnail (appears on archive pages)
 }
 
-
-/*-----------------------------------------------------------------------------------*/
-/* Declaring the theme language domain (for language translations)
-/*-----------------------------------------------------------------------------------*/
-
-//load_theme_textdomain('velocityslide', get_template_directory().'/lang');
-
 /*-----------------------------------------------------------------------------------*/
 /* Register & Enqueue JS and CSS
 /*-----------------------------------------------------------------------------------*/
 
 
-function gt_queue_assets()
+function vs_queue_assets()
 {
     $data = get_option("velocityslide_options");
     // Enqueue Scripts (Global)
@@ -86,7 +79,7 @@ function gt_queue_assets()
     wp_enqueue_script('jcarousel-vision-init.js', get_template_directory_uri() .'/assets/js/carousel/jcarousel-vision-init.js', false);
 }
 
-add_action("init", "gt_queue_assets");
+add_action("init", "vs_queue_assets");
 
 /*-----------------------------------------------------------------------------------*/
 /* Declaring the theme language domain (for language translations)

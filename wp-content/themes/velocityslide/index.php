@@ -189,11 +189,11 @@ get_header();?>
 
                                                 <?php if ($loop->have_posts()) : ?>
                                                     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-                                                        <?php $side = do_shortcode(get_post_meta($post->ID, 'gt_service_side', $single = true)); ?>
+                                                        <?php $side = do_shortcode(get_post_meta($post->ID, 'vs_service_side', $single = true)); ?>
                                                         <?php if ($side=='Left') : ?>
 
                                                             <div class="service one-third column">
-                                                                <?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_icon', $single = true)); ?>
+                                                                <?php echo do_shortcode(get_post_meta($post->ID, 'vs_service_icon', $single = true)); ?>
 
                                                                 <h2>
                                                                     <?php the_title(); ?>
@@ -203,8 +203,8 @@ get_header();?>
                                                                     <?php the_content(); ?>
                                                                 </p>
 
-                                                                <?php if (do_shortcode(get_post_meta($post->ID, 'gt_service_url', $single = true))) : ?>
-                                                                    <a class="read-more-btn" href="<?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_url', $single = true)); ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
+                                                                <?php if (do_shortcode(get_post_meta($post->ID, 'vs_service_url', $single = true))) : ?>
+                                                                    <a class="read-more-btn" href="<?php echo do_shortcode(get_post_meta($post->ID, 'vs_service_url', $single = true)); ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
                                                                 <?php endif; ?>
                                                             </div><!-- end .service -->
 
@@ -241,11 +241,11 @@ get_header();?>
 
                                                 <?php if ($loop->have_posts()) : ?>
                                                     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-                                                    <?php $side = do_shortcode(get_post_meta($post->ID, 'gt_service_side', $single = true)); ?>
+                                                    <?php $side = do_shortcode(get_post_meta($post->ID, 'vs_service_side', $single = true)); ?>
                                                         <?php if ($side=='Right'): ?>
 
                                                             <div class="service one-third column">
-                                                                <?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_icon', $single = true)); ?>
+                                                                <?php echo do_shortcode(get_post_meta($post->ID, 'vs_service_icon', $single = true)); ?>
 
                                                                 <h2>
                                                                     <?php the_title(); ?>
@@ -255,8 +255,8 @@ get_header();?>
                                                                     <?php the_content(); ?>
                                                                 </p>
 
-                                                                <?php if (do_shortcode(get_post_meta($post->ID, 'gt_service_url', $single = true))): ?>
-                                                                    <a class="read-more-btn" href="<?php echo do_shortcode(get_post_meta($post->ID, 'gt_service_url', $single = true)); ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
+                                                                <?php if (do_shortcode(get_post_meta($post->ID, 'vs_service_url', $single = true))): ?>
+                                                                    <a class="read-more-btn" href="<?php echo do_shortcode(get_post_meta($post->ID, 'vs_service_url', $single = true)); ?>"><?php _e('Read more', 'velocityslide'); ?> <span>&rarr;</span></a>
                                                                 <?php endif; ?>
 
                                                             </div><!-- end .service -->
@@ -386,7 +386,7 @@ get_header();?>
                                             <?php if($loop->have_posts()) : ?>
                                                 <?php while ($loop->have_posts()) : ?>
                                                     <?php $loop->the_post(); ?>
-                                                    <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'gt_portfolio_side', $single = true)); ?>
+                                                    <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'vs_portfolio_side', $single = true)); ?>
                                                     <?php if($side=='Left'): ?>
                                                     <?php
                                                     $terms =  get_the_terms( $loop->post->ID, 'project-type' );
@@ -454,7 +454,7 @@ get_header();?>
 
                                             <?php if($loop->have_posts()) : ?>
                                                 <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-                                                    <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'gt_portfolio_side', $single = true)); ?>
+                                                    <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'vs_portfolio_side', $single = true)); ?>
                                                     <?php if($side=='Right'): ?>
                                                     <?php
                                                     $terms =  get_the_terms( $loop->post->ID, 'project-type' );
@@ -519,7 +519,7 @@ get_header();?>
                                                 <?php if($loop->have_posts()) : ?>
                                                     <?php while ($loop->have_posts()) : ?>
                                                         <?php $loop->the_post(); ?>
-                                                        <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'gt_article_side', $single = true)); ?>
+                                                        <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'vs_article_side', $single = true)); ?>
                                                         <?php if($side=='Left'): ?>
 
                                                             <li class="item-article">
@@ -588,7 +588,7 @@ get_header();?>
                                                 <?php if($loop->have_posts()) : ?>
                                                     <?php while ($loop->have_posts()) : ?>
                                                         <?php $loop->the_post(); ?>
-                                                        <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'gt_article_side', $single = true)); ?>
+                                                        <?php $side = do_shortcode(get_post_meta($loop->post->ID, 'vs_article_side', $single = true)); ?>
                                                         <?php if($side=='Right'): ?>
 
                                                             <li class="item-article">

@@ -2,7 +2,7 @@
 
 // Do not delete these lines
 if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-    die ('Please do not load this page directly. Thanks!');
+    die (__('Please do not load this page directly. Thanks!', 'velocityslide' ));
 
 if ( post_password_required() ) { ?>
     <p class="nocomments"><?php echo __( 'This post is password protected. Enter the password to view comments.', 'velocityslide' ); ?></p>
@@ -23,7 +23,7 @@ if ( post_password_required() ) { ?>
     </div>
 
     <ul class="comments-list">
-        <?php wp_list_comments('callback=gt_comments'); ?>
+        <?php wp_list_comments('callback=vs_comments'); ?>
     </ul>
 
 <?php else : // this is displayed if there are no comments so far ?>

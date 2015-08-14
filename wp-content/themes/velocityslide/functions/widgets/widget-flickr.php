@@ -7,23 +7,23 @@ Version: 1.0
 Author URI: http://guuhuu.com/
 */
 
-add_action( 'widgets_init', 'gt_flickr_widget' );
+add_action( 'widgets_init', 'vs_flickr_widget' );
 
-function gt_flickr_widget() {
-	register_widget( 'gt_flickr_widget' );
+function vs_flickr_widget() {
+	register_widget( 'vs_flickr_widget' );
 }
 
-class gt_flickr_widget extends WP_Widget {
+class vs_flickr_widget extends WP_Widget {
 		
-	function gt_flickr_widget() {
-		$widget_style = array('classname' => 'gt_flickr_widget',
+	function vs_flickr_widget() {
+		$widget_style = array('classname' => 'vs_flickr_widget',
 							  'description' => __('Display your Flickr images', 'golden'));
 							  
 		$widget_define = array('show_id' => 'single_flickr',
 							   'get_tips' => 'true',
 							   'get_title' => 'true');
 							   
-		$control_styles = array('id_base' => 'gt_flickr_widget');
+		$control_styles = array('id_base' => 'vs_flickr_widget');
 								
 		$widget_change = array('change1' => 'delay',
 							   'change2' => 'effect',
@@ -31,7 +31,7 @@ class gt_flickr_widget extends WP_Widget {
 							   'change4' => 100,
 							   'change5' => 0);
 							   
-		$this->WP_Widget( 'gt_flickr_widget', __('Flickr', 'golden'), $widget_style, $control_styles );	
+		$this->WP_Widget( 'vs_flickr_widget', __('Flickr', 'golden'), $widget_style, $control_styles );
 	}
 		
 	function widget( $args, $cur_instance ) {

@@ -4,7 +4,7 @@
 /*	Define Metabox Fields
 /*-----------------------------------------------------------------------------------*/
 
-$prefix = 'gt_';
+$prefix = 'vs_';
  
 $meta_box_service = array(
 	'id' => 'service_details',
@@ -38,19 +38,19 @@ $meta_box_service = array(
     )
 );
 
-add_action('admin_menu', 'gt_add_box_service');
+add_action('admin_menu', 'vs_add_box_service');
 
 
 /*-----------------------------------------------------------------------------------*/
 /*	Callback function to show fields in meta box
 /*-----------------------------------------------------------------------------------*/
 
-function gt_show_box_service()
+function vs_show_box_service()
 {
     global $meta_box_service, $post;
 
     // Use nonce for verification
-    echo '<input type="hidden" name="gt_add_box_service_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+    echo '<input type="hidden" name="vs_add_box_service_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 
     echo '<table class="form-table">';
 
@@ -97,24 +97,24 @@ function gt_show_box_service()
     }
     echo '</table>';
 }
-add_action('save_post', 'gt_save_data_service');
+add_action('save_post', 'vs_save_data_service');
 
 /*-----------------------------------------------------------------------------------*/
 /*	Add metabox to edit page
 /*-----------------------------------------------------------------------------------*/
  
-function gt_add_box_service() {
+function vs_add_box_service() {
 	global $meta_box_service;
-	add_meta_box($meta_box_service['id'], $meta_box_service['title'], 'gt_show_box_service', $meta_box_service['page'], $meta_box_service['context'], $meta_box_service['priority']);
+	add_meta_box($meta_box_service['id'], $meta_box_service['title'], 'vs_show_box_service', $meta_box_service['page'], $meta_box_service['context'], $meta_box_service['priority']);
 }
 
 // Save data from meta box
-function gt_save_data_service($post_id)
+function vs_save_data_service($post_id)
 {
     global $meta_box_service;
 
     // verify nonce
-    if (!isset($_POST['gt_add_box_service_nonce']) || !wp_verify_nonce($_POST['gt_add_box_service_nonce'], basename(__FILE__))) {
+    if (!isset($_POST['vs_add_box_service_nonce']) || !wp_verify_nonce($_POST['vs_add_box_service_nonce'], basename(__FILE__))) {
         return $post_id;
 
     }

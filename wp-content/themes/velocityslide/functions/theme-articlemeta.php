@@ -4,7 +4,7 @@
 /*	Define Metabox Fields
 /*-----------------------------------------------------------------------------------*/
 
-$prefix = 'gt_';
+$prefix = 'vs_';
 
 $meta_box_article = array(
     'id' => 'gt-meta-box-article',
@@ -25,17 +25,17 @@ $meta_box_article = array(
 );
 
 
-add_action('admin_menu', 'gt_add_box_article');
+add_action('admin_menu', 'vs_add_box_article');
 
 
 /*-----------------------------------------------------------------------------------*/
 /*	Add metabox to edit page
 /*-----------------------------------------------------------------------------------*/
 
-function gt_add_box_article() {
+function vs_add_box_article() {
     global $meta_box_article;
 
-    add_meta_box($meta_box_article['id'], $meta_box_article['title'], 'gt_show_box_article', $meta_box_article['page'], $meta_box_article['context'], $meta_box_article['priority']);
+    add_meta_box($meta_box_article['id'], $meta_box_article['title'], 'vs_show_box_article', $meta_box_article['page'], $meta_box_article['context'], $meta_box_article['priority']);
 }
 
 
@@ -43,13 +43,13 @@ function gt_add_box_article() {
 /*	Callback function to show fields in meta box
 /*-----------------------------------------------------------------------------------*/
 
-function gt_show_box_article() {
+function vs_show_box_article() {
     global $meta_box_article, $post;
 
     $wp_version = get_bloginfo('version');
 
     // Use nonce for verification
-    echo '<input type="hidden" name="gt_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+    echo '<input type="hidden" name="vs_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 
     echo '<table class="form-table">';
 
@@ -116,18 +116,18 @@ function gt_show_box_article() {
     echo '</table>';
 }
 
-add_action('save_post', 'gt_save_data_article');
+add_action('save_post', 'vs_save_data_article');
 
 
 /*-----------------------------------------------------------------------------------*/
 /*	Save data when post is edited
 /*-----------------------------------------------------------------------------------*/
 
-function gt_save_data_article($post_id) {
+function vs_save_data_article($post_id) {
     global $meta_box_article;
 
     // verify nonce
-    if ( !isset($_POST['gt_meta_box_nonce']) || !wp_verify_nonce($_POST['gt_meta_box_nonce'], basename(__FILE__))) {
+    if ( !isset($_POST['vs_meta_box_nonce']) || !wp_verify_nonce($_POST['vs_meta_box_nonce'], basename(__FILE__))) {
         return $post_id;
     }
 
@@ -158,7 +158,7 @@ function gt_save_data_article($post_id) {
 }
 
 // Save Image IDs
-function gt_save_images_article() {
+function vs_save_images_article() {
 
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
         return;
@@ -169,7 +169,7 @@ function gt_save_images_article() {
     if ( !current_user_can( 'edit_posts' ) ) return;
 
     $ids = strip_tags(rtrim($_POST['ids'], ','));
-    update_post_meta($_POST['post_id'], 'gt_image_ids', $ids);
+    update_post_meta($_POST['post_id'], 'vs_image_ids', $ids);
 
     // update thumbs
     $thumbs = explode(',', $ids);
@@ -182,13 +182,13 @@ function gt_save_images_article() {
 
     die();
 }
-add_action('wp_ajax_gt_save_images', 'gt_save_images_article');
+add_action('wp_ajax_vs_save_images', 'vs_save_images_article');
 
 /*-----------------------------------------------------------------------------------*/
 /*	Queue Scripts
 /*-----------------------------------------------------------------------------------*/
 
-function gt_admin_scripts_article() {
+function vs_admin_scripts_article() {
     global $post;
     $wp_version = get_bloginfo('version');
 
@@ -204,11 +204,11 @@ function gt_admin_scripts_article() {
     }
 
     if( isset($post) ) {
-        wp_localize_script( 'jquery', 'gt_ajax', array(
+        wp_localize_script( 'jquery', 'vs_ajax', array(
             'post_id' => $post->ID,
-            'nonce' => wp_create_nonce( 'gt-ajax' )
+            'nonce' => wp_create_nonce( 'vs-ajax' )
         ) );
     }
 
 }
-add_action('admin_enqueue_scripts', 'gt_admin_scripts_article');
+add_action('admin_enqueue_scripts', 'vs_admin_scripts_article');
