@@ -1,4 +1,4 @@
-/* jQuery Sorter (Enables Sorting of Portfolio, Service, Slider, Team and Quote items)
+/* jQuery Sorter (Enables Sorting of Portfolio, Service items)
 -------------------------------------------------------------------------------------------*/
 
 jQuery(document).ready(function ($) {

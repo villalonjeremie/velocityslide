@@ -6,10 +6,10 @@ var $slider = $('.slider');
 var containerClass = 'container-inner';
 var windowClass = 'window';
 var hidewindowClass = 'hide-window';
-var $powerslide = $('.powerslide');
+var $powerslide = $('.velocityslide');
 var $sliderWrapper = $('.slider-wrapper');
 var $slider = $('.slider');
-var $slide = $('.slide');
+var $slide = $('.page');
 var totalSlidesNbr = $slide.length;
 var slideHeight = $('body').height();
 var slideStartIndex = 0;
@@ -65,7 +65,7 @@ function setSlider(){
             setBreadcrumb();
             setEvents();
             setNavigation();
-            $('.slide--0').css({'z-index': 2});
+            $('.page-homepage').css({'z-index': 2});
         }
 }
 
@@ -131,7 +131,6 @@ function finishSliding(slideCurrentIndex) {
             updateBreadcrumb(slideCurrentIndex);
 }
 
-
 function goToSlide(slideIndex) {
             if( (slideIndex !== slideCurrentIndex) && (slideIndex >= 0) && (slideIndex < totalSlidesNbr) ) {
                 
@@ -164,11 +163,11 @@ function goToSlide(slideIndex) {
                         
                         $($slideAnimCurrent).css({'top': '0'});
 
-                        $('.slide--split__left', $slideAnimCurrent).stop()
+                        $('.half-page-left', $slideAnimCurrent).stop()
                                             .css({'top' : slideAnimStartPos + 'px'})
                                             .velocity({'top' : slideAnimEndPos + 'px'}, currentSpeed, optionsScrolling.easing );
 
-                        $('.slide--split__right', $slideAnimCurrent).stop()
+                        $('.half-page-right', $slideAnimCurrent).stop()
                                             .css({'top' : -slideAnimStartPos + 'px'})
                                             .velocity({'top' : -slideAnimEndPos + 'px'}, currentSpeed, optionsScrolling.easing, function() {
                                                 // si c'est la dernière slide
@@ -195,7 +194,6 @@ function goToSlide(slideIndex) {
             }
 
 }
-
 
 function  setNavigation() {
 
@@ -267,7 +265,6 @@ function  setNavigation() {
         goToSlide((slideCurrentIndex - 1));
     });
 }
-
 
 function Application() { 
       setPage();

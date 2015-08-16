@@ -5,25 +5,19 @@
  *
  */
 get_header();?>
-<div class="powerslide slider-wrapper">
+<div class="velocityslide slider-wrapper">
 
     <div class="slider">
 
-        <div class="slide slide--0" data-slideTitle="<?php echo (($data["name_layout_homepage"]) ? $data["name_layout_homepage"] : 'Homepage'); ?>">
+        <div class="page page-homepage" data-slideTitle="<?php echo (($data["name_layout_homepage"]) ? $data["name_layout_homepage"] : 'Homepage'); ?>">
 
-            <div class="slide-content">
+            <div class="page-content">
+                
+                <div class="page-right">
 
-                <h2 class="logo">
-                    <a href="#" class="js-external-link">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-hr.png" alt="Helena Rubinstein">
-                    </a>
-                </h2>
+                    <div class="panel">
 
-                <div class="slide__content__right">
-
-                    <div class="s-table">
-
-                        <div class="s-table-cell">
+                        <div class="panel-container">
 
                             <?php if (isset($data["title_homepage"])) : ?>
                                 <h1>
@@ -64,21 +58,21 @@ get_header();?>
             switch($key) {
                 case 'presentation': ?>
 
-                <div class="slide slide--split slide--1 effect" data-slideTitle="<?php echo (($data["name_layout_presentation"]) ? $data["name_layout_presentation"] : 'Presentation'); ?>" data-slideTransition="split">
+                <div class="page half-page page-presentation effect" data-slideTitle="<?php echo (($data["name_layout_presentation"]) ? $data["name_layout_presentation"] : 'Presentation'); ?>" data-slideTransition="split">
 
-                    <div class="slide--split__left">
+                    <div class="half-page-left">
 
-                        <div class="s-table">
+                        <div class="panel">
 
-                            <div class="s-table-cell">
+                            <div class="panel-container">
 
                                 <div class="box">
 
                                     <div class="container">
 
-                                        <div class="s-table">
+                                        <div class="panel">
 
-                                            <div class="s-table-cell">
+                                            <div class="panel-container">
 
                                                 <?php if (isset($data["left_content_presentation"])) : ?>
                                                     <?php if (isset($data["left_title_presentation"])) : ?>
@@ -113,21 +107,21 @@ get_header();?>
 
                         </div>
 
-                    </div><!-- end .slide--split__left -->
+                    </div><!-- end .half-page-left -->
 
-                    <div class="slide--split__right">
+                    <div class="half-page-right">
 
-                        <div class="s-table">
+                        <div class="panel">
 
-                            <div class="s-table-cell">
+                            <div class="panel-container">
 
                                 <div class="box">
 
                                     <div class="container">
 
-                                        <div class="s-table">
+                                        <div class="panel">
 
-                                            <div class="s-table-cell">
+                                            <div class="panel-container">
 
                                                 <?php if (isset($data["right_content_presentation"])) : ?>
                                                     <?php if (isset($data["right_title_presentation"])) : ?>
@@ -161,31 +155,31 @@ get_header();?>
 
                         </div>
 
-                    </div><!-- end .slide--split__right -->
+                    </div><!-- end .half-page-right -->
 
-                </div><!-- end .slide--1 -->
+                </div><!-- end .page-presentation -->
 
                 <?php break;
                 case 'service': ?>
 
-                <div class="slide slide--split slide--2" data-slideTitle="<?php echo (($data["name_layout_service"]) ? $data["name_layout_service"] : 'Services'); ?>" data-slideTransition="split">
+                <div class="page half-page page-service" data-slideTitle="<?php echo (($data["name_layout_service"]) ? $data["name_layout_service"] : 'Services'); ?>" data-slideTransition="split">
                     <?php global $data;
                     $args = array('post_type' => 'service', 'orderby' => 'menu_order', 'order' => 'ASC','posts_per_page' => -1);
                     $loop = new WP_Query($args); ?>
 
-                    <div class="slide--split__left">
+                    <div class="half-page-left">
 
-                        <div class="s-table">
+                        <div class="panel">
 
-                            <div class="s-table-cell">
+                            <div class="panel-container">
 
                                 <div class="box">
 
                                     <div class="container">
 
-                                        <div class="s-table">
+                                        <div class="panel">
 
-                                            <div class="s-table-cell">
+                                            <div class="panel-container">
 
                                                 <?php if ($loop->have_posts()) : ?>
                                                     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
@@ -224,20 +218,20 @@ get_header();?>
 
                         </div>
 
-                    </div><!-- end .slide--split__left-->
-                    <div class="slide--split__right">
+                    </div><!-- end .half-page-left-->
+                    <div class="half-page-right">
 
-                        <div class="s-table">
+                        <div class="panel">
 
-                            <div class="s-table-cell">
+                            <div class="panel-container">
 
                                <div class="box">
 
                                     <div class="container">
 
-                                        <div class="s-table">
+                                        <div class="panel">
 
-                                            <div class="s-table-cell">
+                                            <div class="panel-container">
 
                                                 <?php if ($loop->have_posts()) : ?>
                                                     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
@@ -277,20 +271,20 @@ get_header();?>
 
                         </div>
 
-                    </div><!-- end .slide--split__right-->
+                    </div><!-- end .half-page-right-->
 
-                </div><!-- end .slide--2 -->
+                </div><!-- end .page-service -->
 
                 <?php break;
                 case 'portfolio':?>
 
-                <div class="slide slide--split slide--3" data-slideTitle="<?php echo (($data["name_layout_portfolio"]) ? $data["name_layout_portfolio"] : 'Portfolios'); ?>" data-slideTransition="split">
+                <div class="page half-page page-portfolio" data-slideTitle="<?php echo (($data["name_layout_portfolio"]) ? $data["name_layout_portfolio"] : 'Portfolios'); ?>" data-slideTransition="split">
 
-                    <div class="slide--split__left">
+                    <div class="half-page-left">
 
-                        <div class="s-table">
+                        <div class="panel">
 
-                            <div class="s-table-cell">
+                            <div class="panel-container">
 
                                 <?php if ($data['left_content_portfolio']) : ?>
 
@@ -308,7 +302,7 @@ get_header();?>
                                 <?php endif; ?>
 
                                 <?php if ($data['side_left_popup_switch']): ?>
-                                    <a href="#popin-slide3-1" class="window-button js-window-open" title="<?php echo $data['left_text_button_portfolio']; ?>">
+                                    <a href="#popin-page-portfolio-1" class="window-button js-window-open" title="<?php echo $data['left_text_button_portfolio']; ?>">
                                         <?php echo $data['left_text_button_portfolio']; ?>
                                     </a>
                                 <?php endif; ?>
@@ -317,13 +311,13 @@ get_header();?>
 
                         </div>
 
-                    </div><!-- end .slide--split__left -->
+                    </div><!-- end .half-page-left -->
 
-                    <div class="slide--split__right">
+                    <div class="half-page-right">
 
-                        <div class="s-table">
+                        <div class="panel">
 
-                            <div class="s-table-cell">
+                            <div class="panel-container">
 
                                 <?php if ($data['right_content_portfolio']) : ?>
 
@@ -341,7 +335,7 @@ get_header();?>
                                 <?php endif; ?>
 
                                 <?php if ($data['side_right_popup_switch']) : ?>
-                                    <a href="#popin-slide3-2" class="window-button js-window-open" title="<?php echo $data['right_text_button_portfolio']; ?>">
+                                    <a href="#popin-page-portfolio-2" class="window-button js-window-open" title="<?php echo $data['right_text_button_portfolio']; ?>">
                                         <?php echo $data['right_text_button_portfolio']; ?>
                                     </a>
                                 <?php endif; ?>
@@ -350,9 +344,9 @@ get_header();?>
 
                         </div>
 
-                    </div><!-- end .slide--split__right -->
+                    </div><!-- end .half-page-right -->
 
-                    <div class="window hide-window popin-slide3-1" id="popin-slide3-1">
+                    <div class="window hide-window popin-page-portfolio-1" id="popin-page-portfolio-1">
                         <?php global $data;
                         $args = array('post_type' => 'portfolio', 'orderby' => 'menu_order', 'order' => 'ASC','posts_per_page' => -1);
                         $loop = new WP_Query($args); ?>
@@ -422,9 +416,9 @@ get_header();?>
 
                         </div>
 
-                    </div><!-- end .popin-slide3-1 -->
+                    </div><!-- end .popin-page-portfolio-1 -->
 
-                    <div class="window hide-window popin-slide3-2" id="popin-slide3-2">
+                    <div class="window hide-window popin-page-portfolio-2" id="popin-page-portfolio-2">
 
                         <div class="window-close popin-close-overay"></div>
 
@@ -490,23 +484,23 @@ get_header();?>
 
                         </div>
 
-                    </div><!-- end .popin-slide3-2 -->
+                    </div><!-- end .popin-page-portfolio-2 -->
 
                 </div><!-- end .slide3-->
 
                 <?php break;
                 case 'article':?>
 
-                <div class="slide slide--split slide--4" data-slideTitle="<?php echo (($data["name_layout_article"]) ? $data["name_layout_article"] : 'Articles'); ?>" data-slideTransition="split">
+                <div class="page half-page page-article" data-slideTitle="<?php echo (($data["name_layout_article"]) ? $data["name_layout_article"] : 'Articles'); ?>" data-slideTransition="split">
                     <?php
                     global $data; $args = array('post_type' => 'post', 'posts_per_page' => -1);
                     $loop = new WP_Query($args); ?>
 
-                    <div class="slide--split__left">
+                    <div class="half-page-left">
 
-                        <div class="s-table">
+                        <div class="panel">
 
-                            <div class="s-table-cell">
+                            <div class="panel-container">
 
                                 <?php if ($data['left_post_switch']) : ?>
 
@@ -569,13 +563,13 @@ get_header();?>
 
                         </div>
 
-                    </div><!-- end .slide--split__left -->
+                    </div><!-- end .half-page-left -->
 
-                    <div class="slide--split__right">
+                    <div class="half-page-right">
 
-                        <div class="s-table">
+                        <div class="panel">
 
-                            <div class="s-table-cell">
+                            <div class="panel-container">
 
                                 <?php if ($data['right_post_switch']) : ?>
 
@@ -638,18 +632,18 @@ get_header();?>
 
                         </div>
 
-                    </div><!-- end .slide--split__right -->
+                    </div><!-- end .half-page-right -->
 
-                </div><!-- end .slide--4 -->
+                </div><!-- end .page-article -->
 
             <?php break; }
             }?>
 
         <?php endif; ?>
 
-        <div class="slide slide--5 last-slide" data-slideTitle="<?php echo (($data["name_layout_contact"]) ? $data["name_layout_contact"] : 'Contact'); ?>">
+        <div class="page page-contact last-slide" data-slideTitle="<?php echo (($data["name_layout_contact"]) ? $data["name_layout_contact"] : 'Contact'); ?>">
 
-            <div class="slide-content">
+            <div class="page-content">
 
                 <div class="row">
 
@@ -897,12 +891,12 @@ get_header();?>
 
                 </div><!-- end .row -->
 
-            </div><!-- end .slide-content -->
+            </div><!-- end .page-content -->
 
         </div><!-- end .last-slide -->
 
     </div><!-- end .slider-->
 
-</div><!-- end .powerslide -->
+</div><!-- end .velocityslide -->
 <?php get_footer(); ?>
 

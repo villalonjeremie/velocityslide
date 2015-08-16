@@ -178,33 +178,6 @@ function vs_save_data_portfolio($post_id) {
 	}
 }
 
-// Save Image IDs
-function vs_save_images() {
-
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
-		return;
-	
-	if ( !isset($_POST['ids']) || !isset($_POST['nonce']) || !wp_verify_nonce( $_POST['nonce'], 'gt-ajax' ) )
-		return;
-	
-	if ( !current_user_can( 'edit_posts' ) ) return;
- 
-	$ids = strip_tags(rtrim($_POST['ids'], ','));
-	update_post_meta($_POST['post_id'], 'vs_image_ids', $ids);
-
-	// update thumbs
-	$thumbs = explode(',', $ids);
-	$thumbs_output = '';
-	foreach( $thumbs as $thumb ) {
-		$thumbs_output .= '<li>' . wp_get_attachment_image( $thumb, array(32,32) ) . '</li>';
-	}
-
-	echo $thumbs_output;
-
-	die();
-}
-add_action('wp_ajax_vs_save_images', 'vs_save_images');
-
 /*-----------------------------------------------------------------------------------*/
 /*	Queue Scripts
 /*-----------------------------------------------------------------------------------*/
@@ -227,7 +200,7 @@ function vs_admin_scripts_portfolio() {
 	if( isset($post) ) {
 		wp_localize_script( 'jquery', 'vs_ajax', array(
 		    'post_id' => $post->ID,
-		    'nonce' => wp_create_nonce( 'gt-ajax' )
+		    'nonce' => wp_create_nonce( 'vs-ajax' )
 		) );
 	}
 

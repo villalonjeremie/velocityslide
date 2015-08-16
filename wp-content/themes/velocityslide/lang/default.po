@@ -112,6 +112,22 @@ msgstr ""
 msgid "Homepage Settings"
 msgstr ""
 
+#: admin/functions/functions.options.php:104
+msgid "Custom Logo"
+msgstr ""
+
+#: admin/functions/functions.options.php:105
+msgid "Upload your own logo to use on the site."
+msgstr ""
+
+#: admin/functions/functions.options.php:111
+msgid "Text Logo"
+msgstr ""
+
+#: admin/functions/functions.options.php:112
+msgid "If you do not have a logo you can choose to use a plain text logo instead."
+msgstr ""
+
 #: admin/functions/functions.options.php:110
 msgid "Hello There!"
 msgstr ""
@@ -924,9 +940,6 @@ msgstr ""
 msgid "Choose the side article you wish to display."
 msgstr ""
 
-
-
-
 #: functions/custom-post-types/portfolio-type.php:12
 msgid "Portfolio"
 msgstr ""
@@ -962,9 +975,7 @@ msgid "No items found"
 msgstr ""
 
 #: functions/custom-post-types/portfolio-type.php:20
-#: functions/custom-post-types/quotes-type.php:20
 #: functions/custom-post-types/services-type.php:20
-#: functions/custom-post-types/team-type.php:20
 msgid "No items found in Trash"
 msgstr ""
 
@@ -982,90 +993,10 @@ msgid ""
 "below."
 msgstr ""
 
-#: functions/custom-post-types/portfolio-type.php:50
-msgid ""
-"Enter your portfolio item overview into the Visual or HTML area. The text "
-"will appear for your project overview."
-msgstr ""
-
-#: functions/custom-post-types/portfolio-type.php:51
-msgid ""
-"Choose (or first create) a Project Type. You will need to use these to "
-"enable the filterable Portfolio option."
-msgstr ""
-
-#: functions/custom-post-types/portfolio-type.php:55
+#: functions/custom-post-types/portfolio-type.php:53
 msgid ""
 "A list of all Portfolio items appear below. To edit an item, click on the "
 "items's title."
-msgstr ""
-
-#: functions/custom-post-types/portfolio-type.php:97
-msgid "Sort Portfolio Items"
-msgstr ""
-
-#: functions/custom-post-types/portfolio-type.php:98
-msgid ""
-"Click, drag, re-order. Repeat as neccessary. Portfolio item at the top will "
-"appear first on your page."
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:12
-msgid "Quotes"
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:14
-msgid "Add New Quote"
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:15
-msgid "Edit Quote Item"
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:16
-msgid "New Quote Item"
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:17
-msgid "View Quote Item"
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:18
-msgid "Search Quote Items"
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:48
-msgid "Things to remember when adding a Quote:"
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:50
-msgid ""
-"Give the Quote a reference name. This will not appear on your site, and is "
-"just for reference purposes (ie; Quote from Jules Verne)."
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:51
-msgid "Enter a short quote or testimonial."
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:52
-msgid "Enter the name of the quote author."
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:56
-msgid ""
-"A list of all quotes appear below. To edit a quote, click on the quote "
-"Reference Name."
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:101
-msgid "Sort Quote Items"
-msgstr ""
-
-#: functions/custom-post-types/quotes-type.php:102
-msgid ""
-"Click, drag, re-order. Repeat as neccessary. Quote item at the top will "
-"appear first on your page."
 msgstr ""
 
 #: functions/custom-post-types/services-type.php:12
@@ -1098,8 +1029,7 @@ msgstr ""
 
 #: functions/custom-post-types/services-type.php:49
 msgid ""
-"Give the Service a title. (ie; Website Development or Development from the "
-"best in the game)."
+"Title service."
 msgstr ""
 
 #: functions/custom-post-types/services-type.php:50
@@ -1122,79 +1052,16 @@ msgid ""
 "appear first on your page."
 msgstr ""
 
-#: functions/custom-post-types/team-type.php:12
-msgid "Team"
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:14
-msgid "Add New Team Member"
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:15
-msgid "Edit Team Member"
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:16
-msgid "New Team Member"
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:17
-msgid "View Team Member"
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:18
-msgid "Search Team Members"
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:48
-msgid "Things to remember when adding a Team Member:"
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:50
-msgid "Add your Team Member name. (ie; Lana Del Rey)."
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:51
-msgid "Add a short description (Bio) for your member."
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:52
-msgid ""
-"Add a featured image (headshot possibly) to appear above your team member."
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:53
-msgid "Add a Job Title for your member. (ie; The Boss or Managing Director)."
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:54
-msgid ""
-"Add any Social Networks your Team Member belongs to. (ie; Twitter or "
-"Linkedin)."
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:58
-msgid ""
-"A list of all team members appear below. To edit a member, click on the Team "
-"Member name."
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:67
-msgid "Team Member Image"
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:111
-msgid "Sort Team Members"
-msgstr ""
-
-#: functions/custom-post-types/team-type.php:112
-msgid ""
-"Click, drag, re-order. Repeat as neccessary. Team Member at the top will "
-"appear first on your page."
-msgstr ""
-
 #: functions/widgets/widget-flickr.php:20
 msgid "Display your Flickr images"
+msgstr ""
+
+#: functions/widgets/widget-flickr.php:34
+msgid "Flickr"
+msgstr ""
+
+#: functions/widgets/widget-flickr.php:34
+msgid "Title"
 msgstr ""
 
 #: functions/widgets/widget-flickr.php:83

@@ -101,6 +101,19 @@ $of_options[] = array( 	"name" 		=> __('Homepage Layout Manager', 'velocityslide
 						"type" 		=> "sorter"
 				);
 
+$of_options[] = array(  "name" 		=> __('Custom Logo', 'velocityslide'),
+						"desc" 		=> __('Upload your own logo to use on the site.', 'velocityslide'),
+						"id" 		=> "custom_logo",
+						"std" 		=> "",
+						"mod" 		=> "min",
+						"type" 		=> "media");
+
+$of_options[] = array(  "name" 		=> __('Text Logo', 'velocityslide'),
+						"desc" 		=> __('If you do not have a logo you can choose to use a plain text logo instead.', 'velocityslide'),
+						"id" 		=> "text_logo",
+						"std" 		=> false,
+						"type" 		=> "checkbox");
+
 $of_options[] = array( 	"name" 		=> __('Rename Layout for Menu', 'velocityslide'),
                         "desc" 		=> __('For displaying the name you wish in menu.', 'velocityslide'),
                         "id" 		=> "name_layout_switch",

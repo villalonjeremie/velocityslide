@@ -1,11 +1,5 @@
 <?php
-/*
-Plugin Name: Flickr Widget
-Description: Flickr Widget to display your Flickr images.
-Author: GuuThemes
-Version: 1.0
-Author URI: http://guuhuu.com/
-*/
+
 
 add_action( 'widgets_init', 'vs_flickr_widget' );
 
@@ -17,7 +11,7 @@ class vs_flickr_widget extends WP_Widget {
 		
 	function vs_flickr_widget() {
 		$widget_style = array('classname' => 'vs_flickr_widget',
-							  'description' => __('Display your Flickr images', 'golden'));
+							  'description' => __('Display your Flickr images', 'velocityslide'));
 							  
 		$widget_define = array('show_id' => 'single_flickr',
 							   'get_tips' => 'true',
@@ -31,7 +25,7 @@ class vs_flickr_widget extends WP_Widget {
 							   'change4' => 100,
 							   'change5' => 0);
 							   
-		$this->WP_Widget( 'vs_flickr_widget', __('Flickr', 'golden'), $widget_style, $control_styles );
+		$this->WP_Widget( 'vs_flickr_widget', __('Flickr', 'velocityslide'), $widget_style, $control_styles );
 	}
 		
 	function widget( $args, $cur_instance ) {
@@ -73,21 +67,21 @@ class vs_flickr_widget extends WP_Widget {
 		$cur_instance = wp_parse_args( (array) $cur_instance, $defaults ); ?>
 
 		<p style="border-bottom: 1px solid #DFDFDF;">
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><strong><?php echo __('Title', 'golden'); ?></strong></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><strong><?php echo __('Title', 'velocityslide'); ?></strong></label>
 		</p>
 		<p>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $cur_instance['title']; ?>" />		
 		</p>
 
 		<p style="border-bottom: 1px solid #DFDFDF;">
-			<label for="<?php echo $this->get_field_id( 'flickrID' ); ?>"><strong><?php echo __('Flickr ID', 'golden'); ?></strong> (see <a href="http://idgettr.com/" target="_blank">idGettr</a>)</label>
+			<label for="<?php echo $this->get_field_id( 'flickrID' ); ?>"><strong><?php echo __('Flickr ID', 'velocityslide'); ?></strong> (see <a href="http://idgettr.com/" target="_blank">idGettr</a>)</label>
 		</p>
 		<p>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'flickrID' ); ?>" name="<?php echo $this->get_field_name( 'flickrID' ); ?>" value="<?php echo $cur_instance['flickrID']; ?>" />
 		</p>
 		
 		<p style="border-bottom: 1px solid #DFDFDF;">
-			<label for="<?php echo $this->get_field_id( 'postcount' ); ?>"><strong><?php echo __('Number of photos', 'golden'); ?></strong></label>
+			<label for="<?php echo $this->get_field_id( 'postcount' ); ?>"><strong><?php echo __('Number of photos', 'velocityslide'); ?></strong></label>
 		</p>
 		
 		<p>
@@ -105,7 +99,7 @@ class vs_flickr_widget extends WP_Widget {
 		</p>
 		
 		<p style="border-bottom: 1px solid #DFDFDF;">
-			<label for="<?php echo $this->get_field_id( 'type' ); ?>"><strong><?php echo __('Type (user or group)', 'golden'); ?></strong></label>
+			<label for="<?php echo $this->get_field_id( 'type' ); ?>"><strong><?php echo __('Type (user or group)', 'velocityslide'); ?></strong></label>
 		</p>
 		<p>
 			<select id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" class="widefat">	
@@ -115,7 +109,7 @@ class vs_flickr_widget extends WP_Widget {
 		</p>
 		
 		<p style="border-bottom: 1px solid #DFDFDF;">
-			<label for="<?php echo $this->get_field_id( 'display' ); ?>"><strong><?php echo __('Show (random or most recent)', 'golden'); ?></strong></label>
+			<label for="<?php echo $this->get_field_id( 'display' ); ?>"><strong><?php echo __('Show (random or most recent)', 'velocityslide'); ?></strong></label>
 		</p>
 		<p>
 			<select id="<?php echo $this->get_field_id( 'display' ); ?>" name="<?php echo $this->get_field_name( 'display' ); ?>" class="widefat">
