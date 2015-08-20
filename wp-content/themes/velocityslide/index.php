@@ -17,6 +17,35 @@ get_header();?>
 
                     <div class="panel">
 
+                        <div id="intro"
+                             class="intro-range intro boxjs"
+                             data-boxjs="
+                                module:kerastase/intro;
+                                component:kerastase/ui/intro;
+                                bgcolor:#000000;
+                                image:/assets/img/slide0/bg-slide0.jpg;
+                            ">
+                            <div class="intro-inner">
+                                <div class="intro-visual"></div>
+                                <div class="intro-visual-mask"></div>
+                                <div class="wrapper">
+                                    <div class="intro-content-wrapper">
+                                        <div class="intro-content-outer">
+                                            <div class="intro-content-animate">
+                                                <div class="intro-content">
+                                                    <h1 class="h-tgs h-it h-26">
+                                                        <strong class="h-ibc h-18 h-dash">coucou</strong>
+                                                        coucou
+                                                    </h1>
+                                                    <p>yoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyo</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="panel-container">
 
                             <?php if (isset($data["title_homepage"])) : ?>

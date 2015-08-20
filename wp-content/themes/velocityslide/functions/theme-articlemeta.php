@@ -24,9 +24,7 @@ $meta_box_article = array(
     )
 );
 
-
 add_action('admin_menu', 'vs_add_box_article');
-
 
 /*-----------------------------------------------------------------------------------*/
 /*	Add metabox to edit page
@@ -118,7 +116,6 @@ function vs_show_box_article() {
 
 add_action('save_post', 'vs_save_data_article');
 
-
 /*-----------------------------------------------------------------------------------*/
 /*	Save data when post is edited
 /*-----------------------------------------------------------------------------------*/
@@ -157,7 +154,6 @@ function vs_save_data_article($post_id) {
     }
 }
 
-
 /*-----------------------------------------------------------------------------------*/
 /*	Queue Scripts
 /*-----------------------------------------------------------------------------------*/
@@ -185,4 +181,5 @@ function vs_admin_scripts_article() {
     }
 
 }
+
 add_action('admin_enqueue_scripts', 'vs_admin_scripts_article');

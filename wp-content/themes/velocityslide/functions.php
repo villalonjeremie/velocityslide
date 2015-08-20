@@ -43,7 +43,7 @@ function adjust_the_wp_menu() {
 /*-----------------------------------------------------------------------------------*/
 /* Add support, and configure Thumbnails (for WordPress 2.9+)
 /*-----------------------------------------------------------------------------------*/
-
+/*
 if ( function_exists('add_theme_support') ) {
     add_theme_support('post-thumbnails');
     set_post_thumbnail_size(200, 200, true); // Normal post thumbnails
@@ -53,7 +53,7 @@ if ( function_exists('add_theme_support') ) {
     add_image_size('single-post', 980, 523, true); // Large Post Thumbnail (appears on single post)
     add_image_size('archive-post', 980, 523, true); // Large Post Thumbnail (appears on archive pages)
 }
-
+*/
 /*-----------------------------------------------------------------------------------*/
 /* Register & Enqueue JS and CSS
 /*-----------------------------------------------------------------------------------*/
@@ -74,6 +74,8 @@ function vs_queue_assets()
     wp_enqueue_style('jcarousel-popup', get_template_directory_uri() .'/assets/css/jcarousel-popup.css', false);
     wp_enqueue_style('jcarousel-article', get_template_directory_uri() .'/assets/css/jcarousel-article.css', false);
     wp_enqueue_script('jquery-migrate-1.2.1', get_template_directory_uri() .'/assets/js/jquery-migrate-1.2.1.js', false);
+    wp_enqueue_script('box-0.8.0', get_template_directory_uri() .'/assets/js/box-0.8.0.js', false);
+    wp_enqueue_script('intro', get_template_directory_uri() .'/assets/js/intro.js', false);
     wp_enqueue_script('initialize-jcarousel.js', get_template_directory_uri() .'/assets/js/carousel/initialize-jcarousel.js', false);
     wp_enqueue_script('jcarousel.js', get_template_directory_uri() .'/assets/js/carousel/jcarousel.js', false);
     wp_enqueue_script('jcarousel-vision-init.js', get_template_directory_uri() .'/assets/js/carousel/jcarousel-vision-init.js', false);

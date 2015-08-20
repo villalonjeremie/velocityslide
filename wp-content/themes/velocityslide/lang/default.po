@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: velocityslide\n"
-"POT-Creation-Date: 2013-04-09 20:49-0000\n"
-"PO-Revision-Date: 2015-08-13 18:18+0100\n"
+"POT-Creation-Date: 2015-08-15 20:49-0000\n"
+"PO-Revision-Date: 2015-08-17 11:01+0100\n"
 "Last-Translator: \n"
-"Language-Team: affinitytheme\n"
+"Language-Team: affinitythemes\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -125,7 +125,8 @@ msgid "Text Logo"
 msgstr ""
 
 #: admin/functions/functions.options.php:112
-msgid "If you do not have a logo you can choose to use a plain text logo instead."
+msgid ""
+"If you do not have a logo you can choose to use a plain text logo instead."
 msgstr ""
 
 #: admin/functions/functions.options.php:110
@@ -133,10 +134,12 @@ msgid "Hello There!"
 msgstr ""
 
 #: admin/functions/functions.options.php:89
-msgid "<h3 style=\"margin: 0 0 10px;\">Welcome to the Options velocity slide</h3><br>"
-"Organize how you want the layout to appear on the homepage.<br /><br />"
-"You can choose to enable/disable sections via drag & drop, or re-order."
-"their stacking order on the homepage.<br /><br />NB; Let the fields empty for not display."
+msgid ""
+"<h3 style=\"margin: 0 0 10px;\">Welcome to the Options velocity slide</"
+"h3><br>Organize how you want the layout to appear on the homepage.<br /><br /"
+">You can choose to enable/disable sections via drag & drop, or re-order."
+"their stacking order on the homepage.<br /><br />NB; Let the fields empty "
+"for not display."
 msgstr ""
 
 #: admin/functions/functions.options.php:97
@@ -203,7 +206,8 @@ msgstr ""
 msgid "Rename Contact layout in menu."
 msgstr ""
 
-#: admin/functions/functions.options.php:161
+#: admin/functions/functions.options.php:161,
+#: admin/functions/functions.options.php:546
 msgid "Background upload"
 msgstr ""
 
@@ -211,7 +215,8 @@ msgstr ""
 msgid "Upload your background for homepage."
 msgstr ""
 
-#: admin/functions/functions.options.php:169
+#: admin/functions/functions.options.php:169 ,
+#: functions/widgets/widget-flickr.php:34
 msgid "Title"
 msgstr ""
 
@@ -224,14 +229,18 @@ msgid "Description"
 msgstr ""
 
 #: admin/functions/functions.options.php:177
-msgid "You can add a short description to appear in this block.<br /><br /><em>*HTML tags are allowed.</em>"
+msgid ""
+"You can add a short description to appear in this block.<br /><br /"
+"><em>*HTML tags are allowed.</em>"
 msgstr ""
 
 #: admin/functions/functions.options.php:183
 msgid "Title button"
 msgstr ""
 
-#: admin/functions/functions.options.php:184
+#: admin/functions/functions.options.php:184,
+#: admin/functions/functions.options.php:408,
+#: admin/functions/functions.options.php:439
 msgid "Please enter a global name for your button."
 msgstr ""
 
@@ -247,7 +256,10 @@ msgstr ""
 msgid "Presentation Settings"
 msgstr ""
 
-#: admin/functions/functions.options.php:202
+#: admin/functions/functions.options.php:202,
+#: admin/functions/functions.options.php:286,
+#: admin/functions/functions.options.php:316,
+#: admin/functions/functions.options.php:464
 msgid "Left background upload"
 msgstr ""
 
@@ -255,7 +267,10 @@ msgstr ""
 msgid "Upload your left background for presentation."
 msgstr ""
 
-#: admin/functions/functions.options.php:210
+#: admin/functions/functions.options.php:210,
+#: admin/functions/functions.options.php:294,
+#: admin/functions/functions.options.php:324,
+#: admin/functions/functions.options.php:472
 msgid "Right background upload"
 msgstr ""
 
@@ -263,11 +278,13 @@ msgstr ""
 msgid "Upload your right background for presentation."
 msgstr ""
 
-#: admin/functions/functions.options.php:218
+#: admin/functions/functions.options.php:218,
+#: admin/functions/functions.options.php:332
 msgid "Left content"
 msgstr ""
 
-#: admin/functions/functions.options.php:219
+#: admin/functions/functions.options.php:219,
+#: admin/functions/functions.options.php:333
 msgid "For displaying content on left panel."
 msgstr ""
 
@@ -275,7 +292,8 @@ msgstr ""
 msgid "Left Title"
 msgstr ""
 
-#: admin/functions/functions.options.php:227
+#: admin/functions/functions.options.php:227,
+#: admin/functions/functions.options.php:259
 msgid "Please enter a title for the presentation section."
 msgstr ""
 
@@ -284,31 +302,34 @@ msgid "Left Subtitle"
 msgstr ""
 
 #: admin/functions/functions.options.php:235
-msgid "You can add a subtitle to appear in left block.<br /><br /><em>*HTML tags are allowed.</em>"
+msgid ""
+"You can add a subtitle to appear in left block.<br /><br /><em>*HTML tags "
+"are allowed.</em>"
 msgstr ""
 
 #: admin/functions/functions.options.php:242
 msgid "Left Description"
 msgstr ""
 
-#: admin/functions/functions.options.php:243
-msgid "You can add a short description to appear in left block.<br /><br /><em>*HTML tags are allowed.</em>"
+#: admin/functions/functions.options.php:243,
+#: admin/functions/functions.options.php:349
+msgid ""
+"You can add a short description to appear in left block.<br /><br /"
+"><em>*HTML tags are allowed.</em>"
 msgstr ""
 
-#: admin/functions/functions.options.php:250
+#: admin/functions/functions.options.php:250,
+#: admin/functions/functions.options.php:357
 msgid "Right content"
 msgstr ""
 
-#: admin/functions/functions.options.php:251
-msgid "For displaying content on right panel.
+#: admin/functions/functions.options.php:251,
+#: admin/functions/functions.options.php:358
+msgid "For displaying content on right panel."
 msgstr ""
 
 #: admin/functions/functions.options.php:258
 msgid "Right Title"
-msgstr ""
-
-#: admin/functions/functions.options.php:259
-msgid "Please enter a title for the presentation section."
 msgstr ""
 
 #: admin/functions/functions.options.php:266
@@ -316,31 +337,28 @@ msgid "Right Subtitle"
 msgstr ""
 
 #: admin/functions/functions.options.php:267
-msgid "You can add a subtitle to appear in right block.<br /><br /><em>*HTML tags are allowed.</em>"
+msgid ""
+"You can add a subtitle to appear in right block.<br /><br /><em>*HTML tags "
+"are allowed.</em>"
 msgstr ""
 
 #: admin/functions/functions.options.php:274
 msgid "Right Description"
 msgstr ""
 
-#: admin/functions/functions.options.php:275
-msgid "You can add a short description to appear in right block.<br /><br /><em>*HTML tags are allowed.</em>"
+#: admin/functions/functions.options.php:275,
+#: admin/functions/functions.options.php:374
+msgid ""
+"You can add a short description to appear in right block.<br /><br /"
+"><em>*HTML tags are allowed.</em>"
 msgstr ""
 
 #: admin/functions/functions.options.php:282
 msgid "Services Settings"
 msgstr ""
 
-#: admin/functions/functions.options.php:286
-msgid "Left background upload"
-msgstr ""
-
 #: admin/functions/functions.options.php:287
 msgid "Upload your left background for services section."
-msgstr ""
-
-#: admin/functions/functions.options.php:294
-msgid "Right background upload"
 msgstr ""
 
 #: admin/functions/functions.options.php:295
@@ -359,35 +377,20 @@ msgstr ""
 msgid "Portfolios Settings"
 msgstr ""
 
-#: admin/functions/functions.options.php:316
-msgid "Left background upload"
-msgstr ""
-
 #: admin/functions/functions.options.php:317
 msgid "Upload your left background for portfolio."
-msgstr ""
-
-#: admin/functions/functions.options.php:324
-msgid "Right background upload"
 msgstr ""
 
 #: admin/functions/functions.options.php:325
 msgid "Upload your right background for portfolio."
 msgstr ""
 
-#: admin/functions/functions.options.php:332
-msgid "Left content"
-msgstr ""
-
-#: admin/functions/functions.options.php:333
-msgid "For displaying content on left panel."
-msgstr ""
-
 #: admin/functions/functions.options.php:340
 msgid "Left title"
 msgstr ""
 
-#: admin/functions/functions.options.php:341
+#: admin/functions/functions.options.php:341,
+#: admin/functions/functions.options.php:366
 msgid "Please enter a title for the portfolio section."
 msgstr ""
 
@@ -395,32 +398,12 @@ msgstr ""
 msgid "Left description"
 msgstr ""
 
-#: admin/functions/functions.options.php:349
-msgid "You can add a short description to appear in left block.<br /><br /><em>*HTML tags are allowed.</em>"
-msgstr ""
-
-#: admin/functions/functions.options.php:357
-msgid "Right content"
-msgstr ""
-
-#: admin/functions/functions.options.php:358
-msgid "For displaying content on right panel."
-msgstr ""
-
 #: admin/functions/functions.options.php:365
 msgid "Right title"
 msgstr ""
 
-#: admin/functions/functions.options.php:366
-msgid "Please enter a title for the portfolio section."
-msgstr ""
-
 #: admin/functions/functions.options.php:373
 msgid "Right description"
-msgstr ""
-
-#: admin/functions/functions.options.php:374
-msgid "You can add a short description to appear in right block.<br /><br /><em>*HTML tags are allowed.</em>"
 msgstr ""
 
 #: admin/functions/functions.options.php:382
@@ -435,7 +418,8 @@ msgstr ""
 msgid "Left title popup"
 msgstr ""
 
-#: admin/functions/functions.options.php:392
+#: admin/functions/functions.options.php:392,
+#: admin/functions/functions.options.php:424
 msgid "Please enter a global name for your popup."
 msgstr ""
 
@@ -443,16 +427,13 @@ msgstr ""
 msgid "Left description popup"
 msgstr ""
 
-#: admin/functions/functions.options.php:400
+#: admin/functions/functions.options.php:400,
+#: admin/functions/functions.options.php:432
 msgid "Please enter a description for your popup."
 msgstr ""
 
 #: admin/functions/functions.options.php:407
 msgid "Left title button"
-msgstr ""
-
-#: admin/functions/functions.options.php:408
-msgid "Please enter a global name for your button."
 msgstr ""
 
 #: admin/functions/functions.options.php:415
@@ -463,24 +444,12 @@ msgstr ""
 msgid "Right title popup"
 msgstr ""
 
-#: admin/functions/functions.options.php:424
-msgid "Please enter a global name for your popup."
-msgstr ""
-
 #: admin/functions/functions.options.php:431
 msgid "Right description popup"
 msgstr ""
 
-#: admin/functions/functions.options.php:432
-msgid "Please enter a description for your popup."
-msgstr ""
-
 #: admin/functions/functions.options.php:438
 msgid "Right title button"
-msgstr ""
-
-#: admin/functions/functions.options.php:439
-msgid "Please enter a global name for your button."
 msgstr ""
 
 #: admin/functions/functions.options.php:446
@@ -495,7 +464,6 @@ msgstr ""
 msgid "For displaying post on left panel."
 msgstr ""
 
-
 #: admin/functions/functions.options.php:457
 msgid "Right post display"
 msgstr ""
@@ -504,21 +472,9 @@ msgstr ""
 msgid "For displaying post on right panel."
 msgstr ""
 
-
-#: admin/functions/functions.options.php:464
-msgid "Left background upload"
-msgstr ""
-
-
 #: admin/functions/functions.options.php:465
 msgid "Upload your left background for blog section."
 msgstr ""
-
-
-#: admin/functions/functions.options.php:472
-msgid "Right background upload"
-msgstr ""
-
 
 #: admin/functions/functions.options.php:473
 msgid "Upload your right background for blog section."
@@ -532,21 +488,17 @@ msgstr ""
 msgid "Title contact"
 msgstr ""
 
-
 #: admin/functions/functions.options.php:490
 msgid "Subtitle contact"
 msgstr ""
-
 
 #: admin/functions/functions.options.php:496
 msgid "Title details contact"
 msgstr ""
 
-
 #: admin/functions/functions.options.php:502
 msgid "Contact Address"
 msgstr ""
-
 
 #: admin/functions/functions.options.php:509
 msgid "Country contact"
@@ -560,52 +512,44 @@ msgstr ""
 msgid "Contact Telephone Number"
 msgstr ""
 
-
 #: admin/functions/functions.options.php:522
 msgid "Please enter your company telephone number."
 msgstr ""
-
 
 #: admin/functions/functions.options.php:528
 msgid "Fax Telephone Number"
 msgstr ""
 
-
 #: admin/functions/functions.options.php:529
 msgid "Please enter your company fax number."
 msgstr ""
-
 
 #: admin/functions/functions.options.php:535
 msgid "Contact Email"
 msgstr ""
 
 #: admin/functions/functions.options.php:536
-msgid "Please enter your company email address (eg; marc@guuthemes.com) This will also populate into your Contact Form."
+msgid ""
+"Please enter your company email address (eg; marc@guuthemes.com) This will "
+"also populate into your Contact Form."
 msgstr ""
 
 #: admin/functions/functions.options.php:542
 msgid "General Settings"
 msgstr ""
 
-
-#: admin/functions/functions.options.php:546
-msgid "Background upload"
-msgstr ""
-
-
 #: admin/functions/functions.options.php:547
 msgid "Upload your background for contact."
 msgstr ""
-
 
 #: admin/functions/functions.options.php:555
 msgid "Tracking Code"
 msgstr ""
 
-
 #: admin/functions/functions.options.php:556
-msgid "Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme."
+msgid ""
+"Paste your Google Analytics (or other) tracking code here. This will be "
+"added into the footer template of your theme."
 msgstr ""
 
 #: admin/functions/functions.options.php:562
@@ -613,24 +557,22 @@ msgid "Footer Text"
 msgstr ""
 
 #: admin/functions/functions.options.php:563
-msgid "You can use the following shortcodes in your footer text: [wp-link] [theme-link] [loginout-link] [blog-title] [blog-link] [the-year]."
+msgid ""
+"You can use the following shortcodes in your footer text: [wp-link] [theme-"
+"link] [loginout-link] [blog-title] [blog-link] [the-year]."
 msgstr ""
-
 
 #: admin/functions/functions.options.php:569
 msgid "Styling Options"
 msgstr ""
 
-
 #: admin/functions/functions.options.php:573
 msgid "Body Background Color"
 msgstr ""
 
-
 #: admin/functions/functions.options.php:574
 msgid "Pick a background color for the theme (default: #fff)."
 msgstr ""
-
 
 #: admin/functions/functions.options.php:580
 msgid "Body Font"
@@ -653,17 +595,17 @@ msgid "Google Font Select"
 msgstr ""
 
 #: admin/functions/functions.options.php:596
-msgid "Some description. Note that this is a custom text added from options file."
+msgid ""
+"Some description. Note that this is a custom text added from options file."
 msgstr ""
-
-
 
 #: admin/functions/functions.options.php:613
 msgid "Twitter"
 msgstr ""
 
 #: admin/functions/functions.options.php:614
-msgid "Enter your Twitter Profile URL <br />(ie; http://twitter.com/affinitythemes)"
+msgid ""
+"Enter your Twitter Profile URL <br />(ie; http://twitter.com/affinitythemes)"
 msgstr ""
 
 #: admin/functions/functions.options.php:619
@@ -672,7 +614,8 @@ msgstr ""
 
 #: admin/functions/functions.options.php:620
 msgid ""
-"Enter your Facebook Profile URL <br />(ie; http://facebook.com/affinitythemes)"
+"Enter your Facebook Profile URL <br />(ie; http://facebook.com/"
+"affinitythemes)"
 msgstr ""
 
 #: admin/functions/functions.options.php:625
@@ -681,7 +624,8 @@ msgstr ""
 
 #: admin/functions/functions.options.php:626
 msgid ""
-"Enter your Dribbble Profile URL <br />(ie; http://dribbble.com/affinitythemes)"
+"Enter your Dribbble Profile URL <br />(ie; http://dribbble.com/"
+"affinitythemes)"
 msgstr ""
 
 #: admin/functions/functions.options.php:631
@@ -690,7 +634,8 @@ msgstr ""
 
 #: admin/functions/functions.options.php:632
 msgid ""
-"Enter your Forrst Profile URL <br />(ie; http://forrst.com/people/affinitythemes)"
+"Enter your Forrst Profile URL <br />(ie; http://forrst.com/people/"
+"affinitythemes)"
 msgstr ""
 
 #: admin/functions/functions.options.php:637
@@ -698,7 +643,8 @@ msgid "Vimeo"
 msgstr ""
 
 #: admin/functions/functions.options.php:638
-msgid "Enter your Vimeo Profile URL <br />(ie; http://vimeo.com/affinitythemes)"
+msgid ""
+"Enter your Vimeo Profile URL <br />(ie; http://vimeo.com/affinitythemes)"
 msgstr ""
 
 #: admin/functions/functions.options.php:643
@@ -707,16 +653,19 @@ msgstr ""
 
 #: admin/functions/functions.options.php:644
 msgid ""
-"Enter your YouTube Profile URL <br />(ie; http://youtube.com/user/affinitythemes)"
+"Enter your YouTube Profile URL <br />(ie; http://youtube.com/user/"
+"affinitythemes)"
 msgstr ""
 
-#: admin/functions/functions.options.php:649
+#: admin/functions/functions.options.php:649,
+#: functions/widgets/widget-flickr.php:34
 msgid "Flickr"
 msgstr ""
 
 #: admin/functions/functions.options.php:650
 msgid ""
-"Enter your Flickr Profile URL <br />(ie; http://flickr.com/people/affinitythemes)"
+"Enter your Flickr Profile URL <br />(ie; http://flickr.com/people/"
+"affinitythemes)"
 msgstr ""
 
 #: admin/functions/functions.options.php:655
@@ -725,7 +674,8 @@ msgstr ""
 
 #: admin/functions/functions.options.php:656
 msgid ""
-"Enter your Linkedin Profile URL <br />(ie; http://linkedin.com/in/affinitythemes)"
+"Enter your Linkedin Profile URL <br />(ie; http://linkedin.com/in/"
+"affinitythemes)"
 msgstr ""
 
 #: admin/functions/functions.options.php:661
@@ -734,7 +684,8 @@ msgstr ""
 
 #: admin/functions/functions.options.php:662
 msgid ""
-"Enter your Pinterest Profile URL <br />(ie; http://pinterest.com/affinitythemes)"
+"Enter your Pinterest Profile URL <br />(ie; http://pinterest.com/"
+"affinitythemes)"
 msgstr ""
 
 #: admin/functions/functions.options.php:667
@@ -751,7 +702,8 @@ msgid "Tumblr"
 msgstr ""
 
 #: admin/functions/functions.options.php:674
-msgid "Enter your Tumblr Profile URL <br />(ie; http://affinitythemes.tumblr.com)"
+msgid ""
+"Enter your Tumblr Profile URL <br />(ie; http://affinitythemes.tumblr.com)"
 msgstr ""
 
 #: admin/functions/functions.options.php:679
@@ -892,8 +844,7 @@ msgid "Portfolio Side"
 msgstr ""
 
 #: functions/theme-portfoliometa.php:39
-msgid ""
-"Choose the side popup portfolio you wish to display."
+msgid "Choose the side popup portfolio you wish to display."
 msgstr ""
 
 #: functions/theme-servicesmeta.php:11
@@ -906,10 +857,9 @@ msgstr ""
 
 #: functions/theme-servicesmeta.php:18
 msgid ""
-"Add an Icon for your service via Shortcode <br />"
-"Example: [icon name=icon-file]<br /><br />A list "
-"of all available icons can be found <a "
-"href=\"http://fortawesome.github.com/Font-Awesome\" target=\"_blank\">here</a>"
+"Add an Icon for your service via Shortcode <br />Example: [icon name=icon-"
+"file]<br /><br />A list of all available icons can be found <a href=\"http://"
+"fortawesome.github.com/Font-Awesome\" target=\"_blank\">here</a>"
 msgstr ""
 
 #: functions/theme-servicesmeta.php:24
@@ -1028,8 +978,7 @@ msgid "Things to remember when adding a Service:"
 msgstr ""
 
 #: functions/custom-post-types/services-type.php:49
-msgid ""
-"Title service."
+msgid "Title service."
 msgstr ""
 
 #: functions/custom-post-types/services-type.php:50
@@ -1054,14 +1003,6 @@ msgstr ""
 
 #: functions/widgets/widget-flickr.php:20
 msgid "Display your Flickr images"
-msgstr ""
-
-#: functions/widgets/widget-flickr.php:34
-msgid "Flickr"
-msgstr ""
-
-#: functions/widgets/widget-flickr.php:34
-msgid "Title"
 msgstr ""
 
 #: functions/widgets/widget-flickr.php:83
